@@ -1,0 +1,15 @@
+﻿FTU,Organ,FTUID,PathStep,PathVessel,PathVesselID,Type
+thymus lobule,thymus,UBERON:0002125,1,left ventricle,UBERON:0002084,Artery
+thymus lobule,thymus,UBERON:0002125,2,aorta,UBERON:0000947,Artery
+thymus lobule,thymus,UBERON:0002125,3,ascending aorta,UBERON:0001496,Artery
+thymus lobule,thymus,UBERON:0002125,4,aortic arch,UBERON:0001508,Artery
+thymus lobule,thymus,UBERON:0002125,5,subclavian artery,UBERON:0001533,Artery
+thymus lobule,thymus,UBERON:0002125,6,internal thoracic artery,UBERON:0002456,Artery
+thymus lobule,thymus,UBERON:0002125,7,thymic artery,UBERON:0018243,Artery
+thymus lobule,thymus,UBERON:0002125,8,thymic arteriole,nan,Artery
+thymus lobule,thymus,UBERON:0002125,9,thymic capillary,FMA:280943,FTU
+thymus lobule,thymus,UBERON:0002125,10,thymic venule,nan,Vein
+thymus lobule,thymus,UBERON:0002125,11,thymic vein,UBERON:0001591,Vein
+thymus lobule,thymus,UBERON:0002125,12,left brachiocephalic vein,FMA:4761,Vein
+thymus lobule,thymus,UBERON:0002125,13,superior vena cava,UBERON:0001585,Vein
+thymus lobule,thymus,UBERON:0002125,14,right atrium,UBERON:0002078,Vein

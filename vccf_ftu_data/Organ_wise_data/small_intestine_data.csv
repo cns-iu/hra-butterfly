@@ -1,0 +1,27 @@
+﻿FTU,Organ,FTUID,PathStep,PathVessel,PathVesselID,Type
+intestinal villus,small intestine,UBERON:0001213,1,left ventricle,UBERON:0002084,Artery
+intestinal villus,small intestine,UBERON:0001213,2,aorta,UBERON:0000947,Artery
+intestinal villus,small intestine,UBERON:0001213,3,ascending aorta,UBERON:0001496,Artery
+intestinal villus,small intestine,UBERON:0001213,4,aortic arch,UBERON:0001508,Artery
+intestinal villus,small intestine,UBERON:0001213,5,descending aorta,UBERON:0001514,Artery
+intestinal villus,small intestine,UBERON:0001213,6,descending thoracic aorta,UBERON:0002345,Artery
+intestinal villus,small intestine,UBERON:0001213,7,abdominal aorta,UBERON:0001516,Artery
+intestinal villus,small intestine,UBERON:0001213,8,superior mesenteric artery,UBERON:0001182,Artery
+intestinal villus,small intestine,UBERON:0001213,9,jejunal branches,UBERON:0018255,Artery
+intestinal villus,small intestine,UBERON:0001213,10,jejunal arcade,nan,Artery
+intestinal villus,small intestine,UBERON:0001213,11,vasa recta of jejunum,nan,Artery
+intestinal villus,small intestine,UBERON:0001213,12,mucous plexus of small intestine,FMA:264945,Artery
+intestinal villus,small intestine,UBERON:0001213,13,branch of mucous plexus of small intestine,nan,FTU
+intestinal villus,small intestine,UBERON:0001213,14,jejunal vein,UBERON:0001216,Vein
+intestinal villus,small intestine,UBERON:0001213,15,superior mesenteric vein,UBERON:0001138,Vein
+intestinal villus,small intestine,UBERON:0001213,16,hepatic portal vein,UBERON:0001639,Vein
+intestinal villus,small intestine,UBERON:0001213,17,left hepatic portal vein,FMA:15415,Vein
+intestinal villus,small intestine,UBERON:0001213,18,left lateral hepatic portal vein,nan,Vein
+intestinal villus,small intestine,UBERON:0001213,19,lateral inferior segmental hepatic portal vein,FMA:15432,Vein
+intestinal villus,small intestine,UBERON:0001213,20,hepatic portal venule,nan,Vein
+intestinal villus,small intestine,UBERON:0001213,21,hepatic sinusoid,UBERON:0001281,Vein
+intestinal villus,small intestine,UBERON:0001213,22,central vein of liver,UBERON:0006841,Vein
+intestinal villus,small intestine,UBERON:0001213,23,segmental hepatic vein,nan,Vein
+intestinal villus,small intestine,UBERON:0001213,24,left hepatic vein,UBERON:0011955,Vein
+intestinal villus,small intestine,UBERON:0001213,25,inferior vena cava,UBERON:0001072,Vein
+intestinal villus,small intestine,UBERON:0001213,26,right atrium,UBERON:0002078,Vein
