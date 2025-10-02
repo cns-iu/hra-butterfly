@@ -1,0 +1,23 @@
+﻿FTU,Organ,FTUID,PathStep,PathVessel,PathVesselID,Type
+dermal papilla,skin of body,UBERON:0000412,1,left ventricle,UBERON:0002084,Artery
+dermal papilla,skin of body,UBERON:0000412,2,aorta,UBERON:0000947,Artery
+dermal papilla,skin of body,UBERON:0000412,3,ascending aorta,UBERON:0001496,Artery
+dermal papilla,skin of body,UBERON:0000412,4,aortic arch,UBERON:0001508,Artery
+dermal papilla,skin of body,UBERON:0000412,5,subclavian artery,UBERON:0001533,Artery
+dermal papilla,skin of body,UBERON:0000412,6,axillary artery,UBERON:0001394,Artery
+dermal papilla,skin of body,UBERON:0000412,7,brachial artery,UBERON:0001398,Artery
+dermal papilla,skin of body,UBERON:0000412,8,ulnar artery,UBERON:0001406,Artery
+dermal papilla,skin of body,UBERON:0000412,9,cutaneous branch of ulnar artery,nan,Artery
+dermal papilla,skin of body,UBERON:0000412,10,cutaneous arteriole,nan,Artery
+dermal papilla,skin of body,UBERON:0000412,11,subpapillary plexus,FMA:280962,Artery
+dermal papilla,skin of body,UBERON:0000412,12,branch of subpapillary plexus,nan,FTU
+dermal papilla,skin of body,UBERON:0000412,13,cutaneous venule,nan,Vein
+dermal papilla,skin of body,UBERON:0000412,14,cutaneous branch of ulnar vein,nan,Vein
+dermal papilla,skin of body,UBERON:0000412,15,ulnar vein,FMA:22950,Vein
+dermal papilla,skin of body,UBERON:0000412,16,brachial vein,UBERON:0001413,Vein
+dermal papilla,skin of body,UBERON:0000412,17,axillary vein,UBERON:0000985,Vein
+dermal papilla,skin of body,UBERON:0000412,18,subclavian vein,UBERON:0001587,Vein
+dermal papilla,skin of body,UBERON:0000412,19,brachiocephalic vein,UBERON:0003711,Vein
+dermal papilla,skin of body,UBERON:0000412,20,superior vena cava,UBERON:0001585,Vein
+dermal papilla,skin of body,UBERON:0000412,21,right atrium,UBERON:0002078,Vein
+epidermal ridge of digit,skin of body,UBERON:0013487,,,,FTU
