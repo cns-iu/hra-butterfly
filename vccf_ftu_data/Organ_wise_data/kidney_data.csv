@@ -1,0 +1,30 @@
+﻿FTU,Organ,FTUID,Vessel,VesselID,PathStep,PathVessel,PathVesselID,Type
+,,,,,,,,
+descending limb of loop of Henle,Kidney,UBERON:0001289,ascending vasa recta of kidney,UBERON:0009091,1,left ventricle,UBERON:0002084,Artery
+descending limb of loop of Henle,Kidney,UBERON:0001289,ascending vasa recta of kidney,UBERON:0009091,2,aorta,UBERON:0000947,Artery
+descending limb of loop of Henle,Kidney,UBERON:0001289,ascending vasa recta of kidney,UBERON:0009091,3,ascending aorta,UBERON:0001496,Artery
+descending limb of loop of Henle,Kidney,UBERON:0001289,ascending vasa recta of kidney,UBERON:0009091,4,aortic arch,UBERON:0001508,Artery
+descending limb of loop of Henle,Kidney,UBERON:0001289,ascending vasa recta of kidney,UBERON:0009091,5,descending aorta,UBERON:0001514,Artery
+descending limb of loop of Henle,Kidney,UBERON:0001289,ascending vasa recta of kidney,UBERON:0009091,6,descending thoracic aorta,UBERON:0002345,Artery
+descending limb of loop of Henle,Kidney,UBERON:0001289,ascending vasa recta of kidney,UBERON:0009091,7,abdominal aorta,UBERON:0001516,Artery
+descending limb of loop of Henle,Kidney,UBERON:0001289,ascending vasa recta of kidney,UBERON:0009091,8,renal artery,UBERON:0001184,Artery
+descending limb of loop of Henle,Kidney,UBERON:0001289,ascending vasa recta of kidney,UBERON:0009091,9,segmental renal artery,FMA:70494,Artery
+descending limb of loop of Henle,Kidney,UBERON:0001289,ascending vasa recta of kidney,UBERON:0009091,10,interlobar renal artery,UBERON:0009885,Artery
+descending limb of loop of Henle,Kidney,UBERON:0001289,ascending vasa recta of kidney,UBERON:0009091,11,arcuate renal artery,UBERON:0001552,Artery
+descending limb of loop of Henle,Kidney,UBERON:0001289,ascending vasa recta of kidney,UBERON:0009091,12,interlobular renal artery,UBERON:0004723,Artery
+descending limb of loop of Henle,Kidney,UBERON:0001289,ascending vasa recta of kidney,UBERON:0009091,13,renal afferent arteriole,UBERON:0004639,FTU
+descending limb of loop of Henle,Kidney,UBERON:0001289,ascending vasa recta of kidney,UBERON:0009091,14,glomerular capillary,UBERON:0004212,FTU
+descending limb of loop of Henle,Kidney,UBERON:0001289,ascending vasa recta of kidney,UBERON:0009091,15,renal efferent arteriole,UBERON:0004640,FTU
+descending limb of loop of Henle,Kidney,UBERON:0001289,ascending vasa recta of kidney,UBERON:0009091,16,descending vasa recta of kidney,UBERON:0009202,FTU
+descending limb of loop of Henle,Kidney,UBERON:0001289,ascending vasa recta of kidney,UBERON:0009091,17,vasa recta of kidney,UBERON:0004726,FTU
+descending limb of loop of Henle,Kidney,UBERON:0001289,ascending vasa recta of kidney,UBERON:0009091,18,ascending vasa recta of kidney,UBERON:0009091,FTU
+descending limb of loop of Henle,Kidney,UBERON:0001289,ascending vasa recta of kidney,UBERON:0009091,19,straight venule of kidney,UBERON:0010181,Vein
+descending limb of loop of Henle,Kidney,UBERON:0001289,ascending vasa recta of kidney,UBERON:0009091,20,interlobular renal vein,UBERON:0005168,Vein
+descending limb of loop of Henle,Kidney,UBERON:0001289,ascending vasa recta of kidney,UBERON:0009091,21,arcuate renal vein,UBERON:0004719,Vein
+descending limb of loop of Henle,Kidney,UBERON:0001289,ascending vasa recta of kidney,UBERON:0009091,22,interlobar renal vein,UBERON:0009887,Vein
+descending limb of loop of Henle,Kidney,UBERON:0001289,ascending vasa recta of kidney,UBERON:0009091,23,segmental renal vein,nan,Vein
+descending limb of loop of Henle,Kidney,UBERON:0001289,ascending vasa recta of kidney,UBERON:0009091,24,renal vein,UBERON:0001140,Vein
+descending limb of loop of Henle,Kidney,UBERON:0001289,ascending vasa recta of kidney,UBERON:0009091,25,inferior vena cava,UBERON:0001072,Vein
+descending limb of loop of Henle,Kidney,UBERON:0001289,ascending vasa recta of kidney,UBERON:0009091,26,right atrium,UBERON:0002078,Vein
+thick ascending limb of loop of Henle,Kidney,UBERON:0001291,peritubular capillary,UBERON:0005272,27,peritubular capillary,UBERON:0005272,FTU
+thick ascending limb of loop of Henle,Kidney,UBERON:0001291,peritubular capillary,UBERON:0005272,28,stellate venule of kidney,FMA:321526,
