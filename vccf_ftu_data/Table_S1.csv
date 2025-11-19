@@ -1029,3 +1029,134 @@ white pulp of spleen,UBERON:0001959,spleen central arteriole,UBERON:0010401,15,s
 white pulp of spleen,UBERON:0001959,spleen central arteriole,UBERON:0010401,16,left hepatic vein,UBERON:0011955
 white pulp of spleen,UBERON:0001959,spleen central arteriole,UBERON:0010401,17,inferior vena cava,UBERON:0001072
 white pulp of spleen,UBERON:0001959,spleen central arteriole,UBERON:0010401,18,right atrium,UBERON:0002078
+hair follicle,UBERON:0002073,branch of deep cutaneous plexus,,-13,left ventricle,UBERON:0002084
+hair follicle,UBERON:0002073,branch of deep cutaneous plexus,,-12,aorta,UBERON:0000947
+hair follicle,UBERON:0002073,branch of deep cutaneous plexus,,-11,ascending aorta,UBERON:0001496
+hair follicle,UBERON:0002073,branch of deep cutaneous plexus,,-10,aortic arch,UBERON:0001508
+hair follicle,UBERON:0002073,branch of deep cutaneous plexus,,-9,subclavian artery,UBERON:0001533
+hair follicle,UBERON:0002073,branch of deep cutaneous plexus,,-8,axillary artery,UBERON:0001394
+hair follicle,UBERON:0002073,branch of deep cutaneous plexus,,-7,brachial artery,UBERON:0001398
+hair follicle,UBERON:0002073,branch of deep cutaneous plexus,,-6,ulnar artery,UBERON:0001406
+hair follicle,UBERON:0002073,branch of deep cutaneous plexus,,-5,superficial palmar arch,UBERON:0006564
+hair follicle,UBERON:0002073,branch of deep cutaneous plexus,,-4,Fourth common palmar digital artery,FMA:85108
+hair follicle,UBERON:0002073,branch of deep cutaneous plexus,,-3,cutaneous branch of medial proper palmar digital artery of fifth digit of hand,
+hair follicle,UBERON:0002073,branch of deep cutaneous plexus,,-2,cutaneous arteriole,
+hair follicle,UBERON:0002073,branch of deep cutaneous plexus,,-1,deep cutaneous plexus,
+hair follicle,UBERON:0002073,branch of deep cutaneous plexus,,0,branch of deep cutaneous plexus,
+hair follicle,UBERON:0002073,branch of deep cutaneous plexus,,1,cutaneous venule,nan
+hair follicle,UBERON:0002073,branch of deep cutaneous plexus,,2,cutaneous branch of ulnar vein,nan
+hair follicle,UBERON:0002073,branch of deep cutaneous plexus,,3,ulnar vein,FMA:22950
+hair follicle,UBERON:0002073,branch of deep cutaneous plexus,,4,brachial vein,UBERON:0001413
+hair follicle,UBERON:0002073,branch of deep cutaneous plexus,,5,axillary vein,UBERON:0000985
+hair follicle,UBERON:0002073,branch of deep cutaneous plexus,,6,subclavian vein,UBERON:0001587
+hair follicle,UBERON:0002073,branch of deep cutaneous plexus,,7,brachiocephalic vein,UBERON:0003711
+hair follicle,UBERON:0002073,branch of deep cutaneous plexus,,8,superior vena cava,UBERON:0001585
+hair follicle,UBERON:0002073,branch of deep cutaneous plexus,,9,right atrium,UBERON:0002078
+submandibular gland,UBERON:0001736,submandibular gland capillary,,-9,left ventricle,UBERON:0002084
+submandibular gland,UBERON:0001736,submandibular gland capillary,,-8,aorta,UBERON:0000947
+submandibular gland,UBERON:0001736,submandibular gland capillary,,-7,ascending aorta,UBERON:0001496
+submandibular gland,UBERON:0001736,submandibular gland capillary,,-6,aortic arch,UBERON:0001508
+submandibular gland,UBERON:0001736,submandibular gland capillary,,-5,common carotid artery,UBERON:0001530
+submandibular gland,UBERON:0001736,submandibular gland capillary,,-4,external carotid artery,UBERON:0001070
+submandibular gland,UBERON:0001736,submandibular gland capillary,,-3,facial artery,UBERON:0001612
+submandibular gland,UBERON:0001736,submandibular gland capillary,,-2,glandular branches of facial artery,FMA:71675
+submandibular gland,UBERON:0001736,submandibular gland capillary,,-1,submandibular gland arteriole,
+submandibular gland,UBERON:0001736,submandibular gland capillary,,0,submandibular gland capillary,
+submandibular gland,UBERON:0001736,submandibular gland capillary,,1,concomitant Wharton doct vein,
+submandibular gland,UBERON:0001736,submandibular gland capillary,,2,sublingual vein,UBERON:8600071
+submandibular gland,UBERON:0001736,submandibular gland capillary,,3,lingual vein,UBERON:0006634
+submandibular gland,UBERON:0001736,submandibular gland capillary,,4,internal jugular vein,UBERON:0001586
+submandibular gland,UBERON:0001736,submandibular gland capillary,,5,brachiocephalic vein,UBERON:0003711
+submandibular gland,UBERON:0001736,submandibular gland capillary,,6,superior vena cava,UBERON:0001585
+submandibular gland,UBERON:0001736,submandibular gland capillary,,7,right atrium,UBERON:0002078
+parotid gland,UBERON:0001831,deep parotid gland capillary,,-8,left ventricle,UBERON:0002084
+parotid gland,UBERON:0001831,deep parotid gland capillary,,-7,aorta,UBERON:0000947
+parotid gland,UBERON:0001831,deep parotid gland capillary,,-6,ascending aorta,UBERON:0001496
+parotid gland,UBERON:0001831,deep parotid gland capillary,,-5,aortic arch,UBERON:0001508
+parotid gland,UBERON:0001831,deep parotid gland capillary,,-4,common carotid artery,UBERON:0001530
+parotid gland,UBERON:0001831,deep parotid gland capillary,,-3,external carotid artery,UBERON:0001070
+parotid gland,UBERON:0001831,deep parotid gland capillary,,-2,maxillary artery,UBERON:0001616
+parotid gland,UBERON:0001831,deep parotid gland capillary,,-1,deep parotid gland arteriole,
+parotid gland,UBERON:0001831,deep parotid gland capillary,,0,deep parotid gland capillary,
+parotid gland,UBERON:0001831,deep parotid gland capillary,,1,deep parotid gland venule,
+parotid gland,UBERON:0001831,deep parotid gland capillary,,2,retromandibular vein,UBERON:0001656
+parotid gland,UBERON:0001831,deep parotid gland capillary,,3,anterior branch of retromandibular vein,
+parotid gland,UBERON:0001831,deep parotid gland capillary,,4,common facial vein,
+parotid gland,UBERON:0001831,deep parotid gland capillary,,5,internal jugular vein,UBERON:0001586
+parotid gland,UBERON:0001831,deep parotid gland capillary,,6,brachiocephalic vein,UBERON:0003711
+parotid gland,UBERON:0001831,deep parotid gland capillary,,7,superior vena cava,UBERON:0001585
+parotid gland,UBERON:0001831,deep parotid gland capillary,,8,right atrium,UBERON:0002078
+parotid gland,UBERON:0001831,superior parotid gland capillary,,-7,left ventricle,UBERON:0002084
+parotid gland,UBERON:0001831,superior parotid gland capillary,,-6,aorta,UBERON:0000947
+parotid gland,UBERON:0001831,superior parotid gland capillary,,-5,ascending aorta,UBERON:0001496
+parotid gland,UBERON:0001831,superior parotid gland capillary,,-4,aortic arch,UBERON:0001508
+parotid gland,UBERON:0001831,superior parotid gland capillary,,-3,common carotid artery,UBERON:0001530
+parotid gland,UBERON:0001831,superior parotid gland capillary,,-2,external carotid artery,UBERON:0001070
+parotid gland,UBERON:0001831,superior parotid gland capillary,,-1,superior parotid gland arteriole,
+parotid gland,UBERON:0001831,superior parotid gland capillary,,0,superior parotid gland capillary,
+parotid gland,UBERON:0001831,superior parotid gland capillary,,1,deep parotid gland capillary,
+parotid gland,UBERON:0001831,superior parotid gland capillary,,2,deep parotid gland venule,
+parotid gland,UBERON:0001831,superior parotid gland capillary,,3,retromandibular vein,UBERON:0001656
+parotid gland,UBERON:0001831,superior parotid gland capillary,,4,anterior branch of retromandibular vein,
+parotid gland,UBERON:0001831,superior parotid gland capillary,,5,common facial vein,
+parotid gland,UBERON:0001831,superior parotid gland capillary,,6,internal jugular vein,UBERON:0001586
+parotid gland,UBERON:0001831,superior parotid gland capillary,,7,brachiocephalic vein,UBERON:0003711
+parotid gland,UBERON:0001831,superior parotid gland capillary,,8,superior vena cava,UBERON:0001585
+parotid gland,UBERON:0001831,superior parotid gland capillary,,9,right atrium,UBERON:0002078
+sublingual gland,UBERON:0001832,sublingual gland capillary,,-9,left ventricle,UBERON:0002084
+sublingual gland,UBERON:0001832,sublingual gland capillary,,-8,aorta,UBERON:0000947
+sublingual gland,UBERON:0001832,sublingual gland capillary,,-7,ascending aorta,UBERON:0001496
+sublingual gland,UBERON:0001832,sublingual gland capillary,,-6,aortic arch,UBERON:0001508
+sublingual gland,UBERON:0001832,sublingual gland capillary,,-5,common carotid artery,UBERON:0001530
+sublingual gland,UBERON:0001832,sublingual gland capillary,,-4,external carotid artery,UBERON:0001070
+sublingual gland,UBERON:0001832,sublingual gland capillary,,-3,lingual artery,UBERON:0001610
+sublingual gland,UBERON:0001832,sublingual gland capillary,,-2,sublingual artery,UBERON:0001611
+sublingual gland,UBERON:0001832,sublingual gland capillary,,-1,sublingual gland arteriole,
+sublingual gland,UBERON:0001832,sublingual gland capillary,,0,sublingual gland capillary,
+sublingual gland,UBERON:0001832,sublingual gland capillary,,1,sublingual vein,UBERON:8600071
+sublingual gland,UBERON:0001832,sublingual gland capillary,,2,lingual vein,UBERON:0006634
+sublingual gland,UBERON:0001832,sublingual gland capillary,,3,internal jugular vein,UBERON:0001586
+sublingual gland,UBERON:0001832,sublingual gland capillary,,4,brachiocephalic vein,UBERON:0003711
+sublingual gland,UBERON:0001832,sublingual gland capillary,,5,superior vena cava,UBERON:0001585
+sublingual gland,UBERON:0001832,sublingual gland capillary,,6,right atrium,UBERON:0002078
+gingiva,UBERON:0001828,inferior gingival plexus,,-9,left ventricle,UBERON:0002084
+gingiva,UBERON:0001828,inferior gingival plexus,,-8,aorta,UBERON:0000947
+gingiva,UBERON:0001828,inferior gingival plexus,,-7,ascending aorta,UBERON:0001496
+gingiva,UBERON:0001828,inferior gingival plexus,,-6,aortic arch,UBERON:0001508
+gingiva,UBERON:0001828,inferior gingival plexus,,-5,common carotid artery,UBERON:0001530
+gingiva,UBERON:0001828,inferior gingival plexus,,-4,external carotid artery,UBERON:0001070
+gingiva,UBERON:0001828,inferior gingival plexus,,-3,maxillary artery,UBERON:0001616
+gingiva,UBERON:0001828,inferior gingival plexus,,-2,inferior alveolar artery,UBERON:0014693
+gingiva,UBERON:0001828,inferior gingival plexus,,-1,supraperiosteal arteriole,
+gingiva,UBERON:0001828,inferior gingival plexus,,0,inferior gingival plexus,
+gingiva,UBERON:0001828,inferior gingival plexus,,1,inferior gingiva venule,
+gingiva,UBERON:0001828,inferior gingival plexus,,2,inferior alveolar vein,
+gingiva,UBERON:0001828,inferior gingival plexus,,3,pterygoid venous plexus,UBERON:0014685
+gingiva,UBERON:0001828,inferior gingival plexus,,4,maxillary vein,UBERON:0001660
+gingiva,UBERON:0001828,inferior gingival plexus,,5,retromandibular vein,UBERON:0001656
+gingiva,UBERON:0001828,inferior gingival plexus,,6,anterior branch of retromandibular vein,
+gingiva,UBERON:0001828,inferior gingival plexus,,7,common facial vein,
+gingiva,UBERON:0001828,inferior gingival plexus,,8,internal jugular vein,UBERON:0001586
+gingiva,UBERON:0001828,inferior gingival plexus,,9,brachiocephalic vein,UBERON:0003711
+gingiva,UBERON:0001828,inferior gingival plexus,,10,superior vena cava,UBERON:0001585
+gingiva,UBERON:0001828,inferior gingival plexus,,11,right atrium,UBERON:0002078
+gingiva,UBERON:0001828,superior gingival plexus,,-8,left ventricle,UBERON:0002084
+gingiva,UBERON:0001828,superior gingival plexus,,-7,aorta,UBERON:0000947
+gingiva,UBERON:0001828,superior gingival plexus,,-6,ascending aorta,UBERON:0001496
+gingiva,UBERON:0001828,superior gingival plexus,,-5,aortic arch,UBERON:0001508
+gingiva,UBERON:0001828,superior gingival plexus,,-4,common carotid artery,UBERON:0001530
+gingiva,UBERON:0001828,superior gingival plexus,,-3,external carotid artery,UBERON:0001070
+gingiva,UBERON:0001828,superior gingival plexus,,-2,maxillary artery,UBERON:0001616
+gingiva,UBERON:0001828,superior gingival plexus,,-1,posterior superior alveolar artery,UBERON:0018397
+gingiva,UBERON:0001828,superior gingival plexus,,0,superior gingival plexus,
+gingiva,UBERON:0001828,superior gingival plexus,,1,inferior gingiva venule,
+gingiva,UBERON:0001828,superior gingival plexus,,2,inferior alveolar vein,
+gingiva,UBERON:0001828,superior gingival plexus,,3,pterygoid venous plexus,UBERON:0014685
+gingiva,UBERON:0001828,superior gingival plexus,,4,maxillary vein,UBERON:0001660
+gingiva,UBERON:0001828,superior gingival plexus,,5,retromandibular vein,UBERON:0001656
+gingiva,UBERON:0001828,superior gingival plexus,,6,anterior branch of retromandibular vein,
+gingiva,UBERON:0001828,superior gingival plexus,,7,common facial vein,
+gingiva,UBERON:0001828,superior gingival plexus,,8,internal jugular vein,UBERON:0001586
+gingiva,UBERON:0001828,superior gingival plexus,,9,brachiocephalic vein,UBERON:0003711
+gingiva,UBERON:0001828,superior gingival plexus,,10,superior vena cava,UBERON:0001585
+gingiva,UBERON:0001828,superior gingival plexus,,11,right atrium,UBERON:0002078
