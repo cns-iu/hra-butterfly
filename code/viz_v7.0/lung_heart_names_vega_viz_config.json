@@ -1,0 +1,2305 @@
+{
+    "$schema": "https://vega.github.io/schema/vega/v5.json",
+    "description": "An example of a radial layout for a node-link diagram of hierarchical data.",
+    "width": 1720,
+    "height": 1720,
+    "padding": {
+        "top": 2,
+        "left": 2,
+        "right": 2,
+        "bottom": 2
+    },
+    "autosize": {
+        "type": "fit",
+        "contains": "padding"
+    },
+    "signals": [
+        {
+            "name": "labels",
+            "value": false,
+            "bind": {
+                "input": "checkbox"
+            }
+        },
+        {
+            "name": "radius",
+            "value": 865,
+            "bind": {
+                "input": "range",
+                "min": 20,
+                "max": 4000
+            }
+        },
+        {
+            "name": "extent",
+            "value": 160,
+            "bind": {
+                "input": "range",
+                "min": 0,
+                "max": 360,
+                "step": 1
+            }
+        },
+        {
+            "name": "rotate",
+            "value": 15,
+            "bind": {
+                "input": "range",
+                "min": 0,
+                "max": 360,
+                "step": 1
+            }
+        },
+        {
+            "name": "layout",
+            "value": "tidy",
+            "bind": {
+                "input": "radio",
+                "options": [
+                    "tidy",
+                    "cluster"
+                ]
+            }
+        },
+        {
+            "name": "links",
+            "value": "diagonal",
+            "bind": {
+                "input": "select",
+                "options": [
+                    "line",
+                    "curve",
+                    "diagonal",
+                    "orthogonal"
+                ]
+            }
+        },
+        {
+            "name": "originX",
+            "update": "width / 2"
+        },
+        {
+            "name": "originY",
+            "update": "height / 2"
+        }
+    ],
+    "data": [
+        {
+            "name": "tree",
+            "values": [
+                {
+                    "id": 0,
+                    "name": "",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0013702",
+                    "id_from_ontology_id": "UBERON:0013702",
+                    "color": "#984ea3",
+                    "organ": "body"
+                },
+                {
+                    "id": 2,
+                    "name": "respiratory tract",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0000065",
+                    "id_from_ontology_id": "UBERON:0000065",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 0
+                },
+                {
+                    "id": 3,
+                    "name": "lower respiratory tract",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0001558",
+                    "id_from_ontology_id": "UBERON:0001558",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 2
+                },
+                {
+                    "id": 4,
+                    "name": "tracheobronchial tree",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0007196",
+                    "id_from_ontology_id": "UBERON:0007196",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 3
+                },
+                {
+                    "id": 5,
+                    "name": "pulmonary nerve plexus",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0002009",
+                    "id_from_ontology_id": "UBERON:0002009",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 4
+                },
+                {
+                    "id": 6,
+                    "name": "sympathetic neuron",
+                    "type": "CT",
+                    "ontology_id": "CL:0011103",
+                    "id_from_ontology_id": "CL:0011103",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 5
+                },
+                {
+                    "id": 7,
+                    "name": "lobar bronchus",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0002183",
+                    "id_from_ontology_id": "UBERON:0002183",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 4
+                },
+                {
+                    "id": 8,
+                    "name": "bronchus submucosal gland",
+                    "type": "AS",
+                    "ontology_id": "UBERON:8410043",
+                    "id_from_ontology_id": "UBERON:8410043",
+                    "color": "#56a04e",
+                    "organ": "lung",
+                    "parent": 7
+                },
+                {
+                    "id": 9,
+                    "name": "bronchial submucosal gland ciliated duct",
+                    "type": "AS",
+                    "ontology_id": "UBERON:8600010",
+                    "id_from_ontology_id": "UBERON:8600010",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 8
+                },
+                {
+                    "id": 10,
+                    "name": "airway submucosal gland duct ciliated cell",
+                    "type": "CT",
+                    "ontology_id": "CL:4033055",
+                    "id_from_ontology_id": "CL:4033055",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 9
+                },
+                {
+                    "id": 11,
+                    "name": "submucosal gland collecting duct",
+                    "type": "AS",
+                    "ontology_id": "UBERON:8600013",
+                    "id_from_ontology_id": "UBERON:8600013",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 8
+                },
+                {
+                    "id": 12,
+                    "name": "airway submucosal gland duct basal cell",
+                    "type": "CT",
+                    "ontology_id": "CL:4033024",
+                    "id_from_ontology_id": "CL:4033024",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 11
+                },
+                {
+                    "id": 13,
+                    "name": "airway submucosal gland collecting duct epithelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:4033023",
+                    "id_from_ontology_id": "CL:4033023",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 11
+                },
+                {
+                    "id": 14,
+                    "name": "submucosal gland acinus",
+                    "type": "AS",
+                    "ontology_id": "UBERON:8600012",
+                    "id_from_ontology_id": "UBERON:8600012",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 8
+                },
+                {
+                    "id": 15,
+                    "name": "serous secreting cell of bronchus submucosal gland",
+                    "type": "CT",
+                    "ontology_id": "CL:4033005",
+                    "id_from_ontology_id": "CL:4033005",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 14
+                },
+                {
+                    "id": 16,
+                    "name": "mucus secreting cell of bronchus submucosal gland",
+                    "type": "CT",
+                    "ontology_id": "CL:4033022",
+                    "id_from_ontology_id": "CL:4033022",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 14
+                },
+                {
+                    "id": 17,
+                    "name": "myoepithelial cell of bronchus submucosal gland",
+                    "type": "CT",
+                    "ontology_id": "CL:4033003",
+                    "id_from_ontology_id": "CL:4033003",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 14
+                },
+                {
+                    "id": 18,
+                    "name": "lobar bronchus connective tissue",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0003591",
+                    "id_from_ontology_id": "UBERON:0003591",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 7
+                },
+                {
+                    "id": 19,
+                    "name": "bronchus smooth muscle",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0004242",
+                    "id_from_ontology_id": "UBERON:0004242",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 7
+                },
+                {
+                    "id": 20,
+                    "name": "bronchial smooth muscle cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0002598",
+                    "id_from_ontology_id": "CL:0002598",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 19
+                },
+                {
+                    "id": 21,
+                    "name": "cartilage of bronchus",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0001956",
+                    "id_from_ontology_id": "UBERON:0001956",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 7
+                },
+                {
+                    "id": 22,
+                    "name": "lung perichondrial fibroblast",
+                    "type": "CT",
+                    "ontology_id": "CL:4033026",
+                    "id_from_ontology_id": "CL:4033026",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 21
+                },
+                {
+                    "id": 23,
+                    "name": "epithelium of lobar bronchus",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0002339",
+                    "id_from_ontology_id": "UBERON:0002339",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 7
+                },
+                {
+                    "id": 24,
+                    "name": "deuterosomal cell",
+                    "type": "CT",
+                    "ontology_id": "CL:4033044",
+                    "id_from_ontology_id": "CL:4033044",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 23
+                },
+                {
+                    "id": 25,
+                    "name": "pulmonary ionocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0017000",
+                    "id_from_ontology_id": "CL:0017000",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 23
+                },
+                {
+                    "id": 26,
+                    "name": "respiratory suprabasal cell",
+                    "type": "CT",
+                    "ontology_id": "CL:4033048",
+                    "id_from_ontology_id": "CL:4033048",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 23
+                },
+                {
+                    "id": 27,
+                    "name": "ciliated cell of the bronchus",
+                    "type": "CT",
+                    "ontology_id": "CL:0002332",
+                    "id_from_ontology_id": "CL:0002332",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 23
+                },
+                {
+                    "id": 28,
+                    "name": "goblet cell of epithelium of lobar bronchus",
+                    "type": "CT",
+                    "ontology_id": "CL:4033009",
+                    "id_from_ontology_id": "CL:4033009",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 23
+                },
+                {
+                    "id": 29,
+                    "name": "basal epithelial cell of tracheobronchial tree",
+                    "type": "CT",
+                    "ontology_id": "CL:0002329",
+                    "id_from_ontology_id": "CL:0002329",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 23
+                },
+                {
+                    "id": 30,
+                    "name": "brush cell of epithelium of lobar bronchus",
+                    "type": "CT",
+                    "ontology_id": "CL:4033007",
+                    "id_from_ontology_id": "CL:4033007",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 23
+                },
+                {
+                    "id": 31,
+                    "name": "neuroendocrine cell of epithelium of lobar bronchus",
+                    "type": "CT",
+                    "ontology_id": "CL:4033010",
+                    "id_from_ontology_id": "CL:4033010",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 23
+                },
+                {
+                    "id": 32,
+                    "name": "lobar bronchus mesenchyme",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0004884",
+                    "id_from_ontology_id": "UBERON:0004884",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 7
+                },
+                {
+                    "id": 33,
+                    "name": "segmental bronchus",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0002184",
+                    "id_from_ontology_id": "UBERON:0002184",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 4
+                },
+                {
+                    "id": 34,
+                    "name": "bronchial submucosal gland",
+                    "type": "AS",
+                    "ontology_id": "UBERON:8410043",
+                    "id_from_ontology_id": "UBERON:8410043$$5184",
+                    "color": "#56a04e",
+                    "organ": "lung",
+                    "parent": 33
+                },
+                {
+                    "id": 35,
+                    "name": "ciliated ducts of bronchial submucosal gland",
+                    "type": "AS",
+                    "ontology_id": "UBERON:8600010",
+                    "id_from_ontology_id": "UBERON:8600010$$5185",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 34
+                },
+                {
+                    "id": 36,
+                    "name": "airway submucosal gland duct ciliated cell",
+                    "type": "CT",
+                    "ontology_id": "CL:4033055",
+                    "id_from_ontology_id": "CL:4033055$$5186",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 35
+                },
+                {
+                    "id": 37,
+                    "name": "submucosal gland collecting duct",
+                    "type": "AS",
+                    "ontology_id": "UBERON:8600013",
+                    "id_from_ontology_id": "UBERON:8600013$$5187",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 34
+                },
+                {
+                    "id": 38,
+                    "name": "airway submucosal gland duct basal cell",
+                    "type": "CT",
+                    "ontology_id": "CL:4033024",
+                    "id_from_ontology_id": "CL:4033024$$5188",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 37
+                },
+                {
+                    "id": 39,
+                    "name": "airway submucosal gland collecting duct epithelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:4033023",
+                    "id_from_ontology_id": "CL:4033023$$5189",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 37
+                },
+                {
+                    "id": 40,
+                    "name": "submucosal gland acinus",
+                    "type": "AS",
+                    "ontology_id": "UBERON:8600012",
+                    "id_from_ontology_id": "UBERON:8600012$$5190",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 34
+                },
+                {
+                    "id": 41,
+                    "name": "serous secreting cell of bronchus submucosal gland",
+                    "type": "CT",
+                    "ontology_id": "CL:4033005",
+                    "id_from_ontology_id": "CL:4033005$$5191",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 40
+                },
+                {
+                    "id": 42,
+                    "name": "mucus secreting cell of bronchus submucosal gland",
+                    "type": "CT",
+                    "ontology_id": "CL:4033022",
+                    "id_from_ontology_id": "CL:4033022$$5192",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 40
+                },
+                {
+                    "id": 43,
+                    "name": "myoepithelial cell of bronchus submucosal gland",
+                    "type": "CT",
+                    "ontology_id": "CL:4033003",
+                    "id_from_ontology_id": "CL:4033003$$5193",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 40
+                },
+                {
+                    "id": 44,
+                    "name": "bronchus smooth muscle",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0004242",
+                    "id_from_ontology_id": "UBERON:0004242$$5194",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 33
+                },
+                {
+                    "id": 45,
+                    "name": "bronchial smooth muscle cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0002598",
+                    "id_from_ontology_id": "CL:0002598$$5195",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 44
+                },
+                {
+                    "id": 46,
+                    "name": "cartilage of bronchus",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0001956",
+                    "id_from_ontology_id": "UBERON:0001956$$5196",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 33
+                },
+                {
+                    "id": 47,
+                    "name": "tracheobronchial chondrocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0019002",
+                    "id_from_ontology_id": "CL:0019002",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 46
+                },
+                {
+                    "id": 48,
+                    "name": "epithelium of segmental bronchus",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0002341",
+                    "id_from_ontology_id": "UBERON:0002341",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 33
+                },
+                {
+                    "id": 49,
+                    "name": "respiratory suprabasal cell",
+                    "type": "CT",
+                    "ontology_id": "CL:4033048",
+                    "id_from_ontology_id": "CL:4033048$$5197",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 48
+                },
+                {
+                    "id": 50,
+                    "name": "club cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000158",
+                    "id_from_ontology_id": "CL:0000158",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 48
+                },
+                {
+                    "id": 51,
+                    "name": "lung neuroendocrine cell",
+                    "type": "CT",
+                    "ontology_id": "CL:1000223",
+                    "id_from_ontology_id": "CL:1000223",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 48
+                },
+                {
+                    "id": 52,
+                    "name": "brush cell of bronchus",
+                    "type": "CT",
+                    "ontology_id": "CL:0002208",
+                    "id_from_ontology_id": "CL:0002208",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 48
+                },
+                {
+                    "id": 53,
+                    "name": "tracheobronchial goblet cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0019003",
+                    "id_from_ontology_id": "CL:0019003",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 48
+                },
+                {
+                    "id": 54,
+                    "name": "deuterosomal cell",
+                    "type": "CT",
+                    "ontology_id": "CL:4033044",
+                    "id_from_ontology_id": "CL:4033044$$5198",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 48
+                },
+                {
+                    "id": 55,
+                    "name": "pulmonary ionocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0017000",
+                    "id_from_ontology_id": "CL:0017000$$5199",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 48
+                },
+                {
+                    "id": 56,
+                    "name": "basal epithelial cell of tracheobronchial tree",
+                    "type": "CT",
+                    "ontology_id": "CL:0002329",
+                    "id_from_ontology_id": "CL:0002329$$5200",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 48
+                },
+                {
+                    "id": 57,
+                    "name": "ciliated cell of the bronchus",
+                    "type": "CT",
+                    "ontology_id": "CL:0002332",
+                    "id_from_ontology_id": "CL:0002332$$5201",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 48
+                },
+                {
+                    "id": 58,
+                    "name": "lobar bronchus mesenchyme",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0004884",
+                    "id_from_ontology_id": "UBERON:0004884$$5202",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 33
+                },
+                {
+                    "id": 59,
+                    "name": "tracheobronchial smooth muscle cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0019019",
+                    "id_from_ontology_id": "CL:0019019",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 58
+                },
+                {
+                    "id": 60,
+                    "name": "bronchopulmonary segment",
+                    "type": "AS",
+                    "ontology_id": "UBERON:8600017",
+                    "id_from_ontology_id": "UBERON:8600017",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 4
+                },
+                {
+                    "id": 61,
+                    "name": "subsegmental bronchus",
+                    "type": "AS",
+                    "ontology_id": "UBERON:8600009",
+                    "id_from_ontology_id": "UBERON:8600009",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 60
+                },
+                {
+                    "id": 62,
+                    "name": "bronchus smooth muscle",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0004242",
+                    "id_from_ontology_id": "UBERON:0004242$$5203",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 61
+                },
+                {
+                    "id": 63,
+                    "name": "bronchial smooth muscle cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0002598",
+                    "id_from_ontology_id": "CL:0002598$$5204",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 62
+                },
+                {
+                    "id": 64,
+                    "name": "cartilage of bronchus",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0001956",
+                    "id_from_ontology_id": "UBERON:0001956$$5205",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 61
+                },
+                {
+                    "id": 65,
+                    "name": "tracheobronchial chondrocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0019002",
+                    "id_from_ontology_id": "CL:0019002$$5206",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 64
+                },
+                {
+                    "id": 66,
+                    "name": "bronchus submucosal gland",
+                    "type": "AS",
+                    "ontology_id": "UBERON:8410043",
+                    "id_from_ontology_id": "UBERON:8410043$$5207",
+                    "color": "#56a04e",
+                    "organ": "lung",
+                    "parent": 61
+                },
+                {
+                    "id": 67,
+                    "name": "ciliated ducts of bronchial submucosal gland",
+                    "type": "AS",
+                    "ontology_id": "UBERON:8600010",
+                    "id_from_ontology_id": "UBERON:8600010$$5208",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 66
+                },
+                {
+                    "id": 68,
+                    "name": "airway submucosal gland duct ciliated cell",
+                    "type": "CT",
+                    "ontology_id": "CL:4033055",
+                    "id_from_ontology_id": "CL:4033055$$5209",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 67
+                },
+                {
+                    "id": 69,
+                    "name": "submucosal gland collecting duct",
+                    "type": "AS",
+                    "ontology_id": "UBERON:8600013",
+                    "id_from_ontology_id": "UBERON:8600013$$5210",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 66
+                },
+                {
+                    "id": 70,
+                    "name": "airway submucosal gland duct basal cell",
+                    "type": "CT",
+                    "ontology_id": "CL:4033024",
+                    "id_from_ontology_id": "CL:4033024$$5211",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 69
+                },
+                {
+                    "id": 71,
+                    "name": "airway submucosal gland collecting duct epithelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:4033023",
+                    "id_from_ontology_id": "CL:4033023$$5212",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 69
+                },
+                {
+                    "id": 72,
+                    "name": "submucosal gland acinus",
+                    "type": "AS",
+                    "ontology_id": "UBERON:8600012",
+                    "id_from_ontology_id": "UBERON:8600012$$5213",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 66
+                },
+                {
+                    "id": 73,
+                    "name": "serous secreting cell of bronchus submucosal gland",
+                    "type": "CT",
+                    "ontology_id": "CL:4033005",
+                    "id_from_ontology_id": "CL:4033005$$5214",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 72
+                },
+                {
+                    "id": 74,
+                    "name": "mucus secreting cell of bronchus submucosal gland",
+                    "type": "CT",
+                    "ontology_id": "CL:4033022",
+                    "id_from_ontology_id": "CL:4033022$$5215",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 72
+                },
+                {
+                    "id": 75,
+                    "name": "myoepithelial cell of bronchus submucosal gland",
+                    "type": "CT",
+                    "ontology_id": "CL:4033003",
+                    "id_from_ontology_id": "CL:4033003$$5216",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 72
+                },
+                {
+                    "id": 76,
+                    "name": "epithelium of segmental bronchus",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0002341",
+                    "id_from_ontology_id": "UBERON:0002341$$5217",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 61
+                },
+                {
+                    "id": 77,
+                    "name": "deuterosomal cell",
+                    "type": "CT",
+                    "ontology_id": "CL:4033044",
+                    "id_from_ontology_id": "CL:4033044$$5218",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 76
+                },
+                {
+                    "id": 78,
+                    "name": "pulmonary ionocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0017000",
+                    "id_from_ontology_id": "CL:0017000$$5219",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 76
+                },
+                {
+                    "id": 79,
+                    "name": "ciliated cell of the bronchus",
+                    "type": "CT",
+                    "ontology_id": "CL:0002332",
+                    "id_from_ontology_id": "CL:0002332$$5220",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 76
+                },
+                {
+                    "id": 80,
+                    "name": "respiratory suprabasal cell",
+                    "type": "CT",
+                    "ontology_id": "CL:4033048",
+                    "id_from_ontology_id": "CL:4033048$$5221",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 76
+                },
+                {
+                    "id": 81,
+                    "name": "club cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000158",
+                    "id_from_ontology_id": "CL:0000158$$5222",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 76
+                },
+                {
+                    "id": 82,
+                    "name": "brush cell of bronchus",
+                    "type": "CT",
+                    "ontology_id": "CL:0002208",
+                    "id_from_ontology_id": "CL:0002208$$5223",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 76
+                },
+                {
+                    "id": 83,
+                    "name": "tracheobronchial goblet cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0019003",
+                    "id_from_ontology_id": "CL:0019003$$5224",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 76
+                },
+                {
+                    "id": 84,
+                    "name": "lung neuroendocrine cell",
+                    "type": "CT",
+                    "ontology_id": "CL:1000223",
+                    "id_from_ontology_id": "CL:1000223$$5225",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 76
+                },
+                {
+                    "id": 85,
+                    "name": "basal epithelial cell of tracheobronchial tree",
+                    "type": "CT",
+                    "ontology_id": "CL:0002329",
+                    "id_from_ontology_id": "CL:0002329$$5226",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 76
+                },
+                {
+                    "id": 86,
+                    "name": "lobar bronchus mesenchyme",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0004884",
+                    "id_from_ontology_id": "UBERON:0004884$$5227",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 61
+                },
+                {
+                    "id": 87,
+                    "name": "tracheobronchial smooth muscle cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0019019",
+                    "id_from_ontology_id": "CL:0019019$$5228",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 86
+                },
+                {
+                    "id": 88,
+                    "name": "primary bronchiole",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0012067",
+                    "id_from_ontology_id": "UBERON:0012067",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 61
+                },
+                {
+                    "id": 89,
+                    "name": "lobular bronchiole",
+                    "type": "AS",
+                    "ontology_id": "UBERON:8600000",
+                    "id_from_ontology_id": "UBERON:8600000",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 88
+                },
+                {
+                    "id": 90,
+                    "name": "epithelium of bronchiole",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0002051",
+                    "id_from_ontology_id": "UBERON:0002051",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 89
+                },
+                {
+                    "id": 91,
+                    "name": "lung ciliated cell",
+                    "type": "CT",
+                    "ontology_id": "CL:1000271",
+                    "id_from_ontology_id": "CL:1000271",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 90
+                },
+                {
+                    "id": 92,
+                    "name": "club cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000158",
+                    "id_from_ontology_id": "CL:0000158$$5229",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 90
+                },
+                {
+                    "id": 93,
+                    "name": "basal cell of epithelium of lobular bronchiole",
+                    "type": "CT",
+                    "ontology_id": "CL:1000352",
+                    "id_from_ontology_id": "CL:1000352",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 90
+                },
+                {
+                    "id": 94,
+                    "name": "smooth muscle tissue of bronchiole",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0004515",
+                    "id_from_ontology_id": "UBERON:0004515",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 89
+                },
+                {
+                    "id": 95,
+                    "name": "bronchiolar smooth muscle cell",
+                    "type": "CT",
+                    "ontology_id": "CL:4033017",
+                    "id_from_ontology_id": "CL:4033017",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 94
+                },
+                {
+                    "id": 96,
+                    "name": "lung",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0002048",
+                    "id_from_ontology_id": "UBERON:0002048",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 3
+                },
+                {
+                    "id": 97,
+                    "name": "secondary pulmonary lobule",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0010369",
+                    "id_from_ontology_id": "UBERON:0010369",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 96
+                },
+                {
+                    "id": 98,
+                    "name": "terminal bronchiole",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0002187",
+                    "id_from_ontology_id": "UBERON:0002187",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 97
+                },
+                {
+                    "id": 99,
+                    "name": "smooth muscle tissue of terminal bronchiole",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0004516",
+                    "id_from_ontology_id": "UBERON:0004516",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 98
+                },
+                {
+                    "id": 100,
+                    "name": "bronchiolar smooth muscle cell",
+                    "type": "CT",
+                    "ontology_id": "CL:4033017",
+                    "id_from_ontology_id": "CL:4033017$$5230",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 99
+                },
+                {
+                    "id": 101,
+                    "name": "terminal bronchiole epithelium",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0001958",
+                    "id_from_ontology_id": "UBERON:0001958",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 98
+                },
+                {
+                    "id": 102,
+                    "name": "lung ciliated cell",
+                    "type": "CT",
+                    "ontology_id": "CL:1000271",
+                    "id_from_ontology_id": "CL:1000271$$5231",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 101
+                },
+                {
+                    "id": 103,
+                    "name": "club cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000158",
+                    "id_from_ontology_id": "CL:0000158$$5232",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 101
+                },
+                {
+                    "id": 104,
+                    "name": "basal cell of epithelium of terminal bronchiole",
+                    "type": "CT",
+                    "ontology_id": "CL:1000350",
+                    "id_from_ontology_id": "CL:1000350",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 101
+                },
+                {
+                    "id": 105,
+                    "name": "pulmonary acinus",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0008874",
+                    "id_from_ontology_id": "UBERON:0008874",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 98
+                },
+                {
+                    "id": 106,
+                    "name": "respiratory bronchiole",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0002188",
+                    "id_from_ontology_id": "UBERON:0002188",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 105
+                },
+                {
+                    "id": 107,
+                    "name": "smooth muscle tissue of respiratory bronchiole",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0004517",
+                    "id_from_ontology_id": "UBERON:0004517",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 106
+                },
+                {
+                    "id": 108,
+                    "name": "bronchiolar smooth muscle cell",
+                    "type": "CT",
+                    "ontology_id": "CL:4033017",
+                    "id_from_ontology_id": "CL:4033017$$5233",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 107
+                },
+                {
+                    "id": 109,
+                    "name": "epithelium of respiratory bronchiole",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0001955",
+                    "id_from_ontology_id": "UBERON:0001955",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 106
+                },
+                {
+                    "id": 110,
+                    "name": "club cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000158",
+                    "id_from_ontology_id": "CL:0000158$$5234",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 109
+                },
+                {
+                    "id": 111,
+                    "name": "basal cell of epithelium of respiratory bronchiole",
+                    "type": "CT",
+                    "ontology_id": "CL:1000351",
+                    "id_from_ontology_id": "CL:1000351",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 109
+                },
+                {
+                    "id": 112,
+                    "name": "lung ciliated cell",
+                    "type": "CT",
+                    "ontology_id": "CL:1000271",
+                    "id_from_ontology_id": "CL:1000271$$5235",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 109
+                },
+                {
+                    "id": 113,
+                    "name": "alveolus of lung",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0002299",
+                    "id_from_ontology_id": "UBERON:0002299",
+                    "color": "#56a04e",
+                    "organ": "lung",
+                    "parent": 106
+                },
+                {
+                    "id": 114,
+                    "name": "pulmonary capillary",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0016405",
+                    "id_from_ontology_id": "UBERON:0016405$$5236",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 113
+                },
+                {
+                    "id": 115,
+                    "name": "alveolar capillary type 2 endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:4028003",
+                    "id_from_ontology_id": "CL:4028003",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 114
+                },
+                {
+                    "id": 116,
+                    "name": "alveolar capillary type 1 endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:4028002",
+                    "id_from_ontology_id": "CL:4028002",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 114
+                },
+                {
+                    "id": 117,
+                    "name": "type II pneumocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0002063",
+                    "id_from_ontology_id": "CL:0002063",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 113
+                },
+                {
+                    "id": 118,
+                    "name": "type I pneumocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0002062",
+                    "id_from_ontology_id": "CL:0002062",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 113
+                },
+                {
+                    "id": 119,
+                    "name": "lung pericyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0009089",
+                    "id_from_ontology_id": "CL:0009089",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 113
+                },
+                {
+                    "id": 120,
+                    "name": "alveolar type 2 fibroblast cell",
+                    "type": "CT",
+                    "ontology_id": "CL:4028006",
+                    "id_from_ontology_id": "CL:4028006",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 113
+                },
+                {
+                    "id": 121,
+                    "name": "alveolar type 1 fibroblast cell",
+                    "type": "CT",
+                    "ontology_id": "CL:4028004",
+                    "id_from_ontology_id": "CL:4028004",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 113
+                },
+                {
+                    "id": 122,
+                    "name": "pulmonary alveolar duct",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0002173",
+                    "id_from_ontology_id": "UBERON:0002173",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 106
+                },
+                {
+                    "id": 123,
+                    "name": "pulmonary capillary",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0016405",
+                    "id_from_ontology_id": "UBERON:0016405$$5237",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 122
+                },
+                {
+                    "id": 124,
+                    "name": "alveolar capillary type 2 endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:4028003",
+                    "id_from_ontology_id": "CL:4028003$$5238",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 123
+                },
+                {
+                    "id": 125,
+                    "name": "alveolar capillary type 1 endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:4028002",
+                    "id_from_ontology_id": "CL:4028002$$5239",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 123
+                },
+                {
+                    "id": 126,
+                    "name": "type II pneumocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0002063",
+                    "id_from_ontology_id": "CL:0002063$$5240",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 122
+                },
+                {
+                    "id": 127,
+                    "name": "type I pneumocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0002062",
+                    "id_from_ontology_id": "CL:0002062$$5241",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 122
+                },
+                {
+                    "id": 128,
+                    "name": "lung pericyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0009089",
+                    "id_from_ontology_id": "CL:0009089$$5242",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 122
+                },
+                {
+                    "id": 129,
+                    "name": "alveolar type 2 fibroblast cell",
+                    "type": "CT",
+                    "ontology_id": "CL:4028006",
+                    "id_from_ontology_id": "CL:4028006$$5243",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 122
+                },
+                {
+                    "id": 130,
+                    "name": "alveolar type 1 fibroblast cell",
+                    "type": "CT",
+                    "ontology_id": "CL:4028004",
+                    "id_from_ontology_id": "CL:4028004$$5244",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 122
+                },
+                {
+                    "id": 131,
+                    "name": "alveolus of lung",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0002299",
+                    "id_from_ontology_id": "UBERON:0002299$$5245",
+                    "color": "#56a04e",
+                    "organ": "lung",
+                    "parent": 105
+                },
+                {
+                    "id": 132,
+                    "name": "pulmonary alveolar parenchyma",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0008870",
+                    "id_from_ontology_id": "UBERON:0008870",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 131
+                },
+                {
+                    "id": 133,
+                    "name": "pulmonary capillary",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0016405",
+                    "id_from_ontology_id": "UBERON:0016405$$5246",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 132
+                },
+                {
+                    "id": 134,
+                    "name": "alveolar capillary type 2 endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:4028003",
+                    "id_from_ontology_id": "CL:4028003$$5247",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 133
+                },
+                {
+                    "id": 135,
+                    "name": "alveolar capillary type 1 endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:4028002",
+                    "id_from_ontology_id": "CL:4028002$$5248",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 133
+                },
+                {
+                    "id": 136,
+                    "name": "type II pneumocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0002063",
+                    "id_from_ontology_id": "CL:0002063$$5249",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 132
+                },
+                {
+                    "id": 137,
+                    "name": "type I pneumocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0002062",
+                    "id_from_ontology_id": "CL:0002062$$5250",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 132
+                },
+                {
+                    "id": 138,
+                    "name": "lung pericyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0009089",
+                    "id_from_ontology_id": "CL:0009089$$5251",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 132
+                },
+                {
+                    "id": 139,
+                    "name": "alveolar type 2 fibroblast cell",
+                    "type": "CT",
+                    "ontology_id": "CL:4028006",
+                    "id_from_ontology_id": "CL:4028006$$5252",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 132
+                },
+                {
+                    "id": 140,
+                    "name": "alveolar type 1 fibroblast cell",
+                    "type": "CT",
+                    "ontology_id": "CL:4028004",
+                    "id_from_ontology_id": "CL:4028004$$5253",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 132
+                },
+                {
+                    "id": 141,
+                    "name": "pulmonary interlobular septum",
+                    "type": "AS",
+                    "ontology_id": "UBERON:8600022",
+                    "id_from_ontology_id": "UBERON:8600022",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 97
+                },
+                {
+                    "id": 142,
+                    "name": "intersegmental pulmonary vein",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0014904",
+                    "id_from_ontology_id": "UBERON:0014904$$5254",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 141
+                },
+                {
+                    "id": 143,
+                    "name": "respiratory system venous endothelium",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0004849",
+                    "id_from_ontology_id": "UBERON:0004849",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 142
+                },
+                {
+                    "id": 144,
+                    "name": "adult endothelial progenitor cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0002619",
+                    "id_from_ontology_id": "CL:0002619",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 143
+                },
+                {
+                    "id": 145,
+                    "name": "vein endothelial cell of respiratory system",
+                    "type": "CT",
+                    "ontology_id": "CL:4033008",
+                    "id_from_ontology_id": "CL:4033008",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 143
+                },
+                {
+                    "id": 146,
+                    "name": "pulmonary lymphatic vessel",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0018227",
+                    "id_from_ontology_id": "UBERON:0018227",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 141
+                },
+                {
+                    "id": 147,
+                    "name": "respiratory system lymphatic vessel endothelium",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0003529",
+                    "id_from_ontology_id": "UBERON:0003529",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 146
+                },
+                {
+                    "id": 148,
+                    "name": "endothelial cell of respiratory system lymphatic vessel",
+                    "type": "CT",
+                    "ontology_id": "CL:0009086",
+                    "id_from_ontology_id": "CL:0009086",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 147
+                },
+                {
+                    "id": 149,
+                    "name": "visceral pleura",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0002401",
+                    "id_from_ontology_id": "UBERON:0002401",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 96
+                },
+                {
+                    "id": 150,
+                    "name": "mesothelial cell of visceral pleura",
+                    "type": "CT",
+                    "ontology_id": "CL:1000493",
+                    "id_from_ontology_id": "CL:1000493",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 149
+                },
+                {
+                    "id": 151,
+                    "name": "lung mesenchyme",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0004883",
+                    "id_from_ontology_id": "UBERON:0004883",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 96
+                },
+                {
+                    "id": 152,
+                    "name": "lung connective tissue",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0000114",
+                    "id_from_ontology_id": "UBERON:0000114",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 96
+                },
+                {
+                    "id": 153,
+                    "name": "lung megakaryocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:4033018",
+                    "id_from_ontology_id": "CL:4033018",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 152
+                },
+                {
+                    "id": 154,
+                    "name": "secondary crest myofibroblast",
+                    "type": "CT",
+                    "ontology_id": "CL:4033016",
+                    "id_from_ontology_id": "CL:4033016",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 152
+                },
+                {
+                    "id": 155,
+                    "name": "immune system",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0002405",
+                    "id_from_ontology_id": "UBERON:0002405",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 96
+                },
+                {
+                    "id": 156,
+                    "name": "CCL3-positive alveolar macrophage",
+                    "type": "CT",
+                    "ontology_id": "CL:4033041",
+                    "id_from_ontology_id": "CL:4033041",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 155
+                },
+                {
+                    "id": 157,
+                    "name": "alveolar macrophage",
+                    "type": "CT",
+                    "ontology_id": "CL:0000583",
+                    "id_from_ontology_id": "CL:0000583",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 155
+                },
+                {
+                    "id": 158,
+                    "name": "metallothionein-positive alveolar macrophage",
+                    "type": "CT",
+                    "ontology_id": "CL:4033042",
+                    "id_from_ontology_id": "CL:4033042",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 155
+                },
+                {
+                    "id": 159,
+                    "name": "lung interstitial macrophage",
+                    "type": "CT",
+                    "ontology_id": "CL:4033043",
+                    "id_from_ontology_id": "CL:4033043",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 155
+                },
+                {
+                    "id": 160,
+                    "name": "classical monocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0000860",
+                    "id_from_ontology_id": "CL:0000860",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 155
+                },
+                {
+                    "id": 161,
+                    "name": "non-classical monocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0000875",
+                    "id_from_ontology_id": "CL:0000875$$5268",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 155
+                },
+                {
+                    "id": 162,
+                    "name": "natural killer cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000623",
+                    "id_from_ontology_id": "CL:0000623$$5269",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 155
+                },
+                {
+                    "id": 163,
+                    "name": "CD16-negative, CD56-bright natural killer cell, human",
+                    "type": "CT",
+                    "ontology_id": "CL:0000938",
+                    "id_from_ontology_id": "CL:0000938$$5270",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 155
+                },
+                {
+                    "id": 164,
+                    "name": "mucosal type mast cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000485",
+                    "id_from_ontology_id": "CL:0000485",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 155
+                },
+                {
+                    "id": 165,
+                    "name": "connective tissue type mast cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000484",
+                    "id_from_ontology_id": "CL:0000484",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 155
+                },
+                {
+                    "id": 166,
+                    "name": "neutrophil",
+                    "type": "CT",
+                    "ontology_id": "CL:0000775",
+                    "id_from_ontology_id": "CL:0000775$$5271",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 155
+                },
+                {
+                    "id": 167,
+                    "name": "basophil",
+                    "type": "CT",
+                    "ontology_id": "CL:0000767",
+                    "id_from_ontology_id": "CL:0000767$$5272",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 155
+                },
+                {
+                    "id": 168,
+                    "name": "lung parenchyma resident eosinophil",
+                    "type": "CT",
+                    "ontology_id": "CL:0019015",
+                    "id_from_ontology_id": "CL:0019015",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 155
+                },
+                {
+                    "id": 169,
+                    "name": "mature NK T cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000814",
+                    "id_from_ontology_id": "CL:0000814$$5273",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 155
+                },
+                {
+                    "id": 170,
+                    "name": "naive thymus-derived CD4-positive, alpha-beta T cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000895",
+                    "id_from_ontology_id": "CL:0000895$$5274",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 155
+                },
+                {
+                    "id": 171,
+                    "name": "effector memory CD4-positive, alpha-beta T cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000905",
+                    "id_from_ontology_id": "CL:0000905",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 155
+                },
+                {
+                    "id": 172,
+                    "name": "lung resident memory CD4-positive, alpha-beta T cell",
+                    "type": "CT",
+                    "ontology_id": "CL:4033038",
+                    "id_from_ontology_id": "CL:4033038",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 155
+                },
+                {
+                    "id": 173,
+                    "name": "regulatory T cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000815",
+                    "id_from_ontology_id": "CL:0000815$$5275",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 155
+                },
+                {
+                    "id": 174,
+                    "name": "naive thymus-derived CD8-positive, alpha-beta T cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000900",
+                    "id_from_ontology_id": "CL:0000900$$5276",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 155
+                },
+                {
+                    "id": 175,
+                    "name": "effector memory CD8-positive, alpha-beta T cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000913",
+                    "id_from_ontology_id": "CL:0000913$$5277",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 155
+                },
+                {
+                    "id": 176,
+                    "name": "lung resident memory CD8-positive, alpha-beta T cell",
+                    "type": "CT",
+                    "ontology_id": "CL:4033039",
+                    "id_from_ontology_id": "CL:4033039",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 155
+                },
+                {
+                    "id": 177,
+                    "name": "mucosal invariant T cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000940",
+                    "id_from_ontology_id": "CL:0000940",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 155
+                },
+                {
+                    "id": 178,
+                    "name": "CD141-positive myeloid dendritic cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0002394",
+                    "id_from_ontology_id": "CL:0002394$$5278",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 155
+                },
+                {
+                    "id": 179,
+                    "name": "CD1c-positive myeloid dendritic cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0002399",
+                    "id_from_ontology_id": "CL:0002399$$5279",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 155
+                },
+                {
+                    "id": 180,
+                    "name": "lung migratory dendritic cell",
+                    "type": "CT",
+                    "ontology_id": "CL:4033045",
+                    "id_from_ontology_id": "CL:4033045",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 155
+                },
+                {
+                    "id": 181,
+                    "name": "plasmacytoid dendritic cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000784",
+                    "id_from_ontology_id": "CL:0000784$$5280",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 155
+                },
+                {
+                    "id": 182,
+                    "name": "plasma cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000786",
+                    "id_from_ontology_id": "CL:0000786$$5281",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 155
+                },
+                {
+                    "id": 183,
+                    "name": "B cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000236",
+                    "id_from_ontology_id": "CL:0000236$$5282",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 155
+                },
+                {
+                    "id": 185,
+                    "name": "pulmonary artery",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0002012",
+                    "id_from_ontology_id": "UBERON:0002012",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 0
+                },
+                {
+                    "id": 186,
+                    "name": "respiratory system arterial endothelium",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0004848",
+                    "id_from_ontology_id": "UBERON:0004848",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 185
+                },
+                {
+                    "id": 187,
+                    "name": "pulmonary artery endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:1001568",
+                    "id_from_ontology_id": "CL:1001568",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 186
+                },
+                {
+                    "id": 188,
+                    "name": "respiratory system arterial smooth muscle",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0012416",
+                    "id_from_ontology_id": "UBERON:0012416",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 185
+                },
+                {
+                    "id": 189,
+                    "name": "smooth muscle cell of the pulmonary artery",
+                    "type": "CT",
+                    "ontology_id": "CL:0002591",
+                    "id_from_ontology_id": "CL:0002591",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 188
+                },
+                {
+                    "id": 190,
+                    "name": "fibroblast of pulmonary artery",
+                    "type": "CT",
+                    "ontology_id": "CL:0002557",
+                    "id_from_ontology_id": "CL:0002557",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 185
+                },
+                {
+                    "id": 191,
+                    "name": "respiratory system venous endothelium",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0004849",
+                    "id_from_ontology_id": "UBERON:0004849$$5255",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 185
+                },
+                {
+                    "id": 192,
+                    "name": "vein endothelial cell of respiratory system",
+                    "type": "CT",
+                    "ontology_id": "CL:4033008",
+                    "id_from_ontology_id": "CL:4033008$$5256",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 191
+                },
+                {
+                    "id": 193,
+                    "name": "respiratory system venous smooth muscle",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0012418",
+                    "id_from_ontology_id": "UBERON:0012418",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 185
+                },
+                {
+                    "id": 194,
+                    "name": "blood vessel smooth muscle cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0019018",
+                    "id_from_ontology_id": "CL:0019018$$5257",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 193
+                },
+                {
+                    "id": 196,
+                    "name": "bronchial artery",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0002040",
+                    "id_from_ontology_id": "UBERON:0002040$$5258",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 0
+                },
+                {
+                    "id": 197,
+                    "name": "respiratory system arterial endothelium",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0004848",
+                    "id_from_ontology_id": "UBERON:0004848$$5259",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 196
+                },
+                {
+                    "id": 198,
+                    "name": "endothelial cell of artery",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$5260",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 197
+                },
+                {
+                    "id": 199,
+                    "name": "respiratory system arterial smooth muscle",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0012416",
+                    "id_from_ontology_id": "UBERON:0012416$$5261",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 196
+                },
+                {
+                    "id": 200,
+                    "name": "blood vessel smooth muscle cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0019018",
+                    "id_from_ontology_id": "CL:0019018$$5262",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 199
+                },
+                {
+                    "id": 202,
+                    "name": "bronchial vein",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0001592",
+                    "id_from_ontology_id": "UBERON:0001592$$5263",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 0
+                },
+                {
+                    "id": 203,
+                    "name": "respiratory system venous endothelium",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0004849",
+                    "id_from_ontology_id": "UBERON:0004849$$5264",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 202
+                },
+                {
+                    "id": 204,
+                    "name": "vein endothelial cell of respiratory system",
+                    "type": "CT",
+                    "ontology_id": "CL:4033008",
+                    "id_from_ontology_id": "CL:4033008$$5265",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 203
+                },
+                {
+                    "id": 205,
+                    "name": "respiratory system venous smooth muscle",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0012418",
+                    "id_from_ontology_id": "UBERON:0012418$$5266",
+                    "color": "#984ea3",
+                    "organ": "lung",
+                    "parent": 202
+                },
+                {
+                    "id": 206,
+                    "name": "blood vessel smooth muscle cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0019018",
+                    "id_from_ontology_id": "CL:0019018$$5267",
+                    "color": "#ff7f00",
+                    "organ": "lung",
+                    "parent": 205
+                }
+            ],
+            "transform": [
+                {
+                    "type": "stratify",
+                    "key": "id",
+                    "parentKey": "parent"
+                },
+                {
+                    "type": "tree",
+                    "method": {
+                        "signal": "layout"
+                    },
+                    "size": [
+                        1,
+                        {
+                            "signal": "radius"
+                        }
+                    ],
+                    "as": [
+                        "alpha",
+                        "radius",
+                        "depth",
+                        "children"
+                    ]
+                },
+                {
+                    "type": "formula",
+                    "expr": "(rotate + extent * datum.alpha + 270) % 360",
+                    "as": "angle"
+                },
+                {
+                    "type": "formula",
+                    "expr": "PI * datum.angle / 180",
+                    "as": "radians"
+                },
+                {
+                    "type": "formula",
+                    "expr": "inrange(datum.angle, [90, 270])",
+                    "as": "leftside"
+                },
+                {
+                    "type": "formula",
+                    "expr": "originX + datum.radius * cos(datum.radians)",
+                    "as": "x"
+                },
+                {
+                    "type": "formula",
+                    "expr": "originY + datum.radius * sin(datum.radians)",
+                    "as": "y"
+                }
+            ]
+        },
+        {
+            "name": "links",
+            "source": "tree",
+            "transform": [
+                {
+                    "type": "treelinks"
+                },
+                {
+                    "type": "linkpath",
+                    "shape": {
+                        "signal": "links"
+                    },
+                    "orient": "radial",
+                    "sourceX": "source.radians",
+                    "sourceY": "source.radius",
+                    "targetX": "target.radians",
+                    "targetY": "target.radius"
+                }
+            ]
+        }
+    ],
+    "marks": [
+        {
+            "type": "path",
+            "from": {
+                "data": "links"
+            },
+            "encode": {
+                "update": {
+                    "x": {
+                        "signal": "originX"
+                    },
+                    "y": {
+                        "signal": "originY"
+                    },
+                    "path": {
+                        "field": "path"
+                    },
+                    "stroke": {
+                        "value": "#ccc"
+                    },
+                    "opacity": {
+                        "value": 0.7
+                    },
+                    "strokeWidth": {
+                        "value": 0.5
+                    }
+                }
+            }
+        },
+        {
+            "type": "symbol",
+            "from": {
+                "data": "tree"
+            },
+            "encode": {
+                "enter": {
+                    "size": {
+                        "value": 12
+                    },
+                    "stroke": {
+                        "value": "#fff"
+                    },
+                    "strokeWidth": {
+                        "value": 0.2
+                    }
+                },
+                "update": {
+                    "x": {
+                        "field": "x"
+                    },
+                    "y": {
+                        "field": "y"
+                    },
+                    "fill": {
+                        "field": "color"
+                    },
+                    "opacity": {
+                        "value": 0.3
+                    },
+                    "size": {
+                        "value": 40
+                    },
+                    "strokeWidth": {
+                        "value": 0.5
+                    }
+                }
+            }
+        },
+        {
+            "type": "text",
+            "from": {
+                "data": "tree"
+            },
+            "encode": {
+                "enter": {
+                    "text": {
+                        "field": "name"
+                    },
+                    "fontSize": {
+                        "value": 2
+                    },
+                    "baseline": {
+                        "value": "middle"
+                    }
+                },
+                "update": {
+                    "x": {
+                        "field": "x"
+                    },
+                    "y": {
+                        "field": "y"
+                    },
+                    "dx": {
+                        "value": 2
+                    },
+                    "angle": {
+                        "signal": "datum.leftside ? datum.angle - 180 : datum.angle"
+                    },
+                    "align": {
+                        "signal": "datum.leftside ? 'right' : 'left'"
+                    },
+                    "opacity": {
+                        "signal": "labels ? 0.5 : 1"
+                    },
+                    "fontSize": {
+                        "value": 6
+                    }
+                }
+            }
+        }
+    ],
+    "config": {},
+    "background": "white"
+}

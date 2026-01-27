@@ -1,0 +1,2125 @@
+{
+    "$schema": "https://vega.github.io/schema/vega/v5.json",
+    "description": "An example of a radial layout for a node-link diagram of hierarchical data.",
+    "width": 1720,
+    "height": 1720,
+    "padding": {
+        "top": 2,
+        "left": 2,
+        "right": 2,
+        "bottom": 2
+    },
+    "autosize": {
+        "type": "fit",
+        "contains": "padding"
+    },
+    "signals": [
+        {
+            "name": "labels",
+            "value": false,
+            "bind": {
+                "input": "checkbox"
+            }
+        },
+        {
+            "name": "radius",
+            "value": 865,
+            "bind": {
+                "input": "range",
+                "min": 20,
+                "max": 4000
+            }
+        },
+        {
+            "name": "extent",
+            "value": 160,
+            "bind": {
+                "input": "range",
+                "min": 0,
+                "max": 360,
+                "step": 1
+            }
+        },
+        {
+            "name": "rotate",
+            "value": 15,
+            "bind": {
+                "input": "range",
+                "min": 0,
+                "max": 360,
+                "step": 1
+            }
+        },
+        {
+            "name": "layout",
+            "value": "tidy",
+            "bind": {
+                "input": "radio",
+                "options": [
+                    "tidy",
+                    "cluster"
+                ]
+            }
+        },
+        {
+            "name": "links",
+            "value": "diagonal",
+            "bind": {
+                "input": "select",
+                "options": [
+                    "line",
+                    "curve",
+                    "diagonal",
+                    "orthogonal"
+                ]
+            }
+        },
+        {
+            "name": "originX",
+            "update": "width / 2"
+        },
+        {
+            "name": "originY",
+            "update": "height / 2"
+        }
+    ],
+    "data": [
+        {
+            "name": "tree",
+            "values": [
+                {
+                    "id": 0,
+                    "name": "",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0013702",
+                    "id_from_ontology_id": "UBERON:0013702",
+                    "color": "#984ea3",
+                    "organ": "body"
+                },
+                {
+                    "id": 2,
+                    "name": "2",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0002084",
+                    "id_from_ontology_id": "UBERON:0002084",
+                    "color": "#984ea3",
+                    "organ": "blood_vasculature",
+                    "parent": 0
+                },
+                {
+                    "id": 3,
+                    "name": "3",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0006566",
+                    "id_from_ontology_id": "UBERON:0006566",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 2
+                },
+                {
+                    "id": 4,
+                    "name": "4",
+                    "type": "CT",
+                    "ontology_id": "CL:0000746",
+                    "id_from_ontology_id": "CL:0000746$$3742",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 3
+                },
+                {
+                    "id": 5,
+                    "name": "5",
+                    "type": "CT",
+                    "ontology_id": "CL:0002068",
+                    "id_from_ontology_id": "CL:0002068",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 3
+                },
+                {
+                    "id": 6,
+                    "name": "6",
+                    "type": "CT",
+                    "ontology_id": "CL:2000066",
+                    "id_from_ontology_id": "CL:2000066",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 3
+                },
+                {
+                    "id": 7,
+                    "name": "7",
+                    "type": "CT",
+                    "ontology_id": "CL:0000235",
+                    "id_from_ontology_id": "CL:0000235$$3743",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 3
+                },
+                {
+                    "id": 8,
+                    "name": "8",
+                    "type": "CT",
+                    "ontology_id": "CL:0017004",
+                    "id_from_ontology_id": "CL:0017004$$3753",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 3
+                },
+                {
+                    "id": 9,
+                    "name": "9",
+                    "type": "CT",
+                    "ontology_id": "CL:0001056",
+                    "id_from_ontology_id": "CL:0001056$$3754",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 3
+                },
+                {
+                    "id": 10,
+                    "name": "10",
+                    "type": "CT",
+                    "ontology_id": "CL:0000136",
+                    "id_from_ontology_id": "CL:0000136$$3755",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 3
+                },
+                {
+                    "id": 11,
+                    "name": "11",
+                    "type": "CT",
+                    "ontology_id": "CL:0000097",
+                    "id_from_ontology_id": "CL:0000097$$3756",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 3
+                },
+                {
+                    "id": 12,
+                    "name": "12",
+                    "type": "CT",
+                    "ontology_id": "CL:0002138",
+                    "id_from_ontology_id": "CL:0002138$$3757",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 3
+                },
+                {
+                    "id": 13,
+                    "name": "13",
+                    "type": "CT",
+                    "ontology_id": "CL:0000236",
+                    "id_from_ontology_id": "CL:0000236$$3758",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 3
+                },
+                {
+                    "id": 14,
+                    "name": "14",
+                    "type": "CT",
+                    "ontology_id": "CL:0000914",
+                    "id_from_ontology_id": "CL:0000914$$3759",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 3
+                },
+                {
+                    "id": 15,
+                    "name": "15",
+                    "type": "CT",
+                    "ontology_id": "CL:0001065",
+                    "id_from_ontology_id": "CL:0001065$$3760",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 3
+                },
+                {
+                    "id": 16,
+                    "name": "16",
+                    "type": "CT",
+                    "ontology_id": "CL:0002350",
+                    "id_from_ontology_id": "CL:0002350$$3761",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 3
+                },
+                {
+                    "id": 17,
+                    "name": "17",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0002049",
+                    "id_from_ontology_id": "UBERON:0002049$$3744",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 2
+                },
+                {
+                    "id": 18,
+                    "name": "18",
+                    "type": "CT",
+                    "ontology_id": "CL:0000071",
+                    "id_from_ontology_id": "CL:0000071$$3745",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 17
+                },
+                {
+                    "id": 19,
+                    "name": "19",
+                    "type": "CT",
+                    "ontology_id": "CL:0000359",
+                    "id_from_ontology_id": "CL:0000359$$3746",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 17
+                },
+                {
+                    "id": 20,
+                    "name": "20",
+                    "type": "CT",
+                    "ontology_id": "CL:2000066",
+                    "id_from_ontology_id": "CL:2000066$$3747",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 17
+                },
+                {
+                    "id": 21,
+                    "name": "21",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0001982",
+                    "id_from_ontology_id": "UBERON:0001982$$3748",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 2
+                },
+                {
+                    "id": 22,
+                    "name": "22",
+                    "type": "CT",
+                    "ontology_id": "CL:0002144",
+                    "id_from_ontology_id": "CL:0002144$$3749",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 21
+                },
+                {
+                    "id": 23,
+                    "name": "23",
+                    "type": "CT",
+                    "ontology_id": "CL:0000669",
+                    "id_from_ontology_id": "CL:0000669$$3750",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 21
+                },
+                {
+                    "id": 24,
+                    "name": "24",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0001979",
+                    "id_from_ontology_id": "UBERON:0001979$$3751",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 2
+                },
+                {
+                    "id": 25,
+                    "name": "25",
+                    "type": "CT",
+                    "ontology_id": "CL:0000669",
+                    "id_from_ontology_id": "CL:0000669$$3752",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 24
+                },
+                {
+                    "id": 26,
+                    "name": "26",
+                    "type": "AS",
+                    "ontology_id": "FMA:3860",
+                    "id_from_ontology_id": "FMA:3860$$3762",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 2
+                },
+                {
+                    "id": 27,
+                    "name": "27",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$3763",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 26
+                },
+                {
+                    "id": 28,
+                    "name": "28",
+                    "type": "CT",
+                    "ontology_id": "CL:0000071",
+                    "id_from_ontology_id": "CL:0000071$$3764",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 26
+                },
+                {
+                    "id": 29,
+                    "name": "29",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3765",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 26
+                },
+                {
+                    "id": 30,
+                    "name": "30",
+                    "type": "AS",
+                    "ontology_id": "FMA:3902",
+                    "id_from_ontology_id": "FMA:3902",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 2
+                },
+                {
+                    "id": 31,
+                    "name": "31",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$3766",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 30
+                },
+                {
+                    "id": 32,
+                    "name": "32",
+                    "type": "CT",
+                    "ontology_id": "CL:0000071",
+                    "id_from_ontology_id": "CL:0000071$$3767",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 30
+                },
+                {
+                    "id": 33,
+                    "name": "33",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3768",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 30
+                },
+                {
+                    "id": 34,
+                    "name": "34",
+                    "type": "AS",
+                    "ontology_id": "FMA:3835",
+                    "id_from_ontology_id": "FMA:3835",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 2
+                },
+                {
+                    "id": 35,
+                    "name": "35",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$3769",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 34
+                },
+                {
+                    "id": 36,
+                    "name": "36",
+                    "type": "CT",
+                    "ontology_id": "CL:0000071",
+                    "id_from_ontology_id": "CL:0000071$$3770",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 34
+                },
+                {
+                    "id": 37,
+                    "name": "37",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3771",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 34
+                },
+                {
+                    "id": 38,
+                    "name": "38",
+                    "type": "AS",
+                    "ontology_id": "FMA:4708",
+                    "id_from_ontology_id": "FMA:4708$$3772",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 2
+                },
+                {
+                    "id": 39,
+                    "name": "39",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$3773",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 38
+                },
+                {
+                    "id": 40,
+                    "name": "40",
+                    "type": "CT",
+                    "ontology_id": "CL:0000071",
+                    "id_from_ontology_id": "CL:0000071$$3774",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 38
+                },
+                {
+                    "id": 41,
+                    "name": "41",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3775",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 38
+                },
+                {
+                    "id": 42,
+                    "name": "42",
+                    "type": "AS",
+                    "ontology_id": "FMA:4712",
+                    "id_from_ontology_id": "FMA:4712$$3776",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 2
+                },
+                {
+                    "id": 43,
+                    "name": "43",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$3777",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 42
+                },
+                {
+                    "id": 44,
+                    "name": "44",
+                    "type": "CT",
+                    "ontology_id": "CL:0000071",
+                    "id_from_ontology_id": "CL:0000071$$3778",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 42
+                },
+                {
+                    "id": 45,
+                    "name": "45",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3779",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 42
+                },
+                {
+                    "id": 46,
+                    "name": "46",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0002080",
+                    "id_from_ontology_id": "UBERON:0002080",
+                    "color": "#984ea3",
+                    "organ": "blood_vasculature",
+                    "parent": 0
+                },
+                {
+                    "id": 47,
+                    "name": "47",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0006567",
+                    "id_from_ontology_id": "UBERON:0006567",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 46
+                },
+                {
+                    "id": 48,
+                    "name": "48",
+                    "type": "CT",
+                    "ontology_id": "CL:0000097",
+                    "id_from_ontology_id": "CL:0000097$$3821",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 47
+                },
+                {
+                    "id": 49,
+                    "name": "49",
+                    "type": "CT",
+                    "ontology_id": "CL:0002138",
+                    "id_from_ontology_id": "CL:0002138$$3822",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 47
+                },
+                {
+                    "id": 50,
+                    "name": "50",
+                    "type": "CT",
+                    "ontology_id": "CL:0000236",
+                    "id_from_ontology_id": "CL:0000236$$3823",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 47
+                },
+                {
+                    "id": 51,
+                    "name": "51",
+                    "type": "CT",
+                    "ontology_id": "CL:0000914",
+                    "id_from_ontology_id": "CL:0000914$$3824",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 47
+                },
+                {
+                    "id": 52,
+                    "name": "52",
+                    "type": "CT",
+                    "ontology_id": "CL:0001065",
+                    "id_from_ontology_id": "CL:0001065$$3825",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 47
+                },
+                {
+                    "id": 53,
+                    "name": "53",
+                    "type": "CT",
+                    "ontology_id": "CL:0002350",
+                    "id_from_ontology_id": "CL:0002350$$3826",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 47
+                },
+                {
+                    "id": 54,
+                    "name": "54",
+                    "type": "CT",
+                    "ontology_id": "CL:0000746",
+                    "id_from_ontology_id": "CL:0000746$$3827",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 47
+                },
+                {
+                    "id": 55,
+                    "name": "55",
+                    "type": "CT",
+                    "ontology_id": "CL:0002068",
+                    "id_from_ontology_id": "CL:0002068$$3828",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 47
+                },
+                {
+                    "id": 56,
+                    "name": "56",
+                    "type": "CT",
+                    "ontology_id": "CL:2000066",
+                    "id_from_ontology_id": "CL:2000066$$3829",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 47
+                },
+                {
+                    "id": 57,
+                    "name": "57",
+                    "type": "CT",
+                    "ontology_id": "CL:0000235",
+                    "id_from_ontology_id": "CL:0000235$$3830",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 47
+                },
+                {
+                    "id": 58,
+                    "name": "58",
+                    "type": "CT",
+                    "ontology_id": "CL:0017004",
+                    "id_from_ontology_id": "CL:0017004$$3852",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 47
+                },
+                {
+                    "id": 59,
+                    "name": "59",
+                    "type": "CT",
+                    "ontology_id": "CL:0000542",
+                    "id_from_ontology_id": "CL:0000542$$3853",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 47
+                },
+                {
+                    "id": 60,
+                    "name": "60",
+                    "type": "CT",
+                    "ontology_id": "CL:0001056",
+                    "id_from_ontology_id": "CL:0001056$$3854",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 47
+                },
+                {
+                    "id": 61,
+                    "name": "61",
+                    "type": "CT",
+                    "ontology_id": "CL:0000136",
+                    "id_from_ontology_id": "CL:0000136$$3855",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 47
+                },
+                {
+                    "id": 62,
+                    "name": "62",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0039232",
+                    "id_from_ontology_id": "UBERON:0039232$$3831",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 46
+                },
+                {
+                    "id": 63,
+                    "name": "63",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$3832",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 62
+                },
+                {
+                    "id": 64,
+                    "name": "64",
+                    "type": "CT",
+                    "ontology_id": "CL:0000071",
+                    "id_from_ontology_id": "CL:0000071$$3833",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 62
+                },
+                {
+                    "id": 65,
+                    "name": "65",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3834",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 62
+                },
+                {
+                    "id": 66,
+                    "name": "66",
+                    "type": "AS",
+                    "ontology_id": "FMA:3818",
+                    "id_from_ontology_id": "FMA:3818$$3835",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 46
+                },
+                {
+                    "id": 67,
+                    "name": "67",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$3836",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 66
+                },
+                {
+                    "id": 68,
+                    "name": "68",
+                    "type": "CT",
+                    "ontology_id": "CL:0000071",
+                    "id_from_ontology_id": "CL:0000071$$3837",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 66
+                },
+                {
+                    "id": 69,
+                    "name": "69",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3838",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 66
+                },
+                {
+                    "id": 70,
+                    "name": "70",
+                    "type": "AS",
+                    "ontology_id": "FMA:76767",
+                    "id_from_ontology_id": "FMA:76767$$3839",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 46
+                },
+                {
+                    "id": 71,
+                    "name": "71",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$3840",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 70
+                },
+                {
+                    "id": 72,
+                    "name": "72",
+                    "type": "CT",
+                    "ontology_id": "CL:0000071",
+                    "id_from_ontology_id": "CL:0000071$$3841",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 70
+                },
+                {
+                    "id": 73,
+                    "name": "73",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3842",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 70
+                },
+                {
+                    "id": 74,
+                    "name": "74",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0002049",
+                    "id_from_ontology_id": "UBERON:0002049$$3843",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 46
+                },
+                {
+                    "id": 75,
+                    "name": "75",
+                    "type": "CT",
+                    "ontology_id": "CL:0000071",
+                    "id_from_ontology_id": "CL:0000071$$3844",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 74
+                },
+                {
+                    "id": 76,
+                    "name": "76",
+                    "type": "CT",
+                    "ontology_id": "CL:0000359",
+                    "id_from_ontology_id": "CL:0000359$$3845",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 74
+                },
+                {
+                    "id": 77,
+                    "name": "77",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3846",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 74
+                },
+                {
+                    "id": 78,
+                    "name": "78",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0001982",
+                    "id_from_ontology_id": "UBERON:0001982$$3847",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 46
+                },
+                {
+                    "id": 79,
+                    "name": "79",
+                    "type": "CT",
+                    "ontology_id": "CL:0000669",
+                    "id_from_ontology_id": "CL:0000669$$3848",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 78
+                },
+                {
+                    "id": 80,
+                    "name": "80",
+                    "type": "CT",
+                    "ontology_id": "CL:0002144",
+                    "id_from_ontology_id": "CL:0002144$$3849",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 78
+                },
+                {
+                    "id": 81,
+                    "name": "81",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0001979",
+                    "id_from_ontology_id": "UBERON:0001979$$3850",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 46
+                },
+                {
+                    "id": 82,
+                    "name": "82",
+                    "type": "CT",
+                    "ontology_id": "CL:0000669",
+                    "id_from_ontology_id": "CL:0000669$$3851",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 81
+                },
+                {
+                    "id": 83,
+                    "name": "83",
+                    "type": "AS",
+                    "ontology_id": "UBERON:8470002",
+                    "id_from_ontology_id": "UBERON:8470002",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 46
+                },
+                {
+                    "id": 84,
+                    "name": "84",
+                    "type": "CT",
+                    "ontology_id": "CL:0000746",
+                    "id_from_ontology_id": "CL:0000746$$3856",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 83
+                },
+                {
+                    "id": 85,
+                    "name": "85",
+                    "type": "CT",
+                    "ontology_id": "CL:0002068",
+                    "id_from_ontology_id": "CL:0002068$$3857",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 83
+                },
+                {
+                    "id": 86,
+                    "name": "86",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3858",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 83
+                },
+                {
+                    "id": 87,
+                    "name": "87",
+                    "type": "CT",
+                    "ontology_id": "CL:0000235",
+                    "id_from_ontology_id": "CL:0000235$$3859",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 83
+                },
+                {
+                    "id": 88,
+                    "name": "88",
+                    "type": "CT",
+                    "ontology_id": "CL:0000071",
+                    "id_from_ontology_id": "CL:0000071$$3860",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 83
+                },
+                {
+                    "id": 89,
+                    "name": "89",
+                    "type": "CT",
+                    "ontology_id": "CL:0000359",
+                    "id_from_ontology_id": "CL:0000359$$3861",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 83
+                },
+                {
+                    "id": 90,
+                    "name": "90",
+                    "type": "CT",
+                    "ontology_id": "CL:0017004",
+                    "id_from_ontology_id": "CL:0017004$$3862",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 83
+                },
+                {
+                    "id": 91,
+                    "name": "91",
+                    "type": "CT",
+                    "ontology_id": "CL:0000542",
+                    "id_from_ontology_id": "CL:0000542$$3863",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 83
+                },
+                {
+                    "id": 92,
+                    "name": "92",
+                    "type": "CT",
+                    "ontology_id": "CL:0001056",
+                    "id_from_ontology_id": "CL:0001056$$3864",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 83
+                },
+                {
+                    "id": 93,
+                    "name": "93",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0011820",
+                    "id_from_ontology_id": "UBERON:0011820",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 0
+                },
+                {
+                    "id": 94,
+                    "name": "94",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0035422",
+                    "id_from_ontology_id": "UBERON:0035422$$3683",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 93
+                },
+                {
+                    "id": 95,
+                    "name": "95",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$3684",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 94
+                },
+                {
+                    "id": 96,
+                    "name": "96",
+                    "type": "CT",
+                    "ontology_id": "CL:0002592",
+                    "id_from_ontology_id": "CL:0002592$$3685",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 94
+                },
+                {
+                    "id": 97,
+                    "name": "97",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3686",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 94
+                },
+                {
+                    "id": 98,
+                    "name": "98",
+                    "type": "AS",
+                    "ontology_id": "FMA:3851",
+                    "id_from_ontology_id": "FMA:3851$$3687",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 93
+                },
+                {
+                    "id": 99,
+                    "name": "99",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$3688",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 98
+                },
+                {
+                    "id": 100,
+                    "name": "100",
+                    "type": "CT",
+                    "ontology_id": "CL:0002592",
+                    "id_from_ontology_id": "CL:0002592$$3689",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 98
+                },
+                {
+                    "id": 101,
+                    "name": "101",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3690",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 98
+                },
+                {
+                    "id": 102,
+                    "name": "102",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0005438",
+                    "id_from_ontology_id": "UBERON:0005438$$3691",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 93
+                },
+                {
+                    "id": 103,
+                    "name": "103",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$3692",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 102
+                },
+                {
+                    "id": 104,
+                    "name": "104",
+                    "type": "CT",
+                    "ontology_id": "CL:0000359",
+                    "id_from_ontology_id": "CL:0000359$$3693",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 102
+                },
+                {
+                    "id": 105,
+                    "name": "105",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3694",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 102
+                },
+                {
+                    "id": 106,
+                    "name": "106",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0002352",
+                    "id_from_ontology_id": "UBERON:0002352",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 93
+                },
+                {
+                    "id": 107,
+                    "name": "107",
+                    "type": "CT",
+                    "ontology_id": "CL:1000477",
+                    "id_from_ontology_id": "CL:1000477$$3695",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 106
+                },
+                {
+                    "id": 108,
+                    "name": "108",
+                    "type": "CT",
+                    "ontology_id": "CL:0000136",
+                    "id_from_ontology_id": "CL:0000136$$3696",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 106
+                },
+                {
+                    "id": 109,
+                    "name": "109",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0001625",
+                    "id_from_ontology_id": "UBERON:0001625$$3697",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 93
+                },
+                {
+                    "id": 110,
+                    "name": "110",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$3698",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 109
+                },
+                {
+                    "id": 111,
+                    "name": "111",
+                    "type": "CT",
+                    "ontology_id": "CL:0002592",
+                    "id_from_ontology_id": "CL:0002592$$3699",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 109
+                },
+                {
+                    "id": 112,
+                    "name": "112",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3700",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 109
+                },
+                {
+                    "id": 113,
+                    "name": "113",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0035374",
+                    "id_from_ontology_id": "UBERON:0035374$$3701",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 93
+                },
+                {
+                    "id": 114,
+                    "name": "114",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$3702",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 113
+                },
+                {
+                    "id": 115,
+                    "name": "115",
+                    "type": "CT",
+                    "ontology_id": "CL:0002592",
+                    "id_from_ontology_id": "CL:0002592$$3703",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 113
+                },
+                {
+                    "id": 116,
+                    "name": "116",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3704",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 113
+                },
+                {
+                    "id": 117,
+                    "name": "117",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0002094",
+                    "id_from_ontology_id": "UBERON:0002094",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 0
+                },
+                {
+                    "id": 118,
+                    "name": "118",
+                    "type": "AS",
+                    "ontology_id": "UBERON:8600102",
+                    "id_from_ontology_id": "UBERON:8600102$$3780",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 117
+                },
+                {
+                    "id": 119,
+                    "name": "119",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$3781",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 118
+                },
+                {
+                    "id": 120,
+                    "name": "120",
+                    "type": "CT",
+                    "ontology_id": "CL:0000071",
+                    "id_from_ontology_id": "CL:0000071$$3782",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 118
+                },
+                {
+                    "id": 121,
+                    "name": "121",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3783",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 118
+                },
+                {
+                    "id": 122,
+                    "name": "122",
+                    "type": "AS",
+                    "ontology_id": "FMA:3840",
+                    "id_from_ontology_id": "FMA:3840$$3784",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 117
+                },
+                {
+                    "id": 123,
+                    "name": "123",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$3785",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 122
+                },
+                {
+                    "id": 124,
+                    "name": "124",
+                    "type": "CT",
+                    "ontology_id": "CL:0000071",
+                    "id_from_ontology_id": "CL:0000071$$3786",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 122
+                },
+                {
+                    "id": 125,
+                    "name": "125",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3787",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 122
+                },
+                {
+                    "id": 126,
+                    "name": "126",
+                    "type": "AS",
+                    "ontology_id": "UBERON:8600063",
+                    "id_from_ontology_id": "UBERON:8600063$$3788",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 117
+                },
+                {
+                    "id": 127,
+                    "name": "127",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$3789",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 126
+                },
+                {
+                    "id": 128,
+                    "name": "128",
+                    "type": "CT",
+                    "ontology_id": "CL:0000071",
+                    "id_from_ontology_id": "CL:0000071$$3790",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 126
+                },
+                {
+                    "id": 129,
+                    "name": "129",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3791",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 126
+                },
+                {
+                    "id": 130,
+                    "name": "130",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0006958",
+                    "id_from_ontology_id": "UBERON:0006958$$3792",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 117
+                },
+                {
+                    "id": 131,
+                    "name": "131",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$3793",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 130
+                },
+                {
+                    "id": 132,
+                    "name": "132",
+                    "type": "CT",
+                    "ontology_id": "CL:0000071",
+                    "id_from_ontology_id": "CL:0000071$$3794",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 130
+                },
+                {
+                    "id": 133,
+                    "name": "133",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3795",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 130
+                },
+                {
+                    "id": 134,
+                    "name": "134",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0009687",
+                    "id_from_ontology_id": "UBERON:0009687$$3796",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 117
+                },
+                {
+                    "id": 135,
+                    "name": "135",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$3797",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 134
+                },
+                {
+                    "id": 136,
+                    "name": "136",
+                    "type": "CT",
+                    "ontology_id": "CL:0000071",
+                    "id_from_ontology_id": "CL:0000071$$3798",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 134
+                },
+                {
+                    "id": 137,
+                    "name": "137",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3799",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 134
+                },
+                {
+                    "id": 138,
+                    "name": "138",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0001982",
+                    "id_from_ontology_id": "UBERON:0001982$$3800",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 117
+                },
+                {
+                    "id": 139,
+                    "name": "139",
+                    "type": "CT",
+                    "ontology_id": "CL:0000669",
+                    "id_from_ontology_id": "CL:0000669$$3801",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 138
+                },
+                {
+                    "id": 140,
+                    "name": "140",
+                    "type": "CT",
+                    "ontology_id": "CL:0002144",
+                    "id_from_ontology_id": "CL:0002144$$3802",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 138
+                },
+                {
+                    "id": 141,
+                    "name": "141",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0001979",
+                    "id_from_ontology_id": "UBERON:0001979$$3803",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 117
+                },
+                {
+                    "id": 142,
+                    "name": "142",
+                    "type": "CT",
+                    "ontology_id": "CL:0000669",
+                    "id_from_ontology_id": "CL:0000669$$3804",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 141
+                },
+                {
+                    "id": 143,
+                    "name": "143",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0002353",
+                    "id_from_ontology_id": "UBERON:0002353",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 117
+                },
+                {
+                    "id": 144,
+                    "name": "144",
+                    "type": "CT",
+                    "ontology_id": "CL:1000477",
+                    "id_from_ontology_id": "CL:1000477$$3805",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 143
+                },
+                {
+                    "id": 145,
+                    "name": "145",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0003383",
+                    "id_from_ontology_id": "UBERON:0003383$$3806",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 117
+                },
+                {
+                    "id": 146,
+                    "name": "146",
+                    "type": "CT",
+                    "ontology_id": "CL:0000746",
+                    "id_from_ontology_id": "CL:0000746$$3807",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 145
+                },
+                {
+                    "id": 147,
+                    "name": "147",
+                    "type": "CT",
+                    "ontology_id": "CL:0002068",
+                    "id_from_ontology_id": "CL:0002068$$3808",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 145
+                },
+                {
+                    "id": 148,
+                    "name": "148",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3809",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 145
+                },
+                {
+                    "id": 149,
+                    "name": "149",
+                    "type": "CT",
+                    "ontology_id": "CL:0000235",
+                    "id_from_ontology_id": "CL:0000235$$3810",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 145
+                },
+                {
+                    "id": 150,
+                    "name": "150",
+                    "type": "CT",
+                    "ontology_id": "CL:0017004",
+                    "id_from_ontology_id": "CL:0017004$$3811",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 145
+                },
+                {
+                    "id": 151,
+                    "name": "151",
+                    "type": "CT",
+                    "ontology_id": "CL:0000542",
+                    "id_from_ontology_id": "CL:0000542$$3812",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 145
+                },
+                {
+                    "id": 152,
+                    "name": "152",
+                    "type": "CT",
+                    "ontology_id": "CL:0001056",
+                    "id_from_ontology_id": "CL:0001056$$3813",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 145
+                },
+                {
+                    "id": 153,
+                    "name": "153",
+                    "type": "CT",
+                    "ontology_id": "CL:0000136",
+                    "id_from_ontology_id": "CL:0000136$$3814",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 145
+                },
+                {
+                    "id": 154,
+                    "name": "154",
+                    "type": "CT",
+                    "ontology_id": "CL:0000097",
+                    "id_from_ontology_id": "CL:0000097$$3815",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 145
+                },
+                {
+                    "id": 155,
+                    "name": "155",
+                    "type": "CT",
+                    "ontology_id": "CL:0002138",
+                    "id_from_ontology_id": "CL:0002138$$3816",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 145
+                },
+                {
+                    "id": 156,
+                    "name": "156",
+                    "type": "CT",
+                    "ontology_id": "CL:0000236",
+                    "id_from_ontology_id": "CL:0000236$$3817",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 145
+                },
+                {
+                    "id": 157,
+                    "name": "157",
+                    "type": "CT",
+                    "ontology_id": "CL:0000914",
+                    "id_from_ontology_id": "CL:0000914$$3818",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 145
+                },
+                {
+                    "id": 158,
+                    "name": "158",
+                    "type": "CT",
+                    "ontology_id": "CL:0001065",
+                    "id_from_ontology_id": "CL:0001065$$3819",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 145
+                },
+                {
+                    "id": 159,
+                    "name": "159",
+                    "type": "CT",
+                    "ontology_id": "CL:0002350",
+                    "id_from_ontology_id": "CL:0002350$$3820",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 145
+                },
+                {
+                    "id": 160,
+                    "name": "160",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0000946",
+                    "id_from_ontology_id": "UBERON:0000946",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 0
+                },
+                {
+                    "id": 161,
+                    "name": "161",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0002134",
+                    "id_from_ontology_id": "UBERON:0002134",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 160
+                },
+                {
+                    "id": 162,
+                    "name": "162",
+                    "type": "CT",
+                    "ontology_id": "CL:4030032",
+                    "id_from_ontology_id": "CL:4030032",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 161
+                },
+                {
+                    "id": 163,
+                    "name": "163",
+                    "type": "CT",
+                    "ontology_id": "CL:0002350",
+                    "id_from_ontology_id": "CL:0002350$$3865",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 161
+                },
+                {
+                    "id": 164,
+                    "name": "164",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0002146",
+                    "id_from_ontology_id": "UBERON:0002146",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 160
+                },
+                {
+                    "id": 165,
+                    "name": "165",
+                    "type": "CT",
+                    "ontology_id": "CL:4030032",
+                    "id_from_ontology_id": "CL:4030032$$3866",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 164
+                },
+                {
+                    "id": 166,
+                    "name": "166",
+                    "type": "CT",
+                    "ontology_id": "CL:0002350",
+                    "id_from_ontology_id": "CL:0002350$$3867",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 164
+                },
+                {
+                    "id": 167,
+                    "name": "167",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0002135",
+                    "id_from_ontology_id": "UBERON:0002135",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 160
+                },
+                {
+                    "id": 168,
+                    "name": "168",
+                    "type": "CT",
+                    "ontology_id": "CL:4030032",
+                    "id_from_ontology_id": "CL:4030032$$3868",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 167
+                },
+                {
+                    "id": 169,
+                    "name": "169",
+                    "type": "CT",
+                    "ontology_id": "CL:0002350",
+                    "id_from_ontology_id": "CL:0002350$$3869",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 167
+                },
+                {
+                    "id": 170,
+                    "name": "170",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0002137",
+                    "id_from_ontology_id": "UBERON:0002137",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 160
+                },
+                {
+                    "id": 171,
+                    "name": "171",
+                    "type": "CT",
+                    "ontology_id": "CL:4030032",
+                    "id_from_ontology_id": "CL:4030032$$3870",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 170
+                },
+                {
+                    "id": 172,
+                    "name": "172",
+                    "type": "CT",
+                    "ontology_id": "CL:0000071",
+                    "id_from_ontology_id": "CL:0000071$$3871",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 170
+                },
+                {
+                    "id": 173,
+                    "name": "173",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0002348",
+                    "id_from_ontology_id": "UBERON:0002348",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 0
+                },
+                {
+                    "id": 174,
+                    "name": "174",
+                    "type": "CT",
+                    "ontology_id": "CL:0000077",
+                    "id_from_ontology_id": "CL:0000077",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 173
+                },
+                {
+                    "id": 175,
+                    "name": "175",
+                    "type": "CT",
+                    "ontology_id": "CL:1000309",
+                    "id_from_ontology_id": "CL:1000309",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 173
+                },
+                {
+                    "id": 176,
+                    "name": "176",
+                    "type": "CT",
+                    "ontology_id": "CL:0002573",
+                    "id_from_ontology_id": "CL:0002573$$3872",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 173
+                },
+                {
+                    "id": 177,
+                    "name": "177",
+                    "type": "CT",
+                    "ontology_id": "CL:0000359",
+                    "id_from_ontology_id": "CL:0000359$$3873",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 173
+                },
+                {
+                    "id": 178,
+                    "name": "178",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3874",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 173
+                },
+                {
+                    "id": 179,
+                    "name": "179",
+                    "type": "CT",
+                    "ontology_id": "CL:0000071",
+                    "id_from_ontology_id": "CL:0000071$$3875",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 173
+                },
+                {
+                    "id": 180,
+                    "name": "180",
+                    "type": "CT",
+                    "ontology_id": "CL:0000235",
+                    "id_from_ontology_id": "CL:0000235$$3876",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 173
+                },
+                {
+                    "id": 181,
+                    "name": "181",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0003383",
+                    "id_from_ontology_id": "UBERON:0003383$$3877",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 173
+                },
+                {
+                    "id": 182,
+                    "name": "182",
+                    "type": "CT",
+                    "ontology_id": "CL:0000097",
+                    "id_from_ontology_id": "CL:0000097$$3878",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 181
+                },
+                {
+                    "id": 183,
+                    "name": "183",
+                    "type": "CT",
+                    "ontology_id": "CL:0002138",
+                    "id_from_ontology_id": "CL:0002138$$3879",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 181
+                },
+                {
+                    "id": 184,
+                    "name": "184",
+                    "type": "CT",
+                    "ontology_id": "CL:0000236",
+                    "id_from_ontology_id": "CL:0000236$$3880",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 181
+                },
+                {
+                    "id": 185,
+                    "name": "185",
+                    "type": "CT",
+                    "ontology_id": "CL:0000914",
+                    "id_from_ontology_id": "CL:0000914$$3881",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 181
+                }
+            ],
+            "transform": [
+                {
+                    "type": "stratify",
+                    "key": "id",
+                    "parentKey": "parent"
+                },
+                {
+                    "type": "tree",
+                    "method": {
+                        "signal": "layout"
+                    },
+                    "size": [
+                        1,
+                        {
+                            "signal": "radius"
+                        }
+                    ],
+                    "as": [
+                        "alpha",
+                        "radius",
+                        "depth",
+                        "children"
+                    ]
+                },
+                {
+                    "type": "formula",
+                    "expr": "(rotate + extent * datum.alpha + 270) % 360",
+                    "as": "angle"
+                },
+                {
+                    "type": "formula",
+                    "expr": "PI * datum.angle / 180",
+                    "as": "radians"
+                },
+                {
+                    "type": "formula",
+                    "expr": "inrange(datum.angle, [90, 270])",
+                    "as": "leftside"
+                },
+                {
+                    "type": "formula",
+                    "expr": "originX + datum.radius * cos(datum.radians)",
+                    "as": "x"
+                },
+                {
+                    "type": "formula",
+                    "expr": "originY + datum.radius * sin(datum.radians)",
+                    "as": "y"
+                }
+            ]
+        },
+        {
+            "name": "links",
+            "source": "tree",
+            "transform": [
+                {
+                    "type": "treelinks"
+                },
+                {
+                    "type": "linkpath",
+                    "shape": {
+                        "signal": "links"
+                    },
+                    "orient": "radial",
+                    "sourceX": "source.radians",
+                    "sourceY": "source.radius",
+                    "targetX": "target.radians",
+                    "targetY": "target.radius"
+                }
+            ]
+        }
+    ],
+    "marks": [
+        {
+            "type": "path",
+            "from": {
+                "data": "links"
+            },
+            "encode": {
+                "update": {
+                    "x": {
+                        "signal": "originX"
+                    },
+                    "y": {
+                        "signal": "originY"
+                    },
+                    "path": {
+                        "field": "path"
+                    },
+                    "stroke": {
+                        "value": "#ccc"
+                    },
+                    "opacity": {
+                        "value": 0.7
+                    },
+                    "strokeWidth": {
+                        "value": 0.5
+                    }
+                }
+            }
+        },
+        {
+            "type": "symbol",
+            "from": {
+                "data": "tree"
+            },
+            "encode": {
+                "enter": {
+                    "size": {
+                        "value": 12
+                    },
+                    "stroke": {
+                        "value": "#fff"
+                    },
+                    "strokeWidth": {
+                        "value": 0.2
+                    }
+                },
+                "update": {
+                    "x": {
+                        "field": "x"
+                    },
+                    "y": {
+                        "field": "y"
+                    },
+                    "fill": {
+                        "field": "color"
+                    },
+                    "opacity": {
+                        "value": 0.3
+                    },
+                    "size": {
+                        "value": 40
+                    },
+                    "strokeWidth": {
+                        "value": 0.5
+                    }
+                }
+            }
+        },
+        {
+            "type": "text",
+            "from": {
+                "data": "tree"
+            },
+            "encode": {
+                "enter": {
+                    "text": {
+                        "field": "name"
+                    },
+                    "fontSize": {
+                        "value": 2
+                    },
+                    "baseline": {
+                        "value": "middle"
+                    }
+                },
+                "update": {
+                    "x": {
+                        "field": "x"
+                    },
+                    "y": {
+                        "field": "y"
+                    },
+                    "dx": {
+                        "value": 2
+                    },
+                    "angle": {
+                        "signal": "datum.leftside ? datum.angle - 180 : datum.angle"
+                    },
+                    "align": {
+                        "signal": "datum.leftside ? 'right' : 'left'"
+                    },
+                    "opacity": {
+                        "signal": "labels ? 0.5 : 1"
+                    },
+                    "fontSize": {
+                        "value": 6
+                    }
+                }
+            }
+        }
+    ],
+    "config": {},
+    "background": "white"
+}

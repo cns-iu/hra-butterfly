@@ -1,0 +1,40 @@
+organ,source,target,source_type,target_type,vessel_type,source_int,target_int,source_coord,target_coord
+blood_vasculature,UBERON:0002080,UBERON:0002333,unknown,unknown,artery,1000000,1000000,,
+blood_vasculature,UBERON:0002333,UBERON:0001652,unknown,unknown,artery,1000000,1000000,,
+blood_vasculature,UBERON:0001652,FMA:8755,unknown,unknown,artery,1000000,1000000,,
+blood_vasculature,FMA:8755,FMA:9311,unknown,unknown,artery,1000000,1000000,,
+blood_vasculature,FMA:9311,FMA:279896,unknown,unknown,artery,1000000,1000000,,
+blood_vasculature,FMA:279896,ASCTB-TEMP:intra-acinar arteriole,unknown,unknown,artery,1000000,1000000,,
+blood_vasculature,ASCTB-TEMP:intra-acinar arteriole,ASCTB-TEMP:pre-alveolar capillary,unknown,unknown,artery,1000000,1000000,,
+blood_vasculature,ASCTB-TEMP:pre-alveolar capillary,ASCTB-TEMP:alveolar capillary,unknown,unknown,artery,1000000,1000000,,
+blood_vasculature,UBERON:0002079,UBERON:0002016,unknown,unknown,vein,1000000,1000000,,
+blood_vasculature,UBERON:0002016,UBERON:8600051,unknown,unknown,vein,1000000,1000000,,
+blood_vasculature,UBERON:8600051,FMA:9413,unknown,unknown,vein,1000000,1000000,,
+blood_vasculature,FMA:9413,ASCTB-TEMP:pulmonary venule,unknown,unknown,vein,1000000,1000000,,
+blood_vasculature,ASCTB-TEMP:pulmonary venule,ASCTB-TEMP:intra-acinar venule,unknown,unknown,vein,1000000,1000000,,
+blood_vasculature,ASCTB-TEMP:intra-acinar venule,ASCTB-TEMP:post-alveolar capillary,unknown,unknown,vein,1000000,1000000,,
+blood_vasculature,ASCTB-TEMP:post-alveolar capillary,ASCTB-TEMP:alveolar capillary,unknown,unknown,vein,1000000,1000000,,
+blood_vasculature,,UBERON:0002299,unknown,AS,artery,1000000,113,,"(1499.944562003441, 1123.315319649701)"
+blood_vasculature,,UBERON:0002299,unknown,AS,vein,1000000,113,,"(1499.944562003441, 1123.315319649701)"
+blood_vasculature,UBERON:0002084,UBERON:0000947,unknown,unknown,artery,1000000,1000000,,
+blood_vasculature,UBERON:0000947,UBERON:0001496,unknown,unknown,artery,1000000,1000000,,
+blood_vasculature,UBERON:0001496,UBERON:0001508,unknown,unknown,artery,1000000,1000000,,
+blood_vasculature,UBERON:0001508,UBERON:0001514,unknown,unknown,artery,1000000,1000000,,
+blood_vasculature,UBERON:0001514,UBERON:0002345,unknown,unknown,artery,1000000,1000000,,
+blood_vasculature,UBERON:0002345,UBERON:0002040$$5258,unknown,unknown,artery,1000000,196,,"(898.7501939546555, 937.3348076125917)"
+blood_vasculature,UBERON:0002040$$5258,ASCTB-TEMP:bronchial arteriole,unknown,unknown,artery,196,1000000,"(898.7501939546555, 937.3348076125917)",
+blood_vasculature,ASCTB-TEMP:bronchial arteriole,ASCTB-TEMP:bronchial capillary,unknown,unknown,artery,1000000,1000000,,
+blood_vasculature,UBERON:0002078,UBERON:0001585,unknown,unknown,vein,1000000,1000000,,
+blood_vasculature,UBERON:0001585,UBERON:0001594,unknown,unknown,vein,1000000,1000000,,
+blood_vasculature,UBERON:0001594,UBERON:0006665,unknown,unknown,vein,1000000,1000000,,
+blood_vasculature,UBERON:0006665,UBERON:0001592$$5263,unknown,unknown,vein,1000000,202,,"(892.2137995808431, 940.2777747360082)"
+blood_vasculature,UBERON:0001592$$5263,ASCTB-TEMP:bronchial venule,unknown,unknown,vein,202,1000000,"(892.2137995808431, 940.2777747360082)",
+blood_vasculature,ASCTB-TEMP:bronchial venule,ASCTB-TEMP:bronchial capillary,unknown,unknown,vein,1000000,1000000,,
+blood_vasculature,,UBERON:8410043,unknown,AS,artery,1000000,8,,"(1006.1456853028551, 452.9401903069294)"
+blood_vasculature,,UBERON:8410043,unknown,AS,vein,1000000,8,,"(1006.1456853028551, 452.9401903069294)"
+blood_vasculature,,UBERON:0002299$$5245,unknown,AS,artery,1000000,131,,"(1330.635903858318, 1240.9620663523654)"
+blood_vasculature,,UBERON:0002299$$5245,unknown,AS,vein,1000000,131,,"(1330.635903858318, 1240.9620663523654)"
+blood_vasculature,,UBERON:8410043$$5184,unknown,AS,artery,1000000,34,,"(1164.1355751801389, 552.4974765797099)"
+blood_vasculature,,UBERON:8410043$$5207,unknown,AS,artery,1000000,66,,"(1367.5289588956002, 751.4856881220358)"
+blood_vasculature,,UBERON:8410043$$5184,unknown,AS,vein,1000000,34,,"(1164.1355751801389, 552.4974765797099)"
+blood_vasculature,,UBERON:8410043$$5207,unknown,AS,vein,1000000,66,,"(1367.5289588956002, 751.4856881220358)"

@@ -1,0 +1,2125 @@
+{
+    "$schema": "https://vega.github.io/schema/vega/v5.json",
+    "description": "An example of a radial layout for a node-link diagram of hierarchical data.",
+    "width": 1720,
+    "height": 1720,
+    "padding": {
+        "top": 2,
+        "left": 2,
+        "right": 2,
+        "bottom": 2
+    },
+    "autosize": {
+        "type": "fit",
+        "contains": "padding"
+    },
+    "signals": [
+        {
+            "name": "labels",
+            "value": false,
+            "bind": {
+                "input": "checkbox"
+            }
+        },
+        {
+            "name": "radius",
+            "value": 865,
+            "bind": {
+                "input": "range",
+                "min": 20,
+                "max": 4000
+            }
+        },
+        {
+            "name": "extent",
+            "value": 160,
+            "bind": {
+                "input": "range",
+                "min": 0,
+                "max": 360,
+                "step": 1
+            }
+        },
+        {
+            "name": "rotate",
+            "value": 15,
+            "bind": {
+                "input": "range",
+                "min": 0,
+                "max": 360,
+                "step": 1
+            }
+        },
+        {
+            "name": "layout",
+            "value": "tidy",
+            "bind": {
+                "input": "radio",
+                "options": [
+                    "tidy",
+                    "cluster"
+                ]
+            }
+        },
+        {
+            "name": "links",
+            "value": "diagonal",
+            "bind": {
+                "input": "select",
+                "options": [
+                    "line",
+                    "curve",
+                    "diagonal",
+                    "orthogonal"
+                ]
+            }
+        },
+        {
+            "name": "originX",
+            "update": "width / 2"
+        },
+        {
+            "name": "originY",
+            "update": "height / 2"
+        }
+    ],
+    "data": [
+        {
+            "name": "tree",
+            "values": [
+                {
+                    "id": 0,
+                    "name": "",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0013702",
+                    "id_from_ontology_id": "UBERON:0013702",
+                    "color": "#984ea3",
+                    "organ": "body"
+                },
+                {
+                    "id": 2,
+                    "name": "heart left ventricle",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0002084",
+                    "id_from_ontology_id": "UBERON:0002084",
+                    "color": "#984ea3",
+                    "organ": "blood_vasculature",
+                    "parent": 0
+                },
+                {
+                    "id": 3,
+                    "name": "left ventricle myocardium",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0006566",
+                    "id_from_ontology_id": "UBERON:0006566",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 2
+                },
+                {
+                    "id": 4,
+                    "name": "cardiac muscle cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000746",
+                    "id_from_ontology_id": "CL:0000746$$3742",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 3
+                },
+                {
+                    "id": 5,
+                    "name": "Purkinje myocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0002068",
+                    "id_from_ontology_id": "CL:0002068",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 3
+                },
+                {
+                    "id": 6,
+                    "name": "cardiac ventricle fibroblast",
+                    "type": "CT",
+                    "ontology_id": "CL:2000066",
+                    "id_from_ontology_id": "CL:2000066",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 3
+                },
+                {
+                    "id": 7,
+                    "name": "macrophage",
+                    "type": "CT",
+                    "ontology_id": "CL:0000235",
+                    "id_from_ontology_id": "CL:0000235$$3743",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 3
+                },
+                {
+                    "id": 8,
+                    "name": "telocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0017004",
+                    "id_from_ontology_id": "CL:0017004$$3753",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 3
+                },
+                {
+                    "id": 9,
+                    "name": "dendritic cell, human",
+                    "type": "CT",
+                    "ontology_id": "CL:0001056",
+                    "id_from_ontology_id": "CL:0001056$$3754",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 3
+                },
+                {
+                    "id": 10,
+                    "name": "adipocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0000136",
+                    "id_from_ontology_id": "CL:0000136$$3755",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 3
+                },
+                {
+                    "id": 11,
+                    "name": "mast cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000097",
+                    "id_from_ontology_id": "CL:0000097$$3756",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 3
+                },
+                {
+                    "id": 12,
+                    "name": "endothelial cell of lymphatic vessel",
+                    "type": "CT",
+                    "ontology_id": "CL:0002138",
+                    "id_from_ontology_id": "CL:0002138$$3757",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 3
+                },
+                {
+                    "id": 13,
+                    "name": "B cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000236",
+                    "id_from_ontology_id": "CL:0000236$$3758",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 3
+                },
+                {
+                    "id": 14,
+                    "name": "immature NK T cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000914",
+                    "id_from_ontology_id": "CL:0000914$$3759",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 3
+                },
+                {
+                    "id": 15,
+                    "name": "innate lymphoid cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0001065",
+                    "id_from_ontology_id": "CL:0001065$$3760",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 3
+                },
+                {
+                    "id": 16,
+                    "name": "endocardial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0002350",
+                    "id_from_ontology_id": "CL:0002350$$3761",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 3
+                },
+                {
+                    "id": 17,
+                    "name": "vasculature",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0002049",
+                    "id_from_ontology_id": "UBERON:0002049$$3744",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 2
+                },
+                {
+                    "id": 18,
+                    "name": "blood vessel endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000071",
+                    "id_from_ontology_id": "CL:0000071$$3745",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 17
+                },
+                {
+                    "id": 19,
+                    "name": "vascular associated smooth muscle cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000359",
+                    "id_from_ontology_id": "CL:0000359$$3746",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 17
+                },
+                {
+                    "id": 20,
+                    "name": "cardiac ventricle fibroblast",
+                    "type": "CT",
+                    "ontology_id": "CL:2000066",
+                    "id_from_ontology_id": "CL:2000066$$3747",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 17
+                },
+                {
+                    "id": 21,
+                    "name": "capillary",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0001982",
+                    "id_from_ontology_id": "UBERON:0001982$$3748",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 2
+                },
+                {
+                    "id": 22,
+                    "name": "capillary endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0002144",
+                    "id_from_ontology_id": "CL:0002144$$3749",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 21
+                },
+                {
+                    "id": 23,
+                    "name": "pericyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0000669",
+                    "id_from_ontology_id": "CL:0000669$$3750",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 21
+                },
+                {
+                    "id": 24,
+                    "name": "venule",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0001979",
+                    "id_from_ontology_id": "UBERON:0001979$$3751",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 2
+                },
+                {
+                    "id": 25,
+                    "name": "pericyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0000669",
+                    "id_from_ontology_id": "CL:0000669$$3752",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 24
+                },
+                {
+                    "id": 26,
+                    "name": "Diagonal branch of anterior descending branch of left coronary artery",
+                    "type": "AS",
+                    "ontology_id": "FMA:3860",
+                    "id_from_ontology_id": "FMA:3860$$3762",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 2
+                },
+                {
+                    "id": 27,
+                    "name": "endothelial cell of artery",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$3763",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 26
+                },
+                {
+                    "id": 28,
+                    "name": "blood vessel endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000071",
+                    "id_from_ontology_id": "CL:0000071$$3764",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 26
+                },
+                {
+                    "id": 29,
+                    "name": "fibroblast",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3765",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 26
+                },
+                {
+                    "id": 30,
+                    "name": "Left marginal artery",
+                    "type": "AS",
+                    "ontology_id": "FMA:3902",
+                    "id_from_ontology_id": "FMA:3902",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 2
+                },
+                {
+                    "id": 31,
+                    "name": "endothelial cell of artery",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$3766",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 30
+                },
+                {
+                    "id": 32,
+                    "name": "blood vessel endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000071",
+                    "id_from_ontology_id": "CL:0000071$$3767",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 30
+                },
+                {
+                    "id": 33,
+                    "name": "fibroblast",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3768",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 30
+                },
+                {
+                    "id": 34,
+                    "name": "Posterior ventricular branch of right coronary artery",
+                    "type": "AS",
+                    "ontology_id": "FMA:3835",
+                    "id_from_ontology_id": "FMA:3835",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 2
+                },
+                {
+                    "id": 35,
+                    "name": "endothelial cell of artery",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$3769",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 34
+                },
+                {
+                    "id": 36,
+                    "name": "blood vessel endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000071",
+                    "id_from_ontology_id": "CL:0000071$$3770",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 34
+                },
+                {
+                    "id": 37,
+                    "name": "fibroblast",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3771",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 34
+                },
+                {
+                    "id": 38,
+                    "name": "left marginal vein",
+                    "type": "AS",
+                    "ontology_id": "FMA:4708",
+                    "id_from_ontology_id": "FMA:4708$$3772",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 2
+                },
+                {
+                    "id": 39,
+                    "name": "endothelial cell of artery",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$3773",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 38
+                },
+                {
+                    "id": 40,
+                    "name": "blood vessel endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000071",
+                    "id_from_ontology_id": "CL:0000071$$3774",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 38
+                },
+                {
+                    "id": 41,
+                    "name": "fibroblast",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3775",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 38
+                },
+                {
+                    "id": 42,
+                    "name": "Posterior vein of left ventricle",
+                    "type": "AS",
+                    "ontology_id": "FMA:4712",
+                    "id_from_ontology_id": "FMA:4712$$3776",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 2
+                },
+                {
+                    "id": 43,
+                    "name": "endothelial cell of artery",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$3777",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 42
+                },
+                {
+                    "id": 44,
+                    "name": "blood vessel endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000071",
+                    "id_from_ontology_id": "CL:0000071$$3778",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 42
+                },
+                {
+                    "id": 45,
+                    "name": "fibroblast",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3779",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 42
+                },
+                {
+                    "id": 46,
+                    "name": "heart right ventricle",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0002080",
+                    "id_from_ontology_id": "UBERON:0002080",
+                    "color": "#984ea3",
+                    "organ": "blood_vasculature",
+                    "parent": 0
+                },
+                {
+                    "id": 47,
+                    "name": "right ventricle myocardium",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0006567",
+                    "id_from_ontology_id": "UBERON:0006567",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 46
+                },
+                {
+                    "id": 48,
+                    "name": "mast cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000097",
+                    "id_from_ontology_id": "CL:0000097$$3821",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 47
+                },
+                {
+                    "id": 49,
+                    "name": "endothelial cell of lymphatic vessel",
+                    "type": "CT",
+                    "ontology_id": "CL:0002138",
+                    "id_from_ontology_id": "CL:0002138$$3822",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 47
+                },
+                {
+                    "id": 50,
+                    "name": "B cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000236",
+                    "id_from_ontology_id": "CL:0000236$$3823",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 47
+                },
+                {
+                    "id": 51,
+                    "name": "immature NK T cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000914",
+                    "id_from_ontology_id": "CL:0000914$$3824",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 47
+                },
+                {
+                    "id": 52,
+                    "name": "innate lymphoid cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0001065",
+                    "id_from_ontology_id": "CL:0001065$$3825",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 47
+                },
+                {
+                    "id": 53,
+                    "name": "endocardial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0002350",
+                    "id_from_ontology_id": "CL:0002350$$3826",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 47
+                },
+                {
+                    "id": 54,
+                    "name": "cardiac muscle cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000746",
+                    "id_from_ontology_id": "CL:0000746$$3827",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 47
+                },
+                {
+                    "id": 55,
+                    "name": "Purkinje myocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0002068",
+                    "id_from_ontology_id": "CL:0002068$$3828",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 47
+                },
+                {
+                    "id": 56,
+                    "name": "cardiac ventricle fibroblast",
+                    "type": "CT",
+                    "ontology_id": "CL:2000066",
+                    "id_from_ontology_id": "CL:2000066$$3829",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 47
+                },
+                {
+                    "id": 57,
+                    "name": "macrophage",
+                    "type": "CT",
+                    "ontology_id": "CL:0000235",
+                    "id_from_ontology_id": "CL:0000235$$3830",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 47
+                },
+                {
+                    "id": 58,
+                    "name": "telocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0017004",
+                    "id_from_ontology_id": "CL:0017004$$3852",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 47
+                },
+                {
+                    "id": 59,
+                    "name": "lymphocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0000542",
+                    "id_from_ontology_id": "CL:0000542$$3853",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 47
+                },
+                {
+                    "id": 60,
+                    "name": "dendritic cell, human",
+                    "type": "CT",
+                    "ontology_id": "CL:0001056",
+                    "id_from_ontology_id": "CL:0001056$$3854",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 47
+                },
+                {
+                    "id": 61,
+                    "name": "adipocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0000136",
+                    "id_from_ontology_id": "CL:0000136$$3855",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 47
+                },
+                {
+                    "id": 62,
+                    "name": "conus artery",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0039232",
+                    "id_from_ontology_id": "UBERON:0039232$$3831",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 46
+                },
+                {
+                    "id": 63,
+                    "name": "endothelial cell of artery",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$3832",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 62
+                },
+                {
+                    "id": 64,
+                    "name": "blood vessel endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000071",
+                    "id_from_ontology_id": "CL:0000071$$3833",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 62
+                },
+                {
+                    "id": 65,
+                    "name": "fibroblast",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3834",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 62
+                },
+                {
+                    "id": 66,
+                    "name": "right marginal artery",
+                    "type": "AS",
+                    "ontology_id": "FMA:3818",
+                    "id_from_ontology_id": "FMA:3818$$3835",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 46
+                },
+                {
+                    "id": 67,
+                    "name": "endothelial cell of artery",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$3836",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 66
+                },
+                {
+                    "id": 68,
+                    "name": "blood vessel endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000071",
+                    "id_from_ontology_id": "CL:0000071$$3837",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 66
+                },
+                {
+                    "id": 69,
+                    "name": "fibroblast",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3838",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 66
+                },
+                {
+                    "id": 70,
+                    "name": "Anterior cardiac vein",
+                    "type": "AS",
+                    "ontology_id": "FMA:76767",
+                    "id_from_ontology_id": "FMA:76767$$3839",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 46
+                },
+                {
+                    "id": 71,
+                    "name": "endothelial cell of artery",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$3840",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 70
+                },
+                {
+                    "id": 72,
+                    "name": "blood vessel endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000071",
+                    "id_from_ontology_id": "CL:0000071$$3841",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 70
+                },
+                {
+                    "id": 73,
+                    "name": "fibroblast",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3842",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 70
+                },
+                {
+                    "id": 74,
+                    "name": "vasculature",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0002049",
+                    "id_from_ontology_id": "UBERON:0002049$$3843",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 46
+                },
+                {
+                    "id": 75,
+                    "name": "blood vessel endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000071",
+                    "id_from_ontology_id": "CL:0000071$$3844",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 74
+                },
+                {
+                    "id": 76,
+                    "name": "vascular associated smooth muscle cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000359",
+                    "id_from_ontology_id": "CL:0000359$$3845",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 74
+                },
+                {
+                    "id": 77,
+                    "name": "fibroblast",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3846",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 74
+                },
+                {
+                    "id": 78,
+                    "name": "capillary",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0001982",
+                    "id_from_ontology_id": "UBERON:0001982$$3847",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 46
+                },
+                {
+                    "id": 79,
+                    "name": "pericyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0000669",
+                    "id_from_ontology_id": "CL:0000669$$3848",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 78
+                },
+                {
+                    "id": 80,
+                    "name": "capillary endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0002144",
+                    "id_from_ontology_id": "CL:0002144$$3849",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 78
+                },
+                {
+                    "id": 81,
+                    "name": "venule",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0001979",
+                    "id_from_ontology_id": "UBERON:0001979$$3850",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 46
+                },
+                {
+                    "id": 82,
+                    "name": "pericyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0000669",
+                    "id_from_ontology_id": "CL:0000669$$3851",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 81
+                },
+                {
+                    "id": 83,
+                    "name": "moderator band",
+                    "type": "AS",
+                    "ontology_id": "UBERON:8470002",
+                    "id_from_ontology_id": "UBERON:8470002",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 46
+                },
+                {
+                    "id": 84,
+                    "name": "cardiac muscle cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000746",
+                    "id_from_ontology_id": "CL:0000746$$3856",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 83
+                },
+                {
+                    "id": 85,
+                    "name": "Purkinje myocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0002068",
+                    "id_from_ontology_id": "CL:0002068$$3857",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 83
+                },
+                {
+                    "id": 86,
+                    "name": "fibroblast",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3858",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 83
+                },
+                {
+                    "id": 87,
+                    "name": "macrophage",
+                    "type": "CT",
+                    "ontology_id": "CL:0000235",
+                    "id_from_ontology_id": "CL:0000235$$3859",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 83
+                },
+                {
+                    "id": 88,
+                    "name": "blood vessel endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000071",
+                    "id_from_ontology_id": "CL:0000071$$3860",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 83
+                },
+                {
+                    "id": 89,
+                    "name": "vascular associated smooth muscle cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000359",
+                    "id_from_ontology_id": "CL:0000359$$3861",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 83
+                },
+                {
+                    "id": 90,
+                    "name": "telocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0017004",
+                    "id_from_ontology_id": "CL:0017004$$3862",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 83
+                },
+                {
+                    "id": 91,
+                    "name": "lymphocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0000542",
+                    "id_from_ontology_id": "CL:0000542$$3863",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 83
+                },
+                {
+                    "id": 92,
+                    "name": "dendritic cell, human",
+                    "type": "CT",
+                    "ontology_id": "CL:0001056",
+                    "id_from_ontology_id": "CL:0001056$$3864",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 83
+                },
+                {
+                    "id": 93,
+                    "name": "atrioventricular region",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0011820",
+                    "id_from_ontology_id": "UBERON:0011820",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 0
+                },
+                {
+                    "id": 94,
+                    "name": "circumflex branch of left coronary artery",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0035422",
+                    "id_from_ontology_id": "UBERON:0035422$$3683",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 93
+                },
+                {
+                    "id": 95,
+                    "name": "endothelial cell of artery",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$3684",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 94
+                },
+                {
+                    "id": 96,
+                    "name": "smooth muscle cell of the coronary artery",
+                    "type": "CT",
+                    "ontology_id": "CL:0002592",
+                    "id_from_ontology_id": "CL:0002592$$3685",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 94
+                },
+                {
+                    "id": 97,
+                    "name": "fibroblast",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3686",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 94
+                },
+                {
+                    "id": 98,
+                    "name": "Atrioventricular node branch of right coronary artery",
+                    "type": "AS",
+                    "ontology_id": "FMA:3851",
+                    "id_from_ontology_id": "FMA:3851$$3687",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 93
+                },
+                {
+                    "id": 99,
+                    "name": "endothelial cell of artery",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$3688",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 98
+                },
+                {
+                    "id": 100,
+                    "name": "smooth muscle cell of the coronary artery",
+                    "type": "CT",
+                    "ontology_id": "CL:0002592",
+                    "id_from_ontology_id": "CL:0002592$$3689",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 98
+                },
+                {
+                    "id": 101,
+                    "name": "fibroblast",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3690",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 98
+                },
+                {
+                    "id": 102,
+                    "name": "coronary sinus",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0005438",
+                    "id_from_ontology_id": "UBERON:0005438$$3691",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 93
+                },
+                {
+                    "id": 103,
+                    "name": "endothelial cell of artery",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$3692",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 102
+                },
+                {
+                    "id": 104,
+                    "name": "vascular associated smooth muscle cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000359",
+                    "id_from_ontology_id": "CL:0000359$$3693",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 102
+                },
+                {
+                    "id": 105,
+                    "name": "fibroblast",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3694",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 102
+                },
+                {
+                    "id": 106,
+                    "name": "atrioventricular node",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0002352",
+                    "id_from_ontology_id": "UBERON:0002352",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 93
+                },
+                {
+                    "id": 107,
+                    "name": "cardiac pacemaker cell of sinoatrial node",
+                    "type": "CT",
+                    "ontology_id": "CL:1000477",
+                    "id_from_ontology_id": "CL:1000477$$3695",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 106
+                },
+                {
+                    "id": 108,
+                    "name": "adipocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0000136",
+                    "id_from_ontology_id": "CL:0000136$$3696",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 106
+                },
+                {
+                    "id": 109,
+                    "name": "right coronary artery",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0001625",
+                    "id_from_ontology_id": "UBERON:0001625$$3697",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 93
+                },
+                {
+                    "id": 110,
+                    "name": "endothelial cell of artery",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$3698",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 109
+                },
+                {
+                    "id": 111,
+                    "name": "smooth muscle cell of the coronary artery",
+                    "type": "CT",
+                    "ontology_id": "CL:0002592",
+                    "id_from_ontology_id": "CL:0002592$$3699",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 109
+                },
+                {
+                    "id": 112,
+                    "name": "fibroblast",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3700",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 109
+                },
+                {
+                    "id": 113,
+                    "name": "small cardiac vein",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0035374",
+                    "id_from_ontology_id": "UBERON:0035374$$3701",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 93
+                },
+                {
+                    "id": 114,
+                    "name": "endothelial cell of artery",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$3702",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 113
+                },
+                {
+                    "id": 115,
+                    "name": "smooth muscle cell of the coronary artery",
+                    "type": "CT",
+                    "ontology_id": "CL:0002592",
+                    "id_from_ontology_id": "CL:0002592$$3703",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 113
+                },
+                {
+                    "id": 116,
+                    "name": "fibroblast",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3704",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 113
+                },
+                {
+                    "id": 117,
+                    "name": "interventricular septum",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0002094",
+                    "id_from_ontology_id": "UBERON:0002094",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 0
+                },
+                {
+                    "id": 118,
+                    "name": "left anterior descending artery",
+                    "type": "AS",
+                    "ontology_id": "UBERON:8600102",
+                    "id_from_ontology_id": "UBERON:8600102$$3780",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 117
+                },
+                {
+                    "id": 119,
+                    "name": "endothelial cell of artery",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$3781",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 118
+                },
+                {
+                    "id": 120,
+                    "name": "blood vessel endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000071",
+                    "id_from_ontology_id": "CL:0000071$$3782",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 118
+                },
+                {
+                    "id": 121,
+                    "name": "fibroblast",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3783",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 118
+                },
+                {
+                    "id": 122,
+                    "name": "posterior descending artery",
+                    "type": "AS",
+                    "ontology_id": "FMA:3840",
+                    "id_from_ontology_id": "FMA:3840$$3784",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 117
+                },
+                {
+                    "id": 123,
+                    "name": "endothelial cell of artery",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$3785",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 122
+                },
+                {
+                    "id": 124,
+                    "name": "blood vessel endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000071",
+                    "id_from_ontology_id": "CL:0000071$$3786",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 122
+                },
+                {
+                    "id": 125,
+                    "name": "fibroblast",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3787",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 122
+                },
+                {
+                    "id": 126,
+                    "name": "septal perforating artery",
+                    "type": "AS",
+                    "ontology_id": "UBERON:8600063",
+                    "id_from_ontology_id": "UBERON:8600063$$3788",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 117
+                },
+                {
+                    "id": 127,
+                    "name": "endothelial cell of artery",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$3789",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 126
+                },
+                {
+                    "id": 128,
+                    "name": "blood vessel endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000071",
+                    "id_from_ontology_id": "CL:0000071$$3790",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 126
+                },
+                {
+                    "id": 129,
+                    "name": "fibroblast",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3791",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 126
+                },
+                {
+                    "id": 130,
+                    "name": "great vein of heart",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0006958",
+                    "id_from_ontology_id": "UBERON:0006958$$3792",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 117
+                },
+                {
+                    "id": 131,
+                    "name": "endothelial cell of artery",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$3793",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 130
+                },
+                {
+                    "id": 132,
+                    "name": "blood vessel endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000071",
+                    "id_from_ontology_id": "CL:0000071$$3794",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 130
+                },
+                {
+                    "id": 133,
+                    "name": "fibroblast",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3795",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 130
+                },
+                {
+                    "id": 134,
+                    "name": "middle cardiac vein",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0009687",
+                    "id_from_ontology_id": "UBERON:0009687$$3796",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 117
+                },
+                {
+                    "id": 135,
+                    "name": "endothelial cell of artery",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$3797",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 134
+                },
+                {
+                    "id": 136,
+                    "name": "blood vessel endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000071",
+                    "id_from_ontology_id": "CL:0000071$$3798",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 134
+                },
+                {
+                    "id": 137,
+                    "name": "fibroblast",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3799",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 134
+                },
+                {
+                    "id": 138,
+                    "name": "capillary",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0001982",
+                    "id_from_ontology_id": "UBERON:0001982$$3800",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 117
+                },
+                {
+                    "id": 139,
+                    "name": "pericyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0000669",
+                    "id_from_ontology_id": "CL:0000669$$3801",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 138
+                },
+                {
+                    "id": 140,
+                    "name": "capillary endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0002144",
+                    "id_from_ontology_id": "CL:0002144$$3802",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 138
+                },
+                {
+                    "id": 141,
+                    "name": "venule",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0001979",
+                    "id_from_ontology_id": "UBERON:0001979$$3803",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 117
+                },
+                {
+                    "id": 142,
+                    "name": "pericyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0000669",
+                    "id_from_ontology_id": "CL:0000669$$3804",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 141
+                },
+                {
+                    "id": 143,
+                    "name": "bundle of His",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0002353",
+                    "id_from_ontology_id": "UBERON:0002353",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 117
+                },
+                {
+                    "id": 144,
+                    "name": "cardiac pacemaker cell of sinoatrial node",
+                    "type": "CT",
+                    "ontology_id": "CL:1000477",
+                    "id_from_ontology_id": "CL:1000477$$3805",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 143
+                },
+                {
+                    "id": 145,
+                    "name": "cardiac muscle tissue of interventricular septum",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0003383",
+                    "id_from_ontology_id": "UBERON:0003383$$3806",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 117
+                },
+                {
+                    "id": 146,
+                    "name": "cardiac muscle cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000746",
+                    "id_from_ontology_id": "CL:0000746$$3807",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 145
+                },
+                {
+                    "id": 147,
+                    "name": "Purkinje myocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0002068",
+                    "id_from_ontology_id": "CL:0002068$$3808",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 145
+                },
+                {
+                    "id": 148,
+                    "name": "fibroblast",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3809",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 145
+                },
+                {
+                    "id": 149,
+                    "name": "macrophage",
+                    "type": "CT",
+                    "ontology_id": "CL:0000235",
+                    "id_from_ontology_id": "CL:0000235$$3810",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 145
+                },
+                {
+                    "id": 150,
+                    "name": "telocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0017004",
+                    "id_from_ontology_id": "CL:0017004$$3811",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 145
+                },
+                {
+                    "id": 151,
+                    "name": "lymphocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0000542",
+                    "id_from_ontology_id": "CL:0000542$$3812",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 145
+                },
+                {
+                    "id": 152,
+                    "name": "dendritic cell, human",
+                    "type": "CT",
+                    "ontology_id": "CL:0001056",
+                    "id_from_ontology_id": "CL:0001056$$3813",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 145
+                },
+                {
+                    "id": 153,
+                    "name": "adipocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0000136",
+                    "id_from_ontology_id": "CL:0000136$$3814",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 145
+                },
+                {
+                    "id": 154,
+                    "name": "mast cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000097",
+                    "id_from_ontology_id": "CL:0000097$$3815",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 145
+                },
+                {
+                    "id": 155,
+                    "name": "endothelial cell of lymphatic vessel",
+                    "type": "CT",
+                    "ontology_id": "CL:0002138",
+                    "id_from_ontology_id": "CL:0002138$$3816",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 145
+                },
+                {
+                    "id": 156,
+                    "name": "B cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000236",
+                    "id_from_ontology_id": "CL:0000236$$3817",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 145
+                },
+                {
+                    "id": 157,
+                    "name": "immature NK T cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000914",
+                    "id_from_ontology_id": "CL:0000914$$3818",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 145
+                },
+                {
+                    "id": 158,
+                    "name": "innate lymphoid cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0001065",
+                    "id_from_ontology_id": "CL:0001065$$3819",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 145
+                },
+                {
+                    "id": 159,
+                    "name": "endocardial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0002350",
+                    "id_from_ontology_id": "CL:0002350$$3820",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 145
+                },
+                {
+                    "id": 160,
+                    "name": "cardiac valve",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0000946",
+                    "id_from_ontology_id": "UBERON:0000946",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 0
+                },
+                {
+                    "id": 161,
+                    "name": "Tricuspid valve",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0002134",
+                    "id_from_ontology_id": "UBERON:0002134",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 160
+                },
+                {
+                    "id": 162,
+                    "name": "valve interstitial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:4030032",
+                    "id_from_ontology_id": "CL:4030032",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 161
+                },
+                {
+                    "id": 163,
+                    "name": "endocardial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0002350",
+                    "id_from_ontology_id": "CL:0002350$$3865",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 161
+                },
+                {
+                    "id": 164,
+                    "name": "Pulmonary Valve",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0002146",
+                    "id_from_ontology_id": "UBERON:0002146",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 160
+                },
+                {
+                    "id": 165,
+                    "name": "valve interstitial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:4030032",
+                    "id_from_ontology_id": "CL:4030032$$3866",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 164
+                },
+                {
+                    "id": 166,
+                    "name": "endocardial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0002350",
+                    "id_from_ontology_id": "CL:0002350$$3867",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 164
+                },
+                {
+                    "id": 167,
+                    "name": "Mitral valve",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0002135",
+                    "id_from_ontology_id": "UBERON:0002135",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 160
+                },
+                {
+                    "id": 168,
+                    "name": "valve interstitial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:4030032",
+                    "id_from_ontology_id": "CL:4030032$$3868",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 167
+                },
+                {
+                    "id": 169,
+                    "name": "endocardial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0002350",
+                    "id_from_ontology_id": "CL:0002350$$3869",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 167
+                },
+                {
+                    "id": 170,
+                    "name": "Aortic valve",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0002137",
+                    "id_from_ontology_id": "UBERON:0002137",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 160
+                },
+                {
+                    "id": 171,
+                    "name": "valve interstitial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:4030032",
+                    "id_from_ontology_id": "CL:4030032$$3870",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 170
+                },
+                {
+                    "id": 172,
+                    "name": "blood vessel endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000071",
+                    "id_from_ontology_id": "CL:0000071$$3871",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 170
+                },
+                {
+                    "id": 173,
+                    "name": "epicardium",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0002348",
+                    "id_from_ontology_id": "UBERON:0002348",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 0
+                },
+                {
+                    "id": 174,
+                    "name": "mesothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000077",
+                    "id_from_ontology_id": "CL:0000077",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 173
+                },
+                {
+                    "id": 175,
+                    "name": "epicardial adipocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:1000309",
+                    "id_from_ontology_id": "CL:1000309",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 173
+                },
+                {
+                    "id": 176,
+                    "name": "Schwann cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0002573",
+                    "id_from_ontology_id": "CL:0002573$$3872",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 173
+                },
+                {
+                    "id": 177,
+                    "name": "vascular associated smooth muscle cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000359",
+                    "id_from_ontology_id": "CL:0000359$$3873",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 173
+                },
+                {
+                    "id": 178,
+                    "name": "fibroblast",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3874",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 173
+                },
+                {
+                    "id": 179,
+                    "name": "blood vessel endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000071",
+                    "id_from_ontology_id": "CL:0000071$$3875",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 173
+                },
+                {
+                    "id": 180,
+                    "name": "macrophage",
+                    "type": "CT",
+                    "ontology_id": "CL:0000235",
+                    "id_from_ontology_id": "CL:0000235$$3876",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 173
+                },
+                {
+                    "id": 181,
+                    "name": "cardiac muscle tissue of interventricular septum",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0003383",
+                    "id_from_ontology_id": "UBERON:0003383$$3877",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 173
+                },
+                {
+                    "id": 182,
+                    "name": "mast cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000097",
+                    "id_from_ontology_id": "CL:0000097$$3878",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 181
+                },
+                {
+                    "id": 183,
+                    "name": "endothelial cell of lymphatic vessel",
+                    "type": "CT",
+                    "ontology_id": "CL:0002138",
+                    "id_from_ontology_id": "CL:0002138$$3879",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 181
+                },
+                {
+                    "id": 184,
+                    "name": "B cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000236",
+                    "id_from_ontology_id": "CL:0000236$$3880",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 181
+                },
+                {
+                    "id": 185,
+                    "name": "immature NK T cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000914",
+                    "id_from_ontology_id": "CL:0000914$$3881",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 181
+                }
+            ],
+            "transform": [
+                {
+                    "type": "stratify",
+                    "key": "id",
+                    "parentKey": "parent"
+                },
+                {
+                    "type": "tree",
+                    "method": {
+                        "signal": "layout"
+                    },
+                    "size": [
+                        1,
+                        {
+                            "signal": "radius"
+                        }
+                    ],
+                    "as": [
+                        "alpha",
+                        "radius",
+                        "depth",
+                        "children"
+                    ]
+                },
+                {
+                    "type": "formula",
+                    "expr": "(rotate + extent * datum.alpha + 270) % 360",
+                    "as": "angle"
+                },
+                {
+                    "type": "formula",
+                    "expr": "PI * datum.angle / 180",
+                    "as": "radians"
+                },
+                {
+                    "type": "formula",
+                    "expr": "inrange(datum.angle, [90, 270])",
+                    "as": "leftside"
+                },
+                {
+                    "type": "formula",
+                    "expr": "originX + datum.radius * cos(datum.radians)",
+                    "as": "x"
+                },
+                {
+                    "type": "formula",
+                    "expr": "originY + datum.radius * sin(datum.radians)",
+                    "as": "y"
+                }
+            ]
+        },
+        {
+            "name": "links",
+            "source": "tree",
+            "transform": [
+                {
+                    "type": "treelinks"
+                },
+                {
+                    "type": "linkpath",
+                    "shape": {
+                        "signal": "links"
+                    },
+                    "orient": "radial",
+                    "sourceX": "source.radians",
+                    "sourceY": "source.radius",
+                    "targetX": "target.radians",
+                    "targetY": "target.radius"
+                }
+            ]
+        }
+    ],
+    "marks": [
+        {
+            "type": "path",
+            "from": {
+                "data": "links"
+            },
+            "encode": {
+                "update": {
+                    "x": {
+                        "signal": "originX"
+                    },
+                    "y": {
+                        "signal": "originY"
+                    },
+                    "path": {
+                        "field": "path"
+                    },
+                    "stroke": {
+                        "value": "#ccc"
+                    },
+                    "opacity": {
+                        "value": 0.7
+                    },
+                    "strokeWidth": {
+                        "value": 0.5
+                    }
+                }
+            }
+        },
+        {
+            "type": "symbol",
+            "from": {
+                "data": "tree"
+            },
+            "encode": {
+                "enter": {
+                    "size": {
+                        "value": 12
+                    },
+                    "stroke": {
+                        "value": "#fff"
+                    },
+                    "strokeWidth": {
+                        "value": 0.2
+                    }
+                },
+                "update": {
+                    "x": {
+                        "field": "x"
+                    },
+                    "y": {
+                        "field": "y"
+                    },
+                    "fill": {
+                        "field": "color"
+                    },
+                    "opacity": {
+                        "value": 0.3
+                    },
+                    "size": {
+                        "value": 40
+                    },
+                    "strokeWidth": {
+                        "value": 0.5
+                    }
+                }
+            }
+        },
+        {
+            "type": "text",
+            "from": {
+                "data": "tree"
+            },
+            "encode": {
+                "enter": {
+                    "text": {
+                        "field": "name"
+                    },
+                    "fontSize": {
+                        "value": 2
+                    },
+                    "baseline": {
+                        "value": "middle"
+                    }
+                },
+                "update": {
+                    "x": {
+                        "field": "x"
+                    },
+                    "y": {
+                        "field": "y"
+                    },
+                    "dx": {
+                        "value": 2
+                    },
+                    "angle": {
+                        "signal": "datum.leftside ? datum.angle - 180 : datum.angle"
+                    },
+                    "align": {
+                        "signal": "datum.leftside ? 'right' : 'left'"
+                    },
+                    "opacity": {
+                        "signal": "labels ? 0.5 : 1"
+                    },
+                    "fontSize": {
+                        "value": 6
+                    }
+                }
+            }
+        }
+    ],
+    "config": {},
+    "background": "white"
+}
