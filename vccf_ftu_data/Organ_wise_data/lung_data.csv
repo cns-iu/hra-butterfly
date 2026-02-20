@@ -1,0 +1,32 @@
+﻿FTU,Organ,FTUID,PathStep,PathVessel,PathVesselID,Type
+alveolus of lung,Lung,UBERON:0002299,1,right ventricle,UBERON:0002080,Artery
+alveolus of lung,Lung,UBERON:0002299,2,pulmonary trunk,UBERON:0002333,Artery
+alveolus of lung,Lung,UBERON:0002299,3,left pulmonary artery,UBERON:0001652,Artery
+alveolus of lung,Lung,UBERON:0002299,4,segmental pulmonary artery,FMA:8755,Artery
+alveolus of lung,Lung,UBERON:0002299,5,subsegmental pulmonary artery,FMA:9311,Artery
+alveolus of lung,Lung,UBERON:0002299,6,pulmonary arteriole,FMA:279896,Artery
+alveolus of lung,Lung,UBERON:0002299,7,intra-acinar arteriole,nan,Artery
+alveolus of lung,Lung,UBERON:0002299,8,pre-alveolar capillary,nan,Artery
+alveolus of lung,Lung,UBERON:0002299,9,alveolar capillary,nan,FTU
+alveolus of lung,Lung,UBERON:0002299,10,post-alveolar capillary,nan,Vein
+alveolus of lung,Lung,UBERON:0002299,11,intra-acinar venule,nan,Vein
+alveolus of lung,Lung,UBERON:0002299,12,pulmonary venule,nan,Vein
+alveolus of lung,Lung,UBERON:0002299,13,subsegmental pulmonary vein,FMA:9413,Vein
+alveolus of lung,Lung,UBERON:0002299,14,segmental pulmonary vein,FMA:9411,Vein
+alveolus of lung,Lung,UBERON:0002299,15,pulmonary vein,UBERON:0002016,Vein
+alveolus of lung,Lung,UBERON:0002299,16,left atrium,UBERON:0002079,Vein
+bronchus submucosal gland,Lung,UBERON:8410043,17,left ventricle,UBERON:0002084,Artery
+bronchus submucosal gland,Lung,UBERON:8410043,18,aorta,UBERON:0000947,Artery
+bronchus submucosal gland,Lung,UBERON:8410043,19,ascending aorta,UBERON:0001496,Artery
+bronchus submucosal gland,Lung,UBERON:8410043,20,aortic arch,UBERON:0001508,Artery
+bronchus submucosal gland,Lung,UBERON:8410043,21,descending aorta,UBERON:0001514,Artery
+bronchus submucosal gland,Lung,UBERON:8410043,22,descending thoracic aorta,UBERON:0002345,Artery
+bronchus submucosal gland,Lung,UBERON:8410043,23,bronchial artery,UBERON:0002040,Artery
+bronchus submucosal gland,Lung,UBERON:8410043,24,bronchial arteriole,nan,Artery
+bronchus submucosal gland,Lung,UBERON:8410043,25,bronchial capillary,nan,FTU
+bronchus submucosal gland,Lung,UBERON:8410043,26,bronchial venule,nan,Vein
+bronchus submucosal gland,Lung,UBERON:8410043,27,bronchial vein,UBERON:0001592,Vein
+bronchus submucosal gland,Lung,UBERON:8410043,28,accessory hemiazygos vein,UBERON:0006665,Vein
+bronchus submucosal gland,Lung,UBERON:8410043,29,azygos vein,UBERON:0001594,Vein
+bronchus submucosal gland,Lung,UBERON:8410043,30,superior vena cava,UBERON:0001585,Vein
+bronchus submucosal gland,Lung,UBERON:8410043,31,right atrium,UBERON:0002078,Vein

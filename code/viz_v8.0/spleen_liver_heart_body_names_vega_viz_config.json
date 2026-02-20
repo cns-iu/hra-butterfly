@@ -1,0 +1,4585 @@
+{
+    "$schema": "https://vega.github.io/schema/vega/v5.json",
+    "description": "An example of a radial layout for a node-link diagram of hierarchical data.",
+    "width": 1720,
+    "height": 1720,
+    "padding": {
+        "top": 2,
+        "left": 2,
+        "right": 2,
+        "bottom": 2
+    },
+    "autosize": {
+        "type": "fit",
+        "contains": "padding"
+    },
+    "signals": [
+        {
+            "name": "labels",
+            "value": false,
+            "bind": {
+                "input": "checkbox"
+            }
+        },
+        {
+            "name": "radius",
+            "value": 865,
+            "bind": {
+                "input": "range",
+                "min": 20,
+                "max": 4000
+            }
+        },
+        {
+            "name": "extent",
+            "value": 160,
+            "bind": {
+                "input": "range",
+                "min": 0,
+                "max": 360,
+                "step": 1
+            }
+        },
+        {
+            "name": "rotate",
+            "value": 15,
+            "bind": {
+                "input": "range",
+                "min": 0,
+                "max": 360,
+                "step": 1
+            }
+        },
+        {
+            "name": "layout",
+            "value": "tidy",
+            "bind": {
+                "input": "radio",
+                "options": [
+                    "tidy",
+                    "cluster"
+                ]
+            }
+        },
+        {
+            "name": "links",
+            "value": "diagonal",
+            "bind": {
+                "input": "select",
+                "options": [
+                    "line",
+                    "curve",
+                    "diagonal",
+                    "orthogonal"
+                ]
+            }
+        },
+        {
+            "name": "originX",
+            "update": "width / 2"
+        },
+        {
+            "name": "originY",
+            "update": "height / 2"
+        }
+    ],
+    "data": [
+        {
+            "name": "tree",
+            "values": [
+                {
+                    "id": 0,
+                    "name": "",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0013702",
+                    "id_from_ontology_id": "UBERON:0013702",
+                    "color": "#984ea3",
+                    "organ": "body"
+                },
+                {
+                    "id": 2,
+                    "name": "heart left ventricle",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0002084",
+                    "id_from_ontology_id": "UBERON:0002084",
+                    "color": "#984ea3",
+                    "organ": "blood_vasculature",
+                    "parent": 0
+                },
+                {
+                    "id": 3,
+                    "name": "left ventricle myocardium",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0006566",
+                    "id_from_ontology_id": "UBERON:0006566",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 2
+                },
+                {
+                    "id": 4,
+                    "name": "cardiac muscle cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000746",
+                    "id_from_ontology_id": "CL:0000746$$3742",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 3
+                },
+                {
+                    "id": 5,
+                    "name": "Purkinje myocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0002068",
+                    "id_from_ontology_id": "CL:0002068",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 3
+                },
+                {
+                    "id": 6,
+                    "name": "cardiac ventricle fibroblast",
+                    "type": "CT",
+                    "ontology_id": "CL:2000066",
+                    "id_from_ontology_id": "CL:2000066",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 3
+                },
+                {
+                    "id": 7,
+                    "name": "macrophage",
+                    "type": "CT",
+                    "ontology_id": "CL:0000235",
+                    "id_from_ontology_id": "CL:0000235$$3743",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 3
+                },
+                {
+                    "id": 8,
+                    "name": "telocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0017004",
+                    "id_from_ontology_id": "CL:0017004$$3753",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 3
+                },
+                {
+                    "id": 9,
+                    "name": "dendritic cell, human",
+                    "type": "CT",
+                    "ontology_id": "CL:0001056",
+                    "id_from_ontology_id": "CL:0001056$$3754",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 3
+                },
+                {
+                    "id": 10,
+                    "name": "adipocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0000136",
+                    "id_from_ontology_id": "CL:0000136$$3755",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 3
+                },
+                {
+                    "id": 11,
+                    "name": "mast cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000097",
+                    "id_from_ontology_id": "CL:0000097$$3756",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 3
+                },
+                {
+                    "id": 12,
+                    "name": "endothelial cell of lymphatic vessel",
+                    "type": "CT",
+                    "ontology_id": "CL:0002138",
+                    "id_from_ontology_id": "CL:0002138$$3757",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 3
+                },
+                {
+                    "id": 13,
+                    "name": "B cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000236",
+                    "id_from_ontology_id": "CL:0000236$$3758",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 3
+                },
+                {
+                    "id": 14,
+                    "name": "immature NK T cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000914",
+                    "id_from_ontology_id": "CL:0000914$$3759",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 3
+                },
+                {
+                    "id": 15,
+                    "name": "innate lymphoid cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0001065",
+                    "id_from_ontology_id": "CL:0001065$$3760",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 3
+                },
+                {
+                    "id": 16,
+                    "name": "endocardial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0002350",
+                    "id_from_ontology_id": "CL:0002350$$3761",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 3
+                },
+                {
+                    "id": 17,
+                    "name": "vasculature",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0002049",
+                    "id_from_ontology_id": "UBERON:0002049$$3744",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 2
+                },
+                {
+                    "id": 18,
+                    "name": "blood vessel endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000071",
+                    "id_from_ontology_id": "CL:0000071$$3745",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 17
+                },
+                {
+                    "id": 19,
+                    "name": "vascular associated smooth muscle cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000359",
+                    "id_from_ontology_id": "CL:0000359$$3746",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 17
+                },
+                {
+                    "id": 20,
+                    "name": "cardiac ventricle fibroblast",
+                    "type": "CT",
+                    "ontology_id": "CL:2000066",
+                    "id_from_ontology_id": "CL:2000066$$3747",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 17
+                },
+                {
+                    "id": 21,
+                    "name": "capillary",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0001982",
+                    "id_from_ontology_id": "UBERON:0001982$$3748",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 2
+                },
+                {
+                    "id": 22,
+                    "name": "capillary endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0002144",
+                    "id_from_ontology_id": "CL:0002144$$3749",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 21
+                },
+                {
+                    "id": 23,
+                    "name": "pericyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0000669",
+                    "id_from_ontology_id": "CL:0000669$$3750",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 21
+                },
+                {
+                    "id": 24,
+                    "name": "venule",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0001979",
+                    "id_from_ontology_id": "UBERON:0001979$$3751",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 2
+                },
+                {
+                    "id": 25,
+                    "name": "pericyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0000669",
+                    "id_from_ontology_id": "CL:0000669$$3752",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 24
+                },
+                {
+                    "id": 26,
+                    "name": "Diagonal branch of anterior descending branch of left coronary artery",
+                    "type": "AS",
+                    "ontology_id": "FMA:3860",
+                    "id_from_ontology_id": "FMA:3860$$3762",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 2
+                },
+                {
+                    "id": 27,
+                    "name": "endothelial cell of artery",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$3763",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 26
+                },
+                {
+                    "id": 28,
+                    "name": "blood vessel endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000071",
+                    "id_from_ontology_id": "CL:0000071$$3764",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 26
+                },
+                {
+                    "id": 29,
+                    "name": "fibroblast",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3765",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 26
+                },
+                {
+                    "id": 30,
+                    "name": "Left marginal artery",
+                    "type": "AS",
+                    "ontology_id": "FMA:3902",
+                    "id_from_ontology_id": "FMA:3902",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 2
+                },
+                {
+                    "id": 31,
+                    "name": "endothelial cell of artery",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$3766",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 30
+                },
+                {
+                    "id": 32,
+                    "name": "blood vessel endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000071",
+                    "id_from_ontology_id": "CL:0000071$$3767",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 30
+                },
+                {
+                    "id": 33,
+                    "name": "fibroblast",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3768",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 30
+                },
+                {
+                    "id": 34,
+                    "name": "Posterior ventricular branch of right coronary artery",
+                    "type": "AS",
+                    "ontology_id": "FMA:3835",
+                    "id_from_ontology_id": "FMA:3835",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 2
+                },
+                {
+                    "id": 35,
+                    "name": "endothelial cell of artery",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$3769",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 34
+                },
+                {
+                    "id": 36,
+                    "name": "blood vessel endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000071",
+                    "id_from_ontology_id": "CL:0000071$$3770",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 34
+                },
+                {
+                    "id": 37,
+                    "name": "fibroblast",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3771",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 34
+                },
+                {
+                    "id": 38,
+                    "name": "left marginal vein",
+                    "type": "AS",
+                    "ontology_id": "FMA:4708",
+                    "id_from_ontology_id": "FMA:4708$$3772",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 2
+                },
+                {
+                    "id": 39,
+                    "name": "endothelial cell of artery",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$3773",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 38
+                },
+                {
+                    "id": 40,
+                    "name": "blood vessel endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000071",
+                    "id_from_ontology_id": "CL:0000071$$3774",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 38
+                },
+                {
+                    "id": 41,
+                    "name": "fibroblast",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3775",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 38
+                },
+                {
+                    "id": 42,
+                    "name": "Posterior vein of left ventricle",
+                    "type": "AS",
+                    "ontology_id": "FMA:4712",
+                    "id_from_ontology_id": "FMA:4712$$3776",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 2
+                },
+                {
+                    "id": 43,
+                    "name": "endothelial cell of artery",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$3777",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 42
+                },
+                {
+                    "id": 44,
+                    "name": "blood vessel endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000071",
+                    "id_from_ontology_id": "CL:0000071$$3778",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 42
+                },
+                {
+                    "id": 45,
+                    "name": "fibroblast",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3779",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 42
+                },
+                {
+                    "id": 46,
+                    "name": "heart right ventricle",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0002080",
+                    "id_from_ontology_id": "UBERON:0002080",
+                    "color": "#984ea3",
+                    "organ": "blood_vasculature",
+                    "parent": 0
+                },
+                {
+                    "id": 47,
+                    "name": "right ventricle myocardium",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0006567",
+                    "id_from_ontology_id": "UBERON:0006567",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 46
+                },
+                {
+                    "id": 48,
+                    "name": "mast cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000097",
+                    "id_from_ontology_id": "CL:0000097$$3821",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 47
+                },
+                {
+                    "id": 49,
+                    "name": "endothelial cell of lymphatic vessel",
+                    "type": "CT",
+                    "ontology_id": "CL:0002138",
+                    "id_from_ontology_id": "CL:0002138$$3822",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 47
+                },
+                {
+                    "id": 50,
+                    "name": "B cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000236",
+                    "id_from_ontology_id": "CL:0000236$$3823",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 47
+                },
+                {
+                    "id": 51,
+                    "name": "immature NK T cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000914",
+                    "id_from_ontology_id": "CL:0000914$$3824",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 47
+                },
+                {
+                    "id": 52,
+                    "name": "innate lymphoid cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0001065",
+                    "id_from_ontology_id": "CL:0001065$$3825",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 47
+                },
+                {
+                    "id": 53,
+                    "name": "endocardial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0002350",
+                    "id_from_ontology_id": "CL:0002350$$3826",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 47
+                },
+                {
+                    "id": 54,
+                    "name": "cardiac muscle cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000746",
+                    "id_from_ontology_id": "CL:0000746$$3827",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 47
+                },
+                {
+                    "id": 55,
+                    "name": "Purkinje myocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0002068",
+                    "id_from_ontology_id": "CL:0002068$$3828",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 47
+                },
+                {
+                    "id": 56,
+                    "name": "cardiac ventricle fibroblast",
+                    "type": "CT",
+                    "ontology_id": "CL:2000066",
+                    "id_from_ontology_id": "CL:2000066$$3829",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 47
+                },
+                {
+                    "id": 57,
+                    "name": "macrophage",
+                    "type": "CT",
+                    "ontology_id": "CL:0000235",
+                    "id_from_ontology_id": "CL:0000235$$3830",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 47
+                },
+                {
+                    "id": 58,
+                    "name": "telocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0017004",
+                    "id_from_ontology_id": "CL:0017004$$3852",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 47
+                },
+                {
+                    "id": 59,
+                    "name": "lymphocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0000542",
+                    "id_from_ontology_id": "CL:0000542$$3853",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 47
+                },
+                {
+                    "id": 60,
+                    "name": "dendritic cell, human",
+                    "type": "CT",
+                    "ontology_id": "CL:0001056",
+                    "id_from_ontology_id": "CL:0001056$$3854",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 47
+                },
+                {
+                    "id": 61,
+                    "name": "adipocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0000136",
+                    "id_from_ontology_id": "CL:0000136$$3855",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 47
+                },
+                {
+                    "id": 62,
+                    "name": "conus artery",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0039232",
+                    "id_from_ontology_id": "UBERON:0039232$$3831",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 46
+                },
+                {
+                    "id": 63,
+                    "name": "endothelial cell of artery",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$3832",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 62
+                },
+                {
+                    "id": 64,
+                    "name": "blood vessel endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000071",
+                    "id_from_ontology_id": "CL:0000071$$3833",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 62
+                },
+                {
+                    "id": 65,
+                    "name": "fibroblast",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3834",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 62
+                },
+                {
+                    "id": 66,
+                    "name": "right marginal artery",
+                    "type": "AS",
+                    "ontology_id": "FMA:3818",
+                    "id_from_ontology_id": "FMA:3818$$3835",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 46
+                },
+                {
+                    "id": 67,
+                    "name": "endothelial cell of artery",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$3836",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 66
+                },
+                {
+                    "id": 68,
+                    "name": "blood vessel endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000071",
+                    "id_from_ontology_id": "CL:0000071$$3837",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 66
+                },
+                {
+                    "id": 69,
+                    "name": "fibroblast",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3838",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 66
+                },
+                {
+                    "id": 70,
+                    "name": "Anterior cardiac vein",
+                    "type": "AS",
+                    "ontology_id": "FMA:76767",
+                    "id_from_ontology_id": "FMA:76767$$3839",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 46
+                },
+                {
+                    "id": 71,
+                    "name": "endothelial cell of artery",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$3840",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 70
+                },
+                {
+                    "id": 72,
+                    "name": "blood vessel endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000071",
+                    "id_from_ontology_id": "CL:0000071$$3841",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 70
+                },
+                {
+                    "id": 73,
+                    "name": "fibroblast",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3842",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 70
+                },
+                {
+                    "id": 74,
+                    "name": "vasculature",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0002049",
+                    "id_from_ontology_id": "UBERON:0002049$$3843",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 46
+                },
+                {
+                    "id": 75,
+                    "name": "blood vessel endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000071",
+                    "id_from_ontology_id": "CL:0000071$$3844",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 74
+                },
+                {
+                    "id": 76,
+                    "name": "vascular associated smooth muscle cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000359",
+                    "id_from_ontology_id": "CL:0000359$$3845",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 74
+                },
+                {
+                    "id": 77,
+                    "name": "fibroblast",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3846",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 74
+                },
+                {
+                    "id": 78,
+                    "name": "capillary",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0001982",
+                    "id_from_ontology_id": "UBERON:0001982$$3847",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 46
+                },
+                {
+                    "id": 79,
+                    "name": "pericyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0000669",
+                    "id_from_ontology_id": "CL:0000669$$3848",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 78
+                },
+                {
+                    "id": 80,
+                    "name": "capillary endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0002144",
+                    "id_from_ontology_id": "CL:0002144$$3849",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 78
+                },
+                {
+                    "id": 81,
+                    "name": "venule",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0001979",
+                    "id_from_ontology_id": "UBERON:0001979$$3850",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 46
+                },
+                {
+                    "id": 82,
+                    "name": "pericyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0000669",
+                    "id_from_ontology_id": "CL:0000669$$3851",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 81
+                },
+                {
+                    "id": 83,
+                    "name": "moderator band",
+                    "type": "AS",
+                    "ontology_id": "UBERON:8470002",
+                    "id_from_ontology_id": "UBERON:8470002",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 46
+                },
+                {
+                    "id": 84,
+                    "name": "cardiac muscle cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000746",
+                    "id_from_ontology_id": "CL:0000746$$3856",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 83
+                },
+                {
+                    "id": 85,
+                    "name": "Purkinje myocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0002068",
+                    "id_from_ontology_id": "CL:0002068$$3857",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 83
+                },
+                {
+                    "id": 86,
+                    "name": "fibroblast",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3858",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 83
+                },
+                {
+                    "id": 87,
+                    "name": "macrophage",
+                    "type": "CT",
+                    "ontology_id": "CL:0000235",
+                    "id_from_ontology_id": "CL:0000235$$3859",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 83
+                },
+                {
+                    "id": 88,
+                    "name": "blood vessel endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000071",
+                    "id_from_ontology_id": "CL:0000071$$3860",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 83
+                },
+                {
+                    "id": 89,
+                    "name": "vascular associated smooth muscle cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000359",
+                    "id_from_ontology_id": "CL:0000359$$3861",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 83
+                },
+                {
+                    "id": 90,
+                    "name": "telocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0017004",
+                    "id_from_ontology_id": "CL:0017004$$3862",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 83
+                },
+                {
+                    "id": 91,
+                    "name": "lymphocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0000542",
+                    "id_from_ontology_id": "CL:0000542$$3863",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 83
+                },
+                {
+                    "id": 92,
+                    "name": "dendritic cell, human",
+                    "type": "CT",
+                    "ontology_id": "CL:0001056",
+                    "id_from_ontology_id": "CL:0001056$$3864",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 83
+                },
+                {
+                    "id": 93,
+                    "name": "atrioventricular region",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0011820",
+                    "id_from_ontology_id": "UBERON:0011820",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 0
+                },
+                {
+                    "id": 94,
+                    "name": "circumflex branch of left coronary artery",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0035422",
+                    "id_from_ontology_id": "UBERON:0035422$$3683",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 93
+                },
+                {
+                    "id": 95,
+                    "name": "endothelial cell of artery",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$3684",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 94
+                },
+                {
+                    "id": 96,
+                    "name": "smooth muscle cell of the coronary artery",
+                    "type": "CT",
+                    "ontology_id": "CL:0002592",
+                    "id_from_ontology_id": "CL:0002592$$3685",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 94
+                },
+                {
+                    "id": 97,
+                    "name": "fibroblast",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3686",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 94
+                },
+                {
+                    "id": 98,
+                    "name": "Atrioventricular node branch of right coronary artery",
+                    "type": "AS",
+                    "ontology_id": "FMA:3851",
+                    "id_from_ontology_id": "FMA:3851$$3687",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 93
+                },
+                {
+                    "id": 99,
+                    "name": "endothelial cell of artery",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$3688",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 98
+                },
+                {
+                    "id": 100,
+                    "name": "smooth muscle cell of the coronary artery",
+                    "type": "CT",
+                    "ontology_id": "CL:0002592",
+                    "id_from_ontology_id": "CL:0002592$$3689",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 98
+                },
+                {
+                    "id": 101,
+                    "name": "fibroblast",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3690",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 98
+                },
+                {
+                    "id": 102,
+                    "name": "coronary sinus",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0005438",
+                    "id_from_ontology_id": "UBERON:0005438$$3691",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 93
+                },
+                {
+                    "id": 103,
+                    "name": "endothelial cell of artery",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$3692",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 102
+                },
+                {
+                    "id": 104,
+                    "name": "vascular associated smooth muscle cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000359",
+                    "id_from_ontology_id": "CL:0000359$$3693",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 102
+                },
+                {
+                    "id": 105,
+                    "name": "fibroblast",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3694",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 102
+                },
+                {
+                    "id": 106,
+                    "name": "atrioventricular node",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0002352",
+                    "id_from_ontology_id": "UBERON:0002352",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 93
+                },
+                {
+                    "id": 107,
+                    "name": "cardiac pacemaker cell of sinoatrial node",
+                    "type": "CT",
+                    "ontology_id": "CL:1000477",
+                    "id_from_ontology_id": "CL:1000477$$3695",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 106
+                },
+                {
+                    "id": 108,
+                    "name": "adipocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0000136",
+                    "id_from_ontology_id": "CL:0000136$$3696",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 106
+                },
+                {
+                    "id": 109,
+                    "name": "right coronary artery",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0001625",
+                    "id_from_ontology_id": "UBERON:0001625$$3697",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 93
+                },
+                {
+                    "id": 110,
+                    "name": "endothelial cell of artery",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$3698",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 109
+                },
+                {
+                    "id": 111,
+                    "name": "smooth muscle cell of the coronary artery",
+                    "type": "CT",
+                    "ontology_id": "CL:0002592",
+                    "id_from_ontology_id": "CL:0002592$$3699",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 109
+                },
+                {
+                    "id": 112,
+                    "name": "fibroblast",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3700",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 109
+                },
+                {
+                    "id": 113,
+                    "name": "small cardiac vein",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0035374",
+                    "id_from_ontology_id": "UBERON:0035374$$3701",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 93
+                },
+                {
+                    "id": 114,
+                    "name": "endothelial cell of artery",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$3702",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 113
+                },
+                {
+                    "id": 115,
+                    "name": "smooth muscle cell of the coronary artery",
+                    "type": "CT",
+                    "ontology_id": "CL:0002592",
+                    "id_from_ontology_id": "CL:0002592$$3703",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 113
+                },
+                {
+                    "id": 116,
+                    "name": "fibroblast",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3704",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 113
+                },
+                {
+                    "id": 117,
+                    "name": "interventricular septum",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0002094",
+                    "id_from_ontology_id": "UBERON:0002094",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 0
+                },
+                {
+                    "id": 118,
+                    "name": "left anterior descending artery",
+                    "type": "AS",
+                    "ontology_id": "UBERON:8600102",
+                    "id_from_ontology_id": "UBERON:8600102$$3780",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 117
+                },
+                {
+                    "id": 119,
+                    "name": "endothelial cell of artery",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$3781",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 118
+                },
+                {
+                    "id": 120,
+                    "name": "blood vessel endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000071",
+                    "id_from_ontology_id": "CL:0000071$$3782",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 118
+                },
+                {
+                    "id": 121,
+                    "name": "fibroblast",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3783",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 118
+                },
+                {
+                    "id": 122,
+                    "name": "posterior descending artery",
+                    "type": "AS",
+                    "ontology_id": "FMA:3840",
+                    "id_from_ontology_id": "FMA:3840$$3784",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 117
+                },
+                {
+                    "id": 123,
+                    "name": "endothelial cell of artery",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$3785",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 122
+                },
+                {
+                    "id": 124,
+                    "name": "blood vessel endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000071",
+                    "id_from_ontology_id": "CL:0000071$$3786",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 122
+                },
+                {
+                    "id": 125,
+                    "name": "fibroblast",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3787",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 122
+                },
+                {
+                    "id": 126,
+                    "name": "septal perforating artery",
+                    "type": "AS",
+                    "ontology_id": "UBERON:8600063",
+                    "id_from_ontology_id": "UBERON:8600063$$3788",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 117
+                },
+                {
+                    "id": 127,
+                    "name": "endothelial cell of artery",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$3789",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 126
+                },
+                {
+                    "id": 128,
+                    "name": "blood vessel endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000071",
+                    "id_from_ontology_id": "CL:0000071$$3790",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 126
+                },
+                {
+                    "id": 129,
+                    "name": "fibroblast",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3791",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 126
+                },
+                {
+                    "id": 130,
+                    "name": "great vein of heart",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0006958",
+                    "id_from_ontology_id": "UBERON:0006958$$3792",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 117
+                },
+                {
+                    "id": 131,
+                    "name": "endothelial cell of artery",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$3793",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 130
+                },
+                {
+                    "id": 132,
+                    "name": "blood vessel endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000071",
+                    "id_from_ontology_id": "CL:0000071$$3794",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 130
+                },
+                {
+                    "id": 133,
+                    "name": "fibroblast",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3795",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 130
+                },
+                {
+                    "id": 134,
+                    "name": "middle cardiac vein",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0009687",
+                    "id_from_ontology_id": "UBERON:0009687$$3796",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 117
+                },
+                {
+                    "id": 135,
+                    "name": "endothelial cell of artery",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$3797",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 134
+                },
+                {
+                    "id": 136,
+                    "name": "blood vessel endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000071",
+                    "id_from_ontology_id": "CL:0000071$$3798",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 134
+                },
+                {
+                    "id": 137,
+                    "name": "fibroblast",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3799",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 134
+                },
+                {
+                    "id": 138,
+                    "name": "capillary",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0001982",
+                    "id_from_ontology_id": "UBERON:0001982$$3800",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 117
+                },
+                {
+                    "id": 139,
+                    "name": "pericyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0000669",
+                    "id_from_ontology_id": "CL:0000669$$3801",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 138
+                },
+                {
+                    "id": 140,
+                    "name": "capillary endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0002144",
+                    "id_from_ontology_id": "CL:0002144$$3802",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 138
+                },
+                {
+                    "id": 141,
+                    "name": "venule",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0001979",
+                    "id_from_ontology_id": "UBERON:0001979$$3803",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 117
+                },
+                {
+                    "id": 142,
+                    "name": "pericyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0000669",
+                    "id_from_ontology_id": "CL:0000669$$3804",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 141
+                },
+                {
+                    "id": 143,
+                    "name": "bundle of His",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0002353",
+                    "id_from_ontology_id": "UBERON:0002353",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 117
+                },
+                {
+                    "id": 144,
+                    "name": "cardiac pacemaker cell of sinoatrial node",
+                    "type": "CT",
+                    "ontology_id": "CL:1000477",
+                    "id_from_ontology_id": "CL:1000477$$3805",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 143
+                },
+                {
+                    "id": 145,
+                    "name": "cardiac muscle tissue of interventricular septum",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0003383",
+                    "id_from_ontology_id": "UBERON:0003383$$3806",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 117
+                },
+                {
+                    "id": 146,
+                    "name": "cardiac muscle cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000746",
+                    "id_from_ontology_id": "CL:0000746$$3807",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 145
+                },
+                {
+                    "id": 147,
+                    "name": "Purkinje myocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0002068",
+                    "id_from_ontology_id": "CL:0002068$$3808",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 145
+                },
+                {
+                    "id": 148,
+                    "name": "fibroblast",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3809",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 145
+                },
+                {
+                    "id": 149,
+                    "name": "macrophage",
+                    "type": "CT",
+                    "ontology_id": "CL:0000235",
+                    "id_from_ontology_id": "CL:0000235$$3810",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 145
+                },
+                {
+                    "id": 150,
+                    "name": "telocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0017004",
+                    "id_from_ontology_id": "CL:0017004$$3811",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 145
+                },
+                {
+                    "id": 151,
+                    "name": "lymphocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0000542",
+                    "id_from_ontology_id": "CL:0000542$$3812",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 145
+                },
+                {
+                    "id": 152,
+                    "name": "dendritic cell, human",
+                    "type": "CT",
+                    "ontology_id": "CL:0001056",
+                    "id_from_ontology_id": "CL:0001056$$3813",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 145
+                },
+                {
+                    "id": 153,
+                    "name": "adipocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0000136",
+                    "id_from_ontology_id": "CL:0000136$$3814",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 145
+                },
+                {
+                    "id": 154,
+                    "name": "mast cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000097",
+                    "id_from_ontology_id": "CL:0000097$$3815",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 145
+                },
+                {
+                    "id": 155,
+                    "name": "endothelial cell of lymphatic vessel",
+                    "type": "CT",
+                    "ontology_id": "CL:0002138",
+                    "id_from_ontology_id": "CL:0002138$$3816",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 145
+                },
+                {
+                    "id": 156,
+                    "name": "B cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000236",
+                    "id_from_ontology_id": "CL:0000236$$3817",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 145
+                },
+                {
+                    "id": 157,
+                    "name": "immature NK T cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000914",
+                    "id_from_ontology_id": "CL:0000914$$3818",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 145
+                },
+                {
+                    "id": 158,
+                    "name": "innate lymphoid cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0001065",
+                    "id_from_ontology_id": "CL:0001065$$3819",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 145
+                },
+                {
+                    "id": 159,
+                    "name": "endocardial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0002350",
+                    "id_from_ontology_id": "CL:0002350$$3820",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 145
+                },
+                {
+                    "id": 160,
+                    "name": "cardiac valve",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0000946",
+                    "id_from_ontology_id": "UBERON:0000946",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 0
+                },
+                {
+                    "id": 161,
+                    "name": "Tricuspid valve",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0002134",
+                    "id_from_ontology_id": "UBERON:0002134",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 160
+                },
+                {
+                    "id": 162,
+                    "name": "valve interstitial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:4030032",
+                    "id_from_ontology_id": "CL:4030032",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 161
+                },
+                {
+                    "id": 163,
+                    "name": "endocardial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0002350",
+                    "id_from_ontology_id": "CL:0002350$$3865",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 161
+                },
+                {
+                    "id": 164,
+                    "name": "Pulmonary Valve",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0002146",
+                    "id_from_ontology_id": "UBERON:0002146",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 160
+                },
+                {
+                    "id": 165,
+                    "name": "valve interstitial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:4030032",
+                    "id_from_ontology_id": "CL:4030032$$3866",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 164
+                },
+                {
+                    "id": 166,
+                    "name": "endocardial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0002350",
+                    "id_from_ontology_id": "CL:0002350$$3867",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 164
+                },
+                {
+                    "id": 167,
+                    "name": "Mitral valve",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0002135",
+                    "id_from_ontology_id": "UBERON:0002135",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 160
+                },
+                {
+                    "id": 168,
+                    "name": "valve interstitial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:4030032",
+                    "id_from_ontology_id": "CL:4030032$$3868",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 167
+                },
+                {
+                    "id": 169,
+                    "name": "endocardial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0002350",
+                    "id_from_ontology_id": "CL:0002350$$3869",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 167
+                },
+                {
+                    "id": 170,
+                    "name": "Aortic valve",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0002137",
+                    "id_from_ontology_id": "UBERON:0002137",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 160
+                },
+                {
+                    "id": 171,
+                    "name": "valve interstitial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:4030032",
+                    "id_from_ontology_id": "CL:4030032$$3870",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 170
+                },
+                {
+                    "id": 172,
+                    "name": "blood vessel endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000071",
+                    "id_from_ontology_id": "CL:0000071$$3871",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 170
+                },
+                {
+                    "id": 173,
+                    "name": "epicardium",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0002348",
+                    "id_from_ontology_id": "UBERON:0002348",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 0
+                },
+                {
+                    "id": 174,
+                    "name": "mesothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000077",
+                    "id_from_ontology_id": "CL:0000077",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 173
+                },
+                {
+                    "id": 175,
+                    "name": "epicardial adipocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:1000309",
+                    "id_from_ontology_id": "CL:1000309",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 173
+                },
+                {
+                    "id": 176,
+                    "name": "Schwann cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0002573",
+                    "id_from_ontology_id": "CL:0002573$$3872",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 173
+                },
+                {
+                    "id": 177,
+                    "name": "vascular associated smooth muscle cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000359",
+                    "id_from_ontology_id": "CL:0000359$$3873",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 173
+                },
+                {
+                    "id": 178,
+                    "name": "fibroblast",
+                    "type": "CT",
+                    "ontology_id": "CL:0000057",
+                    "id_from_ontology_id": "CL:0000057$$3874",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 173
+                },
+                {
+                    "id": 179,
+                    "name": "blood vessel endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000071",
+                    "id_from_ontology_id": "CL:0000071$$3875",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 173
+                },
+                {
+                    "id": 180,
+                    "name": "macrophage",
+                    "type": "CT",
+                    "ontology_id": "CL:0000235",
+                    "id_from_ontology_id": "CL:0000235$$3876",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 173
+                },
+                {
+                    "id": 181,
+                    "name": "cardiac muscle tissue of interventricular septum",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0003383",
+                    "id_from_ontology_id": "UBERON:0003383$$3877",
+                    "color": "#984ea3",
+                    "organ": "heart",
+                    "parent": 173
+                },
+                {
+                    "id": 182,
+                    "name": "mast cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000097",
+                    "id_from_ontology_id": "CL:0000097$$3878",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 181
+                },
+                {
+                    "id": 183,
+                    "name": "endothelial cell of lymphatic vessel",
+                    "type": "CT",
+                    "ontology_id": "CL:0002138",
+                    "id_from_ontology_id": "CL:0002138$$3879",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 181
+                },
+                {
+                    "id": 184,
+                    "name": "B cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000236",
+                    "id_from_ontology_id": "CL:0000236$$3880",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 181
+                },
+                {
+                    "id": 185,
+                    "name": "immature NK T cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000914",
+                    "id_from_ontology_id": "CL:0000914$$3881",
+                    "color": "#ff7f00",
+                    "organ": "heart",
+                    "parent": 181
+                },
+                {
+                    "id": 187,
+                    "name": "liver lobule",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0004647",
+                    "id_from_ontology_id": "UBERON:0004647",
+                    "color": "#56a04e",
+                    "organ": "liver",
+                    "parent": 0
+                },
+                {
+                    "id": 188,
+                    "name": "hepatic sinusoid",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0001281",
+                    "id_from_ontology_id": "UBERON:0001281$$5168",
+                    "color": "#984ea3",
+                    "organ": "liver",
+                    "parent": 187
+                },
+                {
+                    "id": 189,
+                    "name": "endothelial cell of hepatic sinusoid",
+                    "type": "CT",
+                    "ontology_id": "CL:1000398",
+                    "id_from_ontology_id": "CL:1000398",
+                    "color": "#ff7f00",
+                    "organ": "liver",
+                    "parent": 188
+                },
+                {
+                    "id": 190,
+                    "name": "Kupffer Cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000091",
+                    "id_from_ontology_id": "CL:0000091",
+                    "color": "#ff7f00",
+                    "organ": "liver",
+                    "parent": 188
+                },
+                {
+                    "id": 191,
+                    "name": "liver perisinusoidal space",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0006729",
+                    "id_from_ontology_id": "UBERON:0006729",
+                    "color": "#984ea3",
+                    "organ": "liver",
+                    "parent": 187
+                },
+                {
+                    "id": 192,
+                    "name": "hepatic stellate cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000632",
+                    "id_from_ontology_id": "CL:0000632",
+                    "color": "#ff7f00",
+                    "organ": "liver",
+                    "parent": 191
+                },
+                {
+                    "id": 193,
+                    "name": "leukocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0000738",
+                    "id_from_ontology_id": "CL:0000738$$5169",
+                    "color": "#ff7f00",
+                    "organ": "liver",
+                    "parent": 191
+                },
+                {
+                    "id": 194,
+                    "name": "hepatic cord",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0005452",
+                    "id_from_ontology_id": "UBERON:0005452",
+                    "color": "#984ea3",
+                    "organ": "liver",
+                    "parent": 187
+                },
+                {
+                    "id": 195,
+                    "name": "hepatocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0000182",
+                    "id_from_ontology_id": "CL:0000182",
+                    "color": "#ff7f00",
+                    "organ": "liver",
+                    "parent": 194
+                },
+                {
+                    "id": 196,
+                    "name": "periportal region hepatocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0019026",
+                    "id_from_ontology_id": "CL:0019026",
+                    "color": "#ff7f00",
+                    "organ": "liver",
+                    "parent": 194
+                },
+                {
+                    "id": 197,
+                    "name": "centrilobular region hepatocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0019029",
+                    "id_from_ontology_id": "CL:0019029",
+                    "color": "#ff7f00",
+                    "organ": "liver",
+                    "parent": 194
+                },
+                {
+                    "id": 198,
+                    "name": "midzonal region hepatocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0019028",
+                    "id_from_ontology_id": "CL:0019028",
+                    "color": "#ff7f00",
+                    "organ": "liver",
+                    "parent": 194
+                },
+                {
+                    "id": 199,
+                    "name": "central vein of liver",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0006841",
+                    "id_from_ontology_id": "UBERON:0006841$$5170",
+                    "color": "#984ea3",
+                    "organ": "liver",
+                    "parent": 187
+                },
+                {
+                    "id": 200,
+                    "name": "vein endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0002543",
+                    "id_from_ontology_id": "CL:0002543$$5171",
+                    "color": "#ff7f00",
+                    "organ": "liver",
+                    "parent": 199
+                },
+                {
+                    "id": 201,
+                    "name": "portal triad",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0001279",
+                    "id_from_ontology_id": "UBERON:0001279",
+                    "color": "#984ea3",
+                    "organ": "liver",
+                    "parent": 187
+                },
+                {
+                    "id": 202,
+                    "name": "biliary ductule",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0004058",
+                    "id_from_ontology_id": "UBERON:0004058",
+                    "color": "#984ea3",
+                    "organ": "liver",
+                    "parent": 201
+                },
+                {
+                    "id": 203,
+                    "name": "stratified cuboidal epithelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000241",
+                    "id_from_ontology_id": "CL:0000241",
+                    "color": "#ff7f00",
+                    "organ": "liver",
+                    "parent": 202
+                },
+                {
+                    "id": 204,
+                    "name": "columnar/cuboidal epithelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000075",
+                    "id_from_ontology_id": "CL:0000075",
+                    "color": "#ff7f00",
+                    "organ": "liver",
+                    "parent": 202
+                },
+                {
+                    "id": 205,
+                    "name": "hepatic portal vein",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0001639",
+                    "id_from_ontology_id": "UBERON:0001639$$5172",
+                    "color": "#984ea3",
+                    "organ": "liver",
+                    "parent": 201
+                },
+                {
+                    "id": 206,
+                    "name": "vein endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0002543",
+                    "id_from_ontology_id": "CL:0002543$$5173",
+                    "color": "#ff7f00",
+                    "organ": "liver",
+                    "parent": 205
+                },
+                {
+                    "id": 207,
+                    "name": "nerve",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0001021",
+                    "id_from_ontology_id": "UBERON:0001021",
+                    "color": "#984ea3",
+                    "organ": "liver",
+                    "parent": 201
+                },
+                {
+                    "id": 208,
+                    "name": "afferent neuron",
+                    "type": "CT",
+                    "ontology_id": "CL:0000526",
+                    "id_from_ontology_id": "CL:0000526",
+                    "color": "#ff7f00",
+                    "organ": "liver",
+                    "parent": 207
+                },
+                {
+                    "id": 209,
+                    "name": "hepatic artery",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0001193",
+                    "id_from_ontology_id": "UBERON:0001193",
+                    "color": "#984ea3",
+                    "organ": "liver",
+                    "parent": 201
+                },
+                {
+                    "id": 210,
+                    "name": "endothelial cell of artery",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$5174",
+                    "color": "#ff7f00",
+                    "organ": "liver",
+                    "parent": 209
+                },
+                {
+                    "id": 211,
+                    "name": "blood vessel smooth muscle cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0019018",
+                    "id_from_ontology_id": "CL:0019018$$5175",
+                    "color": "#ff7f00",
+                    "organ": "liver",
+                    "parent": 209
+                },
+                {
+                    "id": 212,
+                    "name": "interstitial tissue",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0005169",
+                    "id_from_ontology_id": "UBERON:0005169",
+                    "color": "#984ea3",
+                    "organ": "liver",
+                    "parent": 201
+                },
+                {
+                    "id": 213,
+                    "name": "hepatic portal fibroblast",
+                    "type": "CT",
+                    "ontology_id": "CL:0009100",
+                    "id_from_ontology_id": "CL:0009100",
+                    "color": "#ff7f00",
+                    "organ": "liver",
+                    "parent": 212
+                },
+                {
+                    "id": 214,
+                    "name": "intralobular bile duct",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0001282",
+                    "id_from_ontology_id": "UBERON:0001282",
+                    "color": "#984ea3",
+                    "organ": "liver",
+                    "parent": 187
+                },
+                {
+                    "id": 215,
+                    "name": "Hepatic oval stem cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0002196",
+                    "id_from_ontology_id": "CL:0002196",
+                    "color": "#ff7f00",
+                    "organ": "liver",
+                    "parent": 214
+                },
+                {
+                    "id": 216,
+                    "name": "lymphatic vessel",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0001473",
+                    "id_from_ontology_id": "UBERON:0001473",
+                    "color": "#984ea3",
+                    "organ": "liver",
+                    "parent": 187
+                },
+                {
+                    "id": 217,
+                    "name": "endothelial cell of lymphatic vessel",
+                    "type": "CT",
+                    "ontology_id": "CL:0002138",
+                    "id_from_ontology_id": "CL:0002138$$5176",
+                    "color": "#ff7f00",
+                    "organ": "liver",
+                    "parent": 216
+                },
+                {
+                    "id": 218,
+                    "name": "liver stroma",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0016478",
+                    "id_from_ontology_id": "UBERON:0016478",
+                    "color": "#984ea3",
+                    "organ": "liver",
+                    "parent": 187
+                },
+                {
+                    "id": 219,
+                    "name": "connective tissue",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0002384",
+                    "id_from_ontology_id": "UBERON:0002384$$5177",
+                    "color": "#984ea3",
+                    "organ": "liver",
+                    "parent": 218
+                },
+                {
+                    "id": 220,
+                    "name": "Liver immune resident component",
+                    "type": "AS",
+                    "ontology_id": "ASCTB-TEMP:liver-immune-resident-component",
+                    "id_from_ontology_id": "ASCTB-TEMP:liver-immune-resident-component",
+                    "color": "#984ea3",
+                    "organ": "liver",
+                    "parent": 187
+                },
+                {
+                    "id": 221,
+                    "name": "dendritic cell, human",
+                    "type": "CT",
+                    "ontology_id": "CL:0001056",
+                    "id_from_ontology_id": "CL:0001056$$5178",
+                    "color": "#ff7f00",
+                    "organ": "liver",
+                    "parent": 220
+                },
+                {
+                    "id": 222,
+                    "name": "conventional dendritic cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000990",
+                    "id_from_ontology_id": "CL:0000990$$5179",
+                    "color": "#ff7f00",
+                    "organ": "liver",
+                    "parent": 220
+                },
+                {
+                    "id": 223,
+                    "name": "CD1c-positive myeloid dendritic cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0002399",
+                    "id_from_ontology_id": "CL:0002399$$5180",
+                    "color": "#ff7f00",
+                    "organ": "liver",
+                    "parent": 220
+                },
+                {
+                    "id": 224,
+                    "name": "plasmacytoid dendritic cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000784",
+                    "id_from_ontology_id": "CL:0000784",
+                    "color": "#ff7f00",
+                    "organ": "liver",
+                    "parent": 220
+                },
+                {
+                    "id": 225,
+                    "name": "CD8-positive, alpha-beta memory T cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000909",
+                    "id_from_ontology_id": "CL:0000909$$5181",
+                    "color": "#ff7f00",
+                    "organ": "liver",
+                    "parent": 220
+                },
+                {
+                    "id": 226,
+                    "name": "CD4-positive, alpha-beta T cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000624",
+                    "id_from_ontology_id": "CL:0000624$$5182",
+                    "color": "#ff7f00",
+                    "organ": "liver",
+                    "parent": 220
+                },
+                {
+                    "id": 227,
+                    "name": "gamma-delta T cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000798",
+                    "id_from_ontology_id": "CL:0000798",
+                    "color": "#ff7f00",
+                    "organ": "liver",
+                    "parent": 220
+                },
+                {
+                    "id": 228,
+                    "name": "CD8-positive, alpha-beta memory T cell, CD45RO-positive",
+                    "type": "CT",
+                    "ontology_id": "CL:0001203",
+                    "id_from_ontology_id": "CL:0001203",
+                    "color": "#ff7f00",
+                    "organ": "liver",
+                    "parent": 220
+                },
+                {
+                    "id": 229,
+                    "name": "Type I NK T cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000921",
+                    "id_from_ontology_id": "CL:0000921",
+                    "color": "#ff7f00",
+                    "organ": "liver",
+                    "parent": 220
+                },
+                {
+                    "id": 230,
+                    "name": "natural killer cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000623",
+                    "id_from_ontology_id": "CL:0000623$$5183",
+                    "color": "#ff7f00",
+                    "organ": "liver",
+                    "parent": 220
+                },
+                {
+                    "id": 231,
+                    "name": "Eomes low Liver NK cell",
+                    "type": "CT",
+                    "ontology_id": "ASCTB-TEMP:eomes-low-liver-nk-cell",
+                    "id_from_ontology_id": "ASCTB-TEMP:eomes-low-liver-nk-cell",
+                    "color": "#ff7f00",
+                    "organ": "liver",
+                    "parent": 230
+                },
+                {
+                    "id": 232,
+                    "name": "TBet low Liver NK cell",
+                    "type": "CT",
+                    "ontology_id": "ASCTB-TEMP:tbet-low-liver-nk-cell",
+                    "id_from_ontology_id": "ASCTB-TEMP:tbet-low-liver-nk-cell",
+                    "color": "#ff7f00",
+                    "organ": "liver",
+                    "parent": 230
+                },
+                {
+                    "id": 233,
+                    "name": "hepatic Pit cell",
+                    "type": "CT",
+                    "ontology_id": "CL:2000054",
+                    "id_from_ontology_id": "CL:2000054",
+                    "color": "#ff7f00",
+                    "organ": "liver",
+                    "parent": 220
+                },
+                {
+                    "id": 236,
+                    "name": "spleen pulp",
+                    "type": "AS",
+                    "ontology_id": "UBERON:1000023",
+                    "id_from_ontology_id": "UBERON:1000023",
+                    "color": "#984ea3",
+                    "organ": "spleen",
+                    "parent": 0
+                },
+                {
+                    "id": 237,
+                    "name": "Splenic Artery",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0001194",
+                    "id_from_ontology_id": "UBERON:0001194$$7924",
+                    "color": "#984ea3",
+                    "organ": "spleen",
+                    "parent": 236
+                },
+                {
+                    "id": 238,
+                    "name": "splenic endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:2000053",
+                    "id_from_ontology_id": "CL:2000053",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 237
+                },
+                {
+                    "id": 239,
+                    "name": "Sympathetic nerve plexus",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0012373",
+                    "id_from_ontology_id": "UBERON:0012373",
+                    "color": "#984ea3",
+                    "organ": "spleen",
+                    "parent": 237
+                },
+                {
+                    "id": 240,
+                    "name": "catecholaminergic neuron",
+                    "type": "CT",
+                    "ontology_id": "CL:4033050",
+                    "id_from_ontology_id": "CL:4033050",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 239
+                },
+                {
+                    "id": 241,
+                    "name": "Spleen central arteriole",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0010401",
+                    "id_from_ontology_id": "UBERON:0010401$$7925",
+                    "color": "#984ea3",
+                    "organ": "spleen",
+                    "parent": 236
+                },
+                {
+                    "id": 242,
+                    "name": "Sympathetic nerve plexus",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0012373",
+                    "id_from_ontology_id": "UBERON:0012373$$7926",
+                    "color": "#984ea3",
+                    "organ": "spleen",
+                    "parent": 241
+                },
+                {
+                    "id": 243,
+                    "name": "catecholaminergic neuron",
+                    "type": "CT",
+                    "ontology_id": "CL:4033050",
+                    "id_from_ontology_id": "CL:4033050$$7927",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 242
+                },
+                {
+                    "id": 244,
+                    "name": "Penicillar Arteriole",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0013132",
+                    "id_from_ontology_id": "UBERON:0013132$$7928",
+                    "color": "#984ea3",
+                    "organ": "spleen",
+                    "parent": 241
+                },
+                {
+                    "id": 245,
+                    "name": "splenic endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:2000053",
+                    "id_from_ontology_id": "CL:2000053$$7929",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 244
+                },
+                {
+                    "id": 246,
+                    "name": "naive B Cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000788",
+                    "id_from_ontology_id": "CL:0000788$$7930",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 244
+                },
+                {
+                    "id": 247,
+                    "name": "memory B cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000787",
+                    "id_from_ontology_id": "CL:0000787$$7931",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 244
+                },
+                {
+                    "id": 248,
+                    "name": "class switched memory B cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000972",
+                    "id_from_ontology_id": "CL:0000972",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 244
+                },
+                {
+                    "id": 249,
+                    "name": "stromal cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000499",
+                    "id_from_ontology_id": "CL:0000499$$7932",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 244
+                },
+                {
+                    "id": 250,
+                    "name": "Adventitial Stromal Cell",
+                    "type": "CT",
+                    "ontology_id": "ASCTB-TEMP:adventitial-stromal-cell",
+                    "id_from_ontology_id": "ASCTB-TEMP:adventitial-stromal-cell",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 249
+                },
+                {
+                    "id": 251,
+                    "name": "Splenic Stromal Cell (non-FRC/non-FDC)",
+                    "type": "CT",
+                    "ontology_id": "ASCTB-TEMP:splenic-stromal-cell-non-frc-non-fdc-",
+                    "id_from_ontology_id": "ASCTB-TEMP:splenic-stromal-cell-non-frc-non-fdc-",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 249
+                },
+                {
+                    "id": 252,
+                    "name": "smooth muscle cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000192",
+                    "id_from_ontology_id": "CL:0000192$$7933",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 244
+                },
+                {
+                    "id": 253,
+                    "name": "Splenic Smooth Muscle Cell",
+                    "type": "CT",
+                    "ontology_id": "ASCTB-TEMP:splenic-smooth-muscle-cell",
+                    "id_from_ontology_id": "ASCTB-TEMP:splenic-smooth-muscle-cell",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 252
+                },
+                {
+                    "id": 254,
+                    "name": "red pulp of spleen",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0001250",
+                    "id_from_ontology_id": "UBERON:0001250",
+                    "color": "#56a04e",
+                    "organ": "spleen",
+                    "parent": 236
+                },
+                {
+                    "id": 255,
+                    "name": "Arterial Capillary",
+                    "type": "AS",
+                    "ontology_id": "ASCTB-TEMP:arterial-capillary",
+                    "id_from_ontology_id": "ASCTB-TEMP:arterial-capillary",
+                    "color": "#984ea3",
+                    "organ": "spleen",
+                    "parent": 254
+                },
+                {
+                    "id": 256,
+                    "name": "splenic endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:2000053",
+                    "id_from_ontology_id": "CL:2000053$$7934",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 255
+                },
+                {
+                    "id": 257,
+                    "name": "Sheathed capillary of spleen",
+                    "type": "AS",
+                    "ontology_id": "ASCTB-TEMP:sheathed-capillary-of-spleen",
+                    "id_from_ontology_id": "ASCTB-TEMP:sheathed-capillary-of-spleen$$7935",
+                    "color": "#984ea3",
+                    "organ": "spleen",
+                    "parent": 254
+                },
+                {
+                    "id": 258,
+                    "name": "splenic endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:2000053",
+                    "id_from_ontology_id": "CL:2000053$$7936",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 257
+                },
+                {
+                    "id": 259,
+                    "name": "mural cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0008034A",
+                    "id_from_ontology_id": "CL:0008034A",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 257
+                },
+                {
+                    "id": 260,
+                    "name": "Splenic Pericyte",
+                    "type": "CT",
+                    "ontology_id": "ASCTB-TEMP:splenic-pericyte",
+                    "id_from_ontology_id": "ASCTB-TEMP:splenic-pericyte",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 259
+                },
+                {
+                    "id": 261,
+                    "name": "stromal cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000499",
+                    "id_from_ontology_id": "CL:0000499$$7937",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 257
+                },
+                {
+                    "id": 262,
+                    "name": "Splenic Stromal Sheath Cell",
+                    "type": "CT",
+                    "ontology_id": "ASCTB-TEMP:splenic-stromal-sheath-cell",
+                    "id_from_ontology_id": "ASCTB-TEMP:splenic-stromal-sheath-cell",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 261
+                },
+                {
+                    "id": 263,
+                    "name": "splenic red pulp macrophage",
+                    "type": "CT",
+                    "ontology_id": "CL:0000874",
+                    "id_from_ontology_id": "CL:0000874",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 257
+                },
+                {
+                    "id": 264,
+                    "name": "naive B Cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000788",
+                    "id_from_ontology_id": "CL:0000788$$7938",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 257
+                },
+                {
+                    "id": 265,
+                    "name": "memory B cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000787",
+                    "id_from_ontology_id": "CL:0000787$$7939",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 257
+                },
+                {
+                    "id": 266,
+                    "name": "class switched memory B cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000972",
+                    "id_from_ontology_id": "CL:0000972$$7940",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 257
+                },
+                {
+                    "id": 267,
+                    "name": "splenic sinusoid",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0003910",
+                    "id_from_ontology_id": "UBERON:0003910$$7941",
+                    "color": "#984ea3",
+                    "organ": "spleen",
+                    "parent": 254
+                },
+                {
+                    "id": 268,
+                    "name": "Ring Fiber",
+                    "type": "AS",
+                    "ontology_id": "ASCTB-TEMP:ring-fiber",
+                    "id_from_ontology_id": "ASCTB-TEMP:ring-fiber",
+                    "color": "#984ea3",
+                    "organ": "spleen",
+                    "parent": 267
+                },
+                {
+                    "id": 269,
+                    "name": "stromal cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000499",
+                    "id_from_ontology_id": "CL:0000499$$7942",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 268
+                },
+                {
+                    "id": 270,
+                    "name": "Reticular Cell of splenic sinusoid",
+                    "type": "CT",
+                    "ontology_id": "ASCTB-TEMP:reticular-cell-of-splenic-sinusoid",
+                    "id_from_ontology_id": "ASCTB-TEMP:reticular-cell-of-splenic-sinusoid",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 269
+                },
+                {
+                    "id": 271,
+                    "name": "vein endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0002543",
+                    "id_from_ontology_id": "CL:0002543$$7943",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 267
+                },
+                {
+                    "id": 272,
+                    "name": "Splenic Littoral Cell",
+                    "type": "CT",
+                    "ontology_id": "ASCTB-TEMP:splenic-littoral-cell",
+                    "id_from_ontology_id": "ASCTB-TEMP:splenic-littoral-cell",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 271
+                },
+                {
+                    "id": 273,
+                    "name": "Splenic Red Pulp Stroma",
+                    "type": "AS",
+                    "ontology_id": "ASCTB-TEMP:splenic-red-pulp-stroma",
+                    "id_from_ontology_id": "ASCTB-TEMP:splenic-red-pulp-stroma",
+                    "color": "#984ea3",
+                    "organ": "spleen",
+                    "parent": 267
+                },
+                {
+                    "id": 274,
+                    "name": "stromal cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000499",
+                    "id_from_ontology_id": "CL:0000499$$7944",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 273
+                },
+                {
+                    "id": 275,
+                    "name": "Splenic Red Pulp Stromal Cell",
+                    "type": "CT",
+                    "ontology_id": "ASCTB-TEMP:splenic-red-pulp-stromal-cell",
+                    "id_from_ontology_id": "ASCTB-TEMP:splenic-red-pulp-stromal-cell",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 274
+                },
+                {
+                    "id": 276,
+                    "name": "splenic vein",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0003713",
+                    "id_from_ontology_id": "UBERON:0003713$$7945",
+                    "color": "#984ea3",
+                    "organ": "spleen",
+                    "parent": 254
+                },
+                {
+                    "id": 277,
+                    "name": "splenic endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:2000053",
+                    "id_from_ontology_id": "CL:2000053$$7946",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 276
+                },
+                {
+                    "id": 278,
+                    "name": "Red pulp venule of spleen",
+                    "type": "AS",
+                    "ontology_id": "ASCTB-TEMP:red-pulp-venule-of-spleen",
+                    "id_from_ontology_id": "ASCTB-TEMP:red-pulp-venule-of-spleen$$7947",
+                    "color": "#984ea3",
+                    "organ": "spleen",
+                    "parent": 254
+                },
+                {
+                    "id": 279,
+                    "name": "splenic endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:2000053",
+                    "id_from_ontology_id": "CL:2000053$$7948",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 278
+                },
+                {
+                    "id": 280,
+                    "name": "splenic cord",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0001266",
+                    "id_from_ontology_id": "UBERON:0001266",
+                    "color": "#984ea3",
+                    "organ": "spleen",
+                    "parent": 254
+                },
+                {
+                    "id": 281,
+                    "name": "splenic red pulp macrophage",
+                    "type": "CT",
+                    "ontology_id": "CL:0000874",
+                    "id_from_ontology_id": "CL:0000874$$7949",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 280
+                },
+                {
+                    "id": 282,
+                    "name": "hematopoietic stem cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000037",
+                    "id_from_ontology_id": "CL:0000037$$7950",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 280
+                },
+                {
+                    "id": 283,
+                    "name": "CD14-positive, CD16-low monocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0001055",
+                    "id_from_ontology_id": "CL:0001055",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 280
+                },
+                {
+                    "id": 284,
+                    "name": "erythrocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0000232",
+                    "id_from_ontology_id": "CL:0000232",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 280
+                },
+                {
+                    "id": 285,
+                    "name": "B cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000236",
+                    "id_from_ontology_id": "CL:0000236$$7951",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 280
+                },
+                {
+                    "id": 286,
+                    "name": "CD8-positive, alpha-beta T cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000625",
+                    "id_from_ontology_id": "CL:0000625$$7952",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 280
+                },
+                {
+                    "id": 287,
+                    "name": "CD8-positive, alpha-beta memory T cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000909",
+                    "id_from_ontology_id": "CL:0000909$$7953",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 280
+                },
+                {
+                    "id": 288,
+                    "name": "plasma cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000786",
+                    "id_from_ontology_id": "CL:0000786$$7954",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 280
+                },
+                {
+                    "id": 289,
+                    "name": "plasmablast",
+                    "type": "CT",
+                    "ontology_id": "CL:0000980",
+                    "id_from_ontology_id": "CL:0000980$$7955",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 280
+                },
+                {
+                    "id": 290,
+                    "name": "dendritic cell, human",
+                    "type": "CT",
+                    "ontology_id": "CL:0001056",
+                    "id_from_ontology_id": "CL:0001056$$7956",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 280
+                },
+                {
+                    "id": 291,
+                    "name": "platelet",
+                    "type": "CT",
+                    "ontology_id": "CL:0000233",
+                    "id_from_ontology_id": "CL:0000233",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 280
+                },
+                {
+                    "id": 292,
+                    "name": "natural killer cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000623",
+                    "id_from_ontology_id": "CL:0000623$$7957",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 280
+                },
+                {
+                    "id": 293,
+                    "name": "stromal cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000499",
+                    "id_from_ontology_id": "CL:0000499$$7958",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 280
+                },
+                {
+                    "id": 294,
+                    "name": "Splenic Stromal Cell (non-FRC/non-FDC)",
+                    "type": "CT",
+                    "ontology_id": "ADDED",
+                    "id_from_ontology_id": "ADDED",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 293
+                },
+                {
+                    "id": 295,
+                    "name": "reticular cell of splenic cord",
+                    "type": "CT",
+                    "ontology_id": "CL:1000489",
+                    "id_from_ontology_id": "CL:1000489",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 280
+                },
+                {
+                    "id": 296,
+                    "name": "Red Pulp-White Pulp Border",
+                    "type": "AS",
+                    "ontology_id": "ASCTB-TEMP:red-pulp-white-pulp-border",
+                    "id_from_ontology_id": "ASCTB-TEMP:red-pulp-white-pulp-border",
+                    "color": "#984ea3",
+                    "organ": "spleen",
+                    "parent": 236
+                },
+                {
+                    "id": 297,
+                    "name": "spleen perifollicular zone",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0005353",
+                    "id_from_ontology_id": "UBERON:0005353",
+                    "color": "#984ea3",
+                    "organ": "spleen",
+                    "parent": 296
+                },
+                {
+                    "id": 298,
+                    "name": "erythrocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0000232",
+                    "id_from_ontology_id": "CL:0000232$$7959",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 297
+                },
+                {
+                    "id": 299,
+                    "name": "CD14-positive, CD16-low monocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0001055",
+                    "id_from_ontology_id": "CL:0001055$$7960",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 297
+                },
+                {
+                    "id": 300,
+                    "name": "neutrophil",
+                    "type": "CT",
+                    "ontology_id": "CL:0000775",
+                    "id_from_ontology_id": "CL:0000775$$7961",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 297
+                },
+                {
+                    "id": 301,
+                    "name": "leukocyte",
+                    "type": "CT",
+                    "ontology_id": "CL:0000738",
+                    "id_from_ontology_id": "CL:0000738$$7962",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 297
+                },
+                {
+                    "id": 302,
+                    "name": "Splenic perifollicular zone macrophage",
+                    "type": "CT",
+                    "ontology_id": "ASCTB-TEMP:splenic-perifollicular-zone-macrophage",
+                    "id_from_ontology_id": "ASCTB-TEMP:splenic-perifollicular-zone-macrophage",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 301
+                },
+                {
+                    "id": 303,
+                    "name": "Sheathed capillary of spleen",
+                    "type": "AS",
+                    "ontology_id": "ASCTB-TEMP:sheathed-capillary-of-spleen",
+                    "id_from_ontology_id": "ASCTB-TEMP:sheathed-capillary-of-spleen$$7963",
+                    "color": "#984ea3",
+                    "organ": "spleen",
+                    "parent": 297
+                },
+                {
+                    "id": 304,
+                    "name": "stromal cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000499",
+                    "id_from_ontology_id": "CL:0000499$$7964",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 303
+                },
+                {
+                    "id": 305,
+                    "name": "CD141-positive myeloid dendritic cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0002394",
+                    "id_from_ontology_id": "CL:0002394$$7965",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 297
+                },
+                {
+                    "id": 306,
+                    "name": "CD1c-positive myeloid dendritic cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0002399",
+                    "id_from_ontology_id": "CL:0002399$$7966",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 297
+                },
+                {
+                    "id": 307,
+                    "name": "monocyte-derived dendritic cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0011031",
+                    "id_from_ontology_id": "CL:0011031",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 297
+                },
+                {
+                    "id": 308,
+                    "name": "plasmacytoid dendritic cell, human",
+                    "type": "CT",
+                    "ontology_id": "CL:0001058",
+                    "id_from_ontology_id": "CL:0001058$$7967",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 297
+                },
+                {
+                    "id": 309,
+                    "name": "conventional dendritic cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000990",
+                    "id_from_ontology_id": "CL:0000990$$7968",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 297
+                },
+                {
+                    "id": 310,
+                    "name": "DEC205+ DC",
+                    "type": "CT",
+                    "ontology_id": "ASCTB-TEMP:dec205-dc",
+                    "id_from_ontology_id": "ASCTB-TEMP:dec205-dc",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 309
+                },
+                {
+                    "id": 311,
+                    "name": "Marginal Zone of Spleen",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0001251",
+                    "id_from_ontology_id": "UBERON:0001251",
+                    "color": "#984ea3",
+                    "organ": "spleen",
+                    "parent": 296
+                },
+                {
+                    "id": 312,
+                    "name": "class switched memory B cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000972",
+                    "id_from_ontology_id": "CL:0000972$$7994",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 311
+                },
+                {
+                    "id": 313,
+                    "name": "memory B cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000787",
+                    "id_from_ontology_id": "CL:0000787$$7995",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 311
+                },
+                {
+                    "id": 314,
+                    "name": "marginal zone B cell of spleen",
+                    "type": "CT",
+                    "ontology_id": "CL:0000845",
+                    "id_from_ontology_id": "CL:0000845",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 311
+                },
+                {
+                    "id": 315,
+                    "name": "transitional stage B cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000818",
+                    "id_from_ontology_id": "CL:0000818$$7996",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 311
+                },
+                {
+                    "id": 316,
+                    "name": "follicular dendritic cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000442",
+                    "id_from_ontology_id": "CL:0000442$$7997",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 311
+                },
+                {
+                    "id": 317,
+                    "name": "splenic marginal zone macrophage",
+                    "type": "CT",
+                    "ontology_id": "CL:0000872",
+                    "id_from_ontology_id": "CL:0000872",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 311
+                },
+                {
+                    "id": 318,
+                    "name": "stromal cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000499",
+                    "id_from_ontology_id": "CL:0000499$$7998",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 311
+                },
+                {
+                    "id": 319,
+                    "name": "Splenic Stromal Cell (non-FRC/non-FDC)",
+                    "type": "CT",
+                    "ontology_id": "ASCTB-TEMP:splenic-stromal-cell-non-frc-non-fdc-",
+                    "id_from_ontology_id": "ASCTB-TEMP:splenic-stromal-cell-non-frc-non-fdc-$$7999",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 318
+                },
+                {
+                    "id": 320,
+                    "name": "plasmacytoid dendritic cell, human",
+                    "type": "CT",
+                    "ontology_id": "CL:0001058",
+                    "id_from_ontology_id": "CL:0001058$$8000",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 311
+                },
+                {
+                    "id": 321,
+                    "name": "CD4-positive helper T cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000492",
+                    "id_from_ontology_id": "CL:0000492",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 311
+                },
+                {
+                    "id": 322,
+                    "name": "plasma cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000786",
+                    "id_from_ontology_id": "CL:0000786$$8001",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 311
+                },
+                {
+                    "id": 323,
+                    "name": "group 3 innate lymphoid cell, human",
+                    "type": "CT",
+                    "ontology_id": "CL:0001078",
+                    "id_from_ontology_id": "CL:0001078",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 311
+                },
+                {
+                    "id": 324,
+                    "name": "neutrophil",
+                    "type": "CT",
+                    "ontology_id": "CL:0000775",
+                    "id_from_ontology_id": "CL:0000775$$8002",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 311
+                },
+                {
+                    "id": 325,
+                    "name": "splenic endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:2000053",
+                    "id_from_ontology_id": "CL:2000053$$8003",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 311
+                },
+                {
+                    "id": 326,
+                    "name": "reticular cell of splenic cord",
+                    "type": "CT",
+                    "ontology_id": "CL:1000489",
+                    "id_from_ontology_id": "CL:1000489$$8004",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 311
+                },
+                {
+                    "id": 327,
+                    "name": "white pulp of spleen",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0001959",
+                    "id_from_ontology_id": "UBERON:0001959",
+                    "color": "#56a04e",
+                    "organ": "spleen",
+                    "parent": 236
+                },
+                {
+                    "id": 328,
+                    "name": "Spleen central arteriole",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0010401",
+                    "id_from_ontology_id": "UBERON:0010401$$7969",
+                    "color": "#984ea3",
+                    "organ": "spleen",
+                    "parent": 327
+                },
+                {
+                    "id": 329,
+                    "name": "splenic endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:2000053",
+                    "id_from_ontology_id": "CL:2000053$$7970",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 328
+                },
+                {
+                    "id": 330,
+                    "name": "Inner PALS",
+                    "type": "AS",
+                    "ontology_id": "ASCTB-TEMP:inner-pals",
+                    "id_from_ontology_id": "ASCTB-TEMP:inner-pals",
+                    "color": "#984ea3",
+                    "organ": "spleen",
+                    "parent": 328
+                },
+                {
+                    "id": 331,
+                    "name": "splenic endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:2000053",
+                    "id_from_ontology_id": "CL:2000053$$8005",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 330
+                },
+                {
+                    "id": 332,
+                    "name": "stromal cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000499",
+                    "id_from_ontology_id": "CL:0000499$$8006",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 330
+                },
+                {
+                    "id": 333,
+                    "name": "Adventitial Stromal Cell",
+                    "type": "CT",
+                    "ontology_id": "ASCTB-TEMP:adventitial-stromal-cell",
+                    "id_from_ontology_id": "ASCTB-TEMP:adventitial-stromal-cell$$8007",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 332
+                },
+                {
+                    "id": 334,
+                    "name": "catecholaminergic neuron",
+                    "type": "CT",
+                    "ontology_id": "CL:4033050",
+                    "id_from_ontology_id": "CL:4033050$$8008",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 330
+                },
+                {
+                    "id": 335,
+                    "name": "White Pulp Lymphatic Vessels",
+                    "type": "AS",
+                    "ontology_id": "ASCTB-TEMP:white-pulp-lymphatic-vessels",
+                    "id_from_ontology_id": "ASCTB-TEMP:white-pulp-lymphatic-vessels",
+                    "color": "#984ea3",
+                    "organ": "spleen",
+                    "parent": 327
+                },
+                {
+                    "id": 336,
+                    "name": "endothelial cell of lymphatic vessel",
+                    "type": "CT",
+                    "ontology_id": "CL:0002138",
+                    "id_from_ontology_id": "CL:0002138$$7971",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 335
+                },
+                {
+                    "id": 337,
+                    "name": "spleen primary B follicle",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0004041",
+                    "id_from_ontology_id": "UBERON:0004041",
+                    "color": "#984ea3",
+                    "organ": "spleen",
+                    "parent": 327
+                },
+                {
+                    "id": 338,
+                    "name": "follicular dendritic cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000442",
+                    "id_from_ontology_id": "CL:0000442$$7972",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 337
+                },
+                {
+                    "id": 339,
+                    "name": "naive B cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000788",
+                    "id_from_ontology_id": "CL:0000788$$7973",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 337
+                },
+                {
+                    "id": 340,
+                    "name": "memory B cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000787",
+                    "id_from_ontology_id": "CL:0000787$$7974",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 337
+                },
+                {
+                    "id": 341,
+                    "name": "splenic white pulp macrophage",
+                    "type": "CT",
+                    "ontology_id": "CL:0000876",
+                    "id_from_ontology_id": "CL:0000876",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 337
+                },
+                {
+                    "id": 342,
+                    "name": "conventional dendritic cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000990",
+                    "id_from_ontology_id": "CL:0000990$$7975",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 337
+                },
+                {
+                    "id": 343,
+                    "name": "DEC205+ DC",
+                    "type": "CT",
+                    "ontology_id": "ASCTB-TEMP:dec205-dc",
+                    "id_from_ontology_id": "ASCTB-TEMP:dec205-dc$$7976",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 342
+                },
+                {
+                    "id": 344,
+                    "name": "spleen secondary B follicle",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0004042",
+                    "id_from_ontology_id": "UBERON:0004042",
+                    "color": "#984ea3",
+                    "organ": "spleen",
+                    "parent": 327
+                },
+                {
+                    "id": 345,
+                    "name": "spleen germinal center",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0005196",
+                    "id_from_ontology_id": "UBERON:0005196",
+                    "color": "#984ea3",
+                    "organ": "spleen",
+                    "parent": 344
+                },
+                {
+                    "id": 346,
+                    "name": "follicular dendritic cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000442",
+                    "id_from_ontology_id": "CL:0000442$$7977",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 345
+                },
+                {
+                    "id": 347,
+                    "name": "germinal center B cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000844",
+                    "id_from_ontology_id": "CL:0000844$$7978",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 345
+                },
+                {
+                    "id": 348,
+                    "name": "T follicular helper cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0002038",
+                    "id_from_ontology_id": "CL:0002038$$7979",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 345
+                },
+                {
+                    "id": 349,
+                    "name": "T follicular regulatory cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0009113",
+                    "id_from_ontology_id": "CL:0009113$$7980",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 345
+                },
+                {
+                    "id": 350,
+                    "name": "splenic tingible body macrophage",
+                    "type": "CT",
+                    "ontology_id": "CL:0000877",
+                    "id_from_ontology_id": "CL:0000877",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 345
+                },
+                {
+                    "id": 351,
+                    "name": "plasmablast",
+                    "type": "CT",
+                    "ontology_id": "CL:0000980",
+                    "id_from_ontology_id": "CL:0000980$$7981",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 345
+                },
+                {
+                    "id": 352,
+                    "name": "spleen B cell corona",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0010421",
+                    "id_from_ontology_id": "UBERON:0010421",
+                    "color": "#984ea3",
+                    "organ": "spleen",
+                    "parent": 344
+                },
+                {
+                    "id": 353,
+                    "name": "Inner Mantle Zone",
+                    "type": "AS",
+                    "ontology_id": "ASCTB-TEMP:inner-mantle-zone",
+                    "id_from_ontology_id": "ASCTB-TEMP:inner-mantle-zone",
+                    "color": "#984ea3",
+                    "organ": "spleen",
+                    "parent": 352
+                },
+                {
+                    "id": 354,
+                    "name": "B cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000236",
+                    "id_from_ontology_id": "CL:0000236$$7982",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 353
+                },
+                {
+                    "id": 355,
+                    "name": "Mantle Zone B Cell",
+                    "type": "CT",
+                    "ontology_id": "ASCTB-TEMP:mantle-zone-b-cell",
+                    "id_from_ontology_id": "ASCTB-TEMP:mantle-zone-b-cell",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 354
+                },
+                {
+                    "id": 356,
+                    "name": "transitional stage B cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000818",
+                    "id_from_ontology_id": "CL:0000818$$7983",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 353
+                },
+                {
+                    "id": 357,
+                    "name": "follicular dendritic cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000442",
+                    "id_from_ontology_id": "CL:0000442$$7984",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 353
+                },
+                {
+                    "id": 358,
+                    "name": "splenic endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:2000053",
+                    "id_from_ontology_id": "CL:2000053$$7985",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 353
+                },
+                {
+                    "id": 359,
+                    "name": "mural cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0008034A",
+                    "id_from_ontology_id": "CL:0008034A$$7986",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 353
+                },
+                {
+                    "id": 360,
+                    "name": "Splenic Pericyte",
+                    "type": "CT",
+                    "ontology_id": "ASCTB-TEMP:splenic-pericyte",
+                    "id_from_ontology_id": "ASCTB-TEMP:splenic-pericyte$$7987",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 359
+                },
+                {
+                    "id": 361,
+                    "name": "Superficial Mantle Zone",
+                    "type": "AS",
+                    "ontology_id": "ASCTB-TEMP:superficial-mantle-zone",
+                    "id_from_ontology_id": "ASCTB-TEMP:superficial-mantle-zone",
+                    "color": "#984ea3",
+                    "organ": "spleen",
+                    "parent": 352
+                },
+                {
+                    "id": 362,
+                    "name": "naive B cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000788",
+                    "id_from_ontology_id": "CL:0000788$$7988",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 361
+                },
+                {
+                    "id": 363,
+                    "name": "memory B cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000787",
+                    "id_from_ontology_id": "CL:0000787$$7989",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 361
+                },
+                {
+                    "id": 364,
+                    "name": "follicular dendritic cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000442",
+                    "id_from_ontology_id": "CL:0000442$$7990",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 361
+                },
+                {
+                    "id": 365,
+                    "name": "mural cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0008034A",
+                    "id_from_ontology_id": "CL:0008034A$$7991",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 361
+                },
+                {
+                    "id": 366,
+                    "name": "Splenic Pericyte",
+                    "type": "CT",
+                    "ontology_id": "ASCTB-TEMP:splenic-pericyte",
+                    "id_from_ontology_id": "ASCTB-TEMP:splenic-pericyte$$7992",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 365
+                },
+                {
+                    "id": 367,
+                    "name": "splenic endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:2000053",
+                    "id_from_ontology_id": "CL:2000053$$7993",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 361
+                },
+                {
+                    "id": 368,
+                    "name": "periarterial lymphatic sheath",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0001960",
+                    "id_from_ontology_id": "UBERON:0001960",
+                    "color": "#984ea3",
+                    "organ": "spleen",
+                    "parent": 327
+                },
+                {
+                    "id": 369,
+                    "name": "Inner PALS",
+                    "type": "AS",
+                    "ontology_id": "ASCTB-TEMP:inner-pals",
+                    "id_from_ontology_id": "ASCTB-TEMP:inner-pals$$8009",
+                    "color": "#984ea3",
+                    "organ": "spleen",
+                    "parent": 368
+                },
+                {
+                    "id": 370,
+                    "name": "naive thymus-derived CD4-positive, alpha-beta T cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000895",
+                    "id_from_ontology_id": "CL:0000895$$8010",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 369
+                },
+                {
+                    "id": 371,
+                    "name": "CD4-positive helper T cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000492",
+                    "id_from_ontology_id": "CL:0000492$$8011",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 369
+                },
+                {
+                    "id": 372,
+                    "name": "naive thymus-derived CD8-positive, alpha-beta T cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000900",
+                    "id_from_ontology_id": "CL:0000900$$8012",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 369
+                },
+                {
+                    "id": 373,
+                    "name": "effector CD8-positive, alpha-beta T cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0001050",
+                    "id_from_ontology_id": "CL:0001050$$8013",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 369
+                },
+                {
+                    "id": 374,
+                    "name": "CD8-positive, alpha-beta cytotoxic T cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000794",
+                    "id_from_ontology_id": "CL:0000794",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 369
+                },
+                {
+                    "id": 375,
+                    "name": "regulatory T cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000815",
+                    "id_from_ontology_id": "CL:0000815$$8014",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 369
+                },
+                {
+                    "id": 376,
+                    "name": "reticular cell of splenic cord",
+                    "type": "CT",
+                    "ontology_id": "CL:1000489",
+                    "id_from_ontology_id": "CL:1000489$$8015",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 369
+                },
+                {
+                    "id": 377,
+                    "name": "conventional dendritic cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000990",
+                    "id_from_ontology_id": "CL:0000990$$8016",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 369
+                },
+                {
+                    "id": 378,
+                    "name": "Interdigitating Dendritic Cells",
+                    "type": "CT",
+                    "ontology_id": "ASCTB-TEMP:interdigitating-dendritic-cells",
+                    "id_from_ontology_id": "ASCTB-TEMP:interdigitating-dendritic-cells",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 377
+                },
+                {
+                    "id": 379,
+                    "name": "splenic white pulp macrophage",
+                    "type": "CT",
+                    "ontology_id": "CL:0000876",
+                    "id_from_ontology_id": "CL:0000876$$8017",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 369
+                },
+                {
+                    "id": 380,
+                    "name": "Sympathetic nerve plexus",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0012373",
+                    "id_from_ontology_id": "UBERON:0012373$$8018",
+                    "color": "#984ea3",
+                    "organ": "spleen",
+                    "parent": 369
+                },
+                {
+                    "id": 381,
+                    "name": "catecholaminergic neuron",
+                    "type": "CT",
+                    "ontology_id": "CL:4033050",
+                    "id_from_ontology_id": "CL:4033050$$8019",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 380
+                },
+                {
+                    "id": 382,
+                    "name": "endothelial cell of lymphatic vessel",
+                    "type": "CT",
+                    "ontology_id": "CL:0002138",
+                    "id_from_ontology_id": "CL:0002138$$8020",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 369
+                },
+                {
+                    "id": 383,
+                    "name": "smooth muscle cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000192",
+                    "id_from_ontology_id": "CL:0000192$$8021",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 369
+                },
+                {
+                    "id": 384,
+                    "name": "Splenic Smooth Muscle Cell",
+                    "type": "CT",
+                    "ontology_id": "ASCTB-TEMP:splenic-smooth-muscle-cell",
+                    "id_from_ontology_id": "ASCTB-TEMP:splenic-smooth-muscle-cell$$8022",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 383
+                },
+                {
+                    "id": 385,
+                    "name": "Outer PALS",
+                    "type": "AS",
+                    "ontology_id": "ASCTB-TEMP:outer-pals",
+                    "id_from_ontology_id": "ASCTB-TEMP:outer-pals",
+                    "color": "#984ea3",
+                    "organ": "spleen",
+                    "parent": 368
+                },
+                {
+                    "id": 386,
+                    "name": "naive thymus-derived CD4-positive, alpha-beta T cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000895",
+                    "id_from_ontology_id": "CL:0000895$$8023",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 385
+                },
+                {
+                    "id": 387,
+                    "name": "CD4-positive helper T cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000492",
+                    "id_from_ontology_id": "CL:0000492$$8024",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 385
+                },
+                {
+                    "id": 388,
+                    "name": "naive thymus-derived CD8-positive, alpha-beta T cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000900",
+                    "id_from_ontology_id": "CL:0000900$$8025",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 385
+                },
+                {
+                    "id": 389,
+                    "name": "effector CD8-positive, alpha-beta T cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0001050",
+                    "id_from_ontology_id": "CL:0001050$$8026",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 385
+                },
+                {
+                    "id": 390,
+                    "name": "CD8-positive, alpha-beta cytotoxic T cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000794",
+                    "id_from_ontology_id": "CL:0000794$$8027",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 385
+                },
+                {
+                    "id": 391,
+                    "name": "regulatory T cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000815",
+                    "id_from_ontology_id": "CL:0000815$$8028",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 385
+                },
+                {
+                    "id": 392,
+                    "name": "reticular cell of splenic cord",
+                    "type": "CT",
+                    "ontology_id": "CL:1000489",
+                    "id_from_ontology_id": "CL:1000489$$8029",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 385
+                },
+                {
+                    "id": 393,
+                    "name": "transitional stage B cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000818",
+                    "id_from_ontology_id": "CL:0000818$$8030",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 385
+                },
+                {
+                    "id": 394,
+                    "name": "CD8-positive, alpha-beta memory T cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000909",
+                    "id_from_ontology_id": "CL:0000909$$8031",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 368
+                },
+                {
+                    "id": 395,
+                    "name": "CD4-positive, alpha-beta memory T cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000897",
+                    "id_from_ontology_id": "CL:0000897$$8032",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 368
+                },
+                {
+                    "id": 396,
+                    "name": "myofibroblast cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000186",
+                    "id_from_ontology_id": "CL:0000186$$8033",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 368
+                },
+                {
+                    "id": 397,
+                    "name": "plasmacytoid dendritic cell, human",
+                    "type": "CT",
+                    "ontology_id": "CL:0001058",
+                    "id_from_ontology_id": "CL:0001058$$8034",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 368
+                },
+                {
+                    "id": 398,
+                    "name": "stromal cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000499",
+                    "id_from_ontology_id": "CL:0000499$$8035",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 368
+                },
+                {
+                    "id": 399,
+                    "name": "Splenic Stromal Cell (non-FRC/non-FDC)",
+                    "type": "CT",
+                    "ontology_id": "ASCTB-TEMP:splenic-stromal-cell-non-frc-non-fdc-",
+                    "id_from_ontology_id": "ASCTB-TEMP:splenic-stromal-cell-non-frc-non-fdc-$$8036",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 398
+                },
+                {
+                    "id": 400,
+                    "name": "CD141-positive myeloid dendritic cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0002394",
+                    "id_from_ontology_id": "CL:0002394$$8037",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 368
+                },
+                {
+                    "id": 401,
+                    "name": "CD1c-positive myeloid dendritic cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0002399",
+                    "id_from_ontology_id": "CL:0002399$$8038",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 368
+                },
+                {
+                    "id": 402,
+                    "name": "splenic white pulp macrophage",
+                    "type": "CT",
+                    "ontology_id": "CL:0000876",
+                    "id_from_ontology_id": "CL:0000876$$8039",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 368
+                },
+                {
+                    "id": 403,
+                    "name": "DEC205+ DC",
+                    "type": "CT",
+                    "ontology_id": "ASCTB-TEMP:dec205-dc",
+                    "id_from_ontology_id": "ASCTB-TEMP:dec205-dc$$8040",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 402
+                },
+                {
+                    "id": 404,
+                    "name": "conventional dendritic cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000990",
+                    "id_from_ontology_id": "CL:0000990$$8041",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 368
+                },
+                {
+                    "id": 405,
+                    "name": "plasmablast",
+                    "type": "CT",
+                    "ontology_id": "CL:0000980",
+                    "id_from_ontology_id": "CL:0000980$$8042",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 368
+                },
+                {
+                    "id": 406,
+                    "name": "natural killer cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000623",
+                    "id_from_ontology_id": "CL:0000623$$8043",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 368
+                },
+                {
+                    "id": 407,
+                    "name": "gamma-delta T cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000798",
+                    "id_from_ontology_id": "CL:0000798$$8044",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 368
+                },
+                {
+                    "id": 408,
+                    "name": "hilum of spleen",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0001248",
+                    "id_from_ontology_id": "UBERON:0001248",
+                    "color": "#984ea3",
+                    "organ": "spleen",
+                    "parent": 0
+                },
+                {
+                    "id": 409,
+                    "name": "splenic artery",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0001194",
+                    "id_from_ontology_id": "UBERON:0001194$$8045",
+                    "color": "#984ea3",
+                    "organ": "spleen",
+                    "parent": 408
+                },
+                {
+                    "id": 410,
+                    "name": "endothelial cell of artery",
+                    "type": "CT",
+                    "ontology_id": "CL:1000413",
+                    "id_from_ontology_id": "CL:1000413$$8046",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 409
+                },
+                {
+                    "id": 411,
+                    "name": "splenic vein",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0003713",
+                    "id_from_ontology_id": "UBERON:0003713$$8047",
+                    "color": "#984ea3",
+                    "organ": "spleen",
+                    "parent": 408
+                },
+                {
+                    "id": 412,
+                    "name": "vein endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0002543",
+                    "id_from_ontology_id": "CL:0002543$$8048",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 411
+                },
+                {
+                    "id": 413,
+                    "name": "Sympathetic nerve plexus",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0012373",
+                    "id_from_ontology_id": "UBERON:0012373$$8049",
+                    "color": "#984ea3",
+                    "organ": "spleen",
+                    "parent": 408
+                },
+                {
+                    "id": 414,
+                    "name": "catecholaminergic neuron",
+                    "type": "CT",
+                    "ontology_id": "CL:4033050",
+                    "id_from_ontology_id": "CL:4033050$$8050",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 413
+                },
+                {
+                    "id": 415,
+                    "name": "lymphatic vessel",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0001473",
+                    "id_from_ontology_id": "UBERON:0001473$$8051",
+                    "color": "#984ea3",
+                    "organ": "spleen",
+                    "parent": 408
+                },
+                {
+                    "id": 416,
+                    "name": "endothelial cell of lymphatic vessel",
+                    "type": "CT",
+                    "ontology_id": "CL:0002138",
+                    "id_from_ontology_id": "CL:0002138$$8052",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 415
+                },
+                {
+                    "id": 417,
+                    "name": "spleen capsule",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0004641",
+                    "id_from_ontology_id": "UBERON:0004641",
+                    "color": "#984ea3",
+                    "organ": "spleen",
+                    "parent": 0
+                },
+                {
+                    "id": 418,
+                    "name": "Connective tissue",
+                    "type": "AS",
+                    "ontology_id": "ASCTB-TEMP:connective-tissue",
+                    "id_from_ontology_id": "ASCTB-TEMP:connective-tissue$$8053",
+                    "color": "#984ea3",
+                    "organ": "spleen",
+                    "parent": 417
+                },
+                {
+                    "id": 419,
+                    "name": "myofibroblast cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000186",
+                    "id_from_ontology_id": "CL:0000186$$8054",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 418
+                },
+                {
+                    "id": 420,
+                    "name": "Subcapsule",
+                    "type": "AS",
+                    "ontology_id": "ASCTB-TEMP:subcapsule",
+                    "id_from_ontology_id": "ASCTB-TEMP:subcapsule",
+                    "color": "#984ea3",
+                    "organ": "spleen",
+                    "parent": 417
+                },
+                {
+                    "id": 421,
+                    "name": "conventional dendritic cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000990",
+                    "id_from_ontology_id": "CL:0000990$$8055",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 420
+                },
+                {
+                    "id": 422,
+                    "name": "Subcapsular Dendritic Cell",
+                    "type": "CT",
+                    "ontology_id": "ASCTB-TEMP:subcapsular-dendritic-cell",
+                    "id_from_ontology_id": "ASCTB-TEMP:subcapsular-dendritic-cell",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 421
+                },
+                {
+                    "id": 423,
+                    "name": "lymphatic vessel",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0001473",
+                    "id_from_ontology_id": "UBERON:0001473$$8056",
+                    "color": "#984ea3",
+                    "organ": "spleen",
+                    "parent": 417
+                },
+                {
+                    "id": 424,
+                    "name": "endothelial cell of lymphatic vessel",
+                    "type": "CT",
+                    "ontology_id": "CL:0002138",
+                    "id_from_ontology_id": "CL:0002138$$8057",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 423
+                },
+                {
+                    "id": 425,
+                    "name": "trabecula of spleen",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0001265",
+                    "id_from_ontology_id": "UBERON:0001265",
+                    "color": "#984ea3",
+                    "organ": "spleen",
+                    "parent": 417
+                },
+                {
+                    "id": 426,
+                    "name": "Spleen Trabecular Artery",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0010399",
+                    "id_from_ontology_id": "UBERON:0010399$$8058",
+                    "color": "#984ea3",
+                    "organ": "spleen",
+                    "parent": 425
+                },
+                {
+                    "id": 427,
+                    "name": "splenic endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:2000053",
+                    "id_from_ontology_id": "CL:2000053$$8059",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 426
+                },
+                {
+                    "id": 428,
+                    "name": "Spleen Trabecular Vein",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0010400",
+                    "id_from_ontology_id": "UBERON:0010400$$8060",
+                    "color": "#984ea3",
+                    "organ": "spleen",
+                    "parent": 425
+                },
+                {
+                    "id": 429,
+                    "name": "splenic endothelial cell",
+                    "type": "CT",
+                    "ontology_id": "CL:2000053",
+                    "id_from_ontology_id": "CL:2000053$$8061",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 428
+                },
+                {
+                    "id": 430,
+                    "name": "Sympathetic nerve plexus",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0012373",
+                    "id_from_ontology_id": "UBERON:0012373$$8062",
+                    "color": "#984ea3",
+                    "organ": "spleen",
+                    "parent": 425
+                },
+                {
+                    "id": 431,
+                    "name": "catecholaminergic neuron",
+                    "type": "CT",
+                    "ontology_id": "CL:4033050",
+                    "id_from_ontology_id": "CL:4033050$$8063",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 430
+                },
+                {
+                    "id": 432,
+                    "name": "lymphatic vessel",
+                    "type": "AS",
+                    "ontology_id": "UBERON:0001473",
+                    "id_from_ontology_id": "UBERON:0001473$$8064",
+                    "color": "#984ea3",
+                    "organ": "spleen",
+                    "parent": 425
+                },
+                {
+                    "id": 433,
+                    "name": "endothelial cell of lymphatic vessel",
+                    "type": "CT",
+                    "ontology_id": "CL:0002138",
+                    "id_from_ontology_id": "CL:0002138$$8065",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 432
+                },
+                {
+                    "id": 434,
+                    "name": "myofibroblast cell",
+                    "type": "CT",
+                    "ontology_id": "CL:0000186",
+                    "id_from_ontology_id": "CL:0000186$$8066",
+                    "color": "#ff7f00",
+                    "organ": "spleen",
+                    "parent": 425
+                }
+            ],
+            "transform": [
+                {
+                    "type": "stratify",
+                    "key": "id",
+                    "parentKey": "parent"
+                },
+                {
+                    "type": "tree",
+                    "method": {
+                        "signal": "layout"
+                    },
+                    "size": [
+                        1,
+                        {
+                            "signal": "radius"
+                        }
+                    ],
+                    "as": [
+                        "alpha",
+                        "radius",
+                        "depth",
+                        "children"
+                    ]
+                },
+                {
+                    "type": "formula",
+                    "expr": "(rotate + extent * datum.alpha + 270) % 360",
+                    "as": "angle"
+                },
+                {
+                    "type": "formula",
+                    "expr": "PI * datum.angle / 180",
+                    "as": "radians"
+                },
+                {
+                    "type": "formula",
+                    "expr": "inrange(datum.angle, [90, 270])",
+                    "as": "leftside"
+                },
+                {
+                    "type": "formula",
+                    "expr": "originX + datum.radius * cos(datum.radians)",
+                    "as": "x"
+                },
+                {
+                    "type": "formula",
+                    "expr": "originY + datum.radius * sin(datum.radians)",
+                    "as": "y"
+                }
+            ]
+        },
+        {
+            "name": "links",
+            "source": "tree",
+            "transform": [
+                {
+                    "type": "treelinks"
+                },
+                {
+                    "type": "linkpath",
+                    "shape": {
+                        "signal": "links"
+                    },
+                    "orient": "radial",
+                    "sourceX": "source.radians",
+                    "sourceY": "source.radius",
+                    "targetX": "target.radians",
+                    "targetY": "target.radius"
+                }
+            ]
+        }
+    ],
+    "marks": [
+        {
+            "type": "path",
+            "from": {
+                "data": "links"
+            },
+            "encode": {
+                "update": {
+                    "x": {
+                        "signal": "originX"
+                    },
+                    "y": {
+                        "signal": "originY"
+                    },
+                    "path": {
+                        "field": "path"
+                    },
+                    "stroke": {
+                        "value": "#ccc"
+                    },
+                    "opacity": {
+                        "value": 0.7
+                    },
+                    "strokeWidth": {
+                        "value": 0.5
+                    }
+                }
+            }
+        },
+        {
+            "type": "symbol",
+            "from": {
+                "data": "tree"
+            },
+            "encode": {
+                "enter": {
+                    "size": {
+                        "value": 12
+                    },
+                    "stroke": {
+                        "value": "#fff"
+                    },
+                    "strokeWidth": {
+                        "value": 0.2
+                    }
+                },
+                "update": {
+                    "x": {
+                        "field": "x"
+                    },
+                    "y": {
+                        "field": "y"
+                    },
+                    "fill": {
+                        "field": "color"
+                    },
+                    "opacity": {
+                        "value": 0.3
+                    },
+                    "size": {
+                        "value": 40
+                    },
+                    "strokeWidth": {
+                        "value": 0.5
+                    }
+                }
+            }
+        },
+        {
+            "type": "text",
+            "from": {
+                "data": "tree"
+            },
+            "encode": {
+                "enter": {
+                    "text": {
+                        "field": "name"
+                    },
+                    "fontSize": {
+                        "value": 2
+                    },
+                    "baseline": {
+                        "value": "middle"
+                    }
+                },
+                "update": {
+                    "x": {
+                        "field": "x"
+                    },
+                    "y": {
+                        "field": "y"
+                    },
+                    "dx": {
+                        "value": 2
+                    },
+                    "angle": {
+                        "signal": "datum.leftside ? datum.angle - 180 : datum.angle"
+                    },
+                    "align": {
+                        "signal": "datum.leftside ? 'right' : 'left'"
+                    },
+                    "opacity": {
+                        "signal": "labels ? 0.5 : 1"
+                    },
+                    "fontSize": {
+                        "value": 6
+                    }
+                }
+            }
+        }
+    ],
+    "config": {},
+    "background": "white"
+}

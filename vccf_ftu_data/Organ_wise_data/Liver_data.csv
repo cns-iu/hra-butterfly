@@ -1,0 +1,37 @@
+﻿FTU,Organ,FTUID,PathStep,PathVessel,PathVesselID,Type
+liver lobule,Liver,UBERON:0004647,1,left ventricle,UBERON:0002084,Artery
+liver lobule,Liver,UBERON:0004647,2,aorta,UBERON:0000947,Artery
+liver lobule,Liver,UBERON:0004647,3,ascending aorta,UBERON:0001496,Artery
+liver lobule,Liver,UBERON:0004647,4,aortic arch,UBERON:0001508,Artery
+liver lobule,Liver,UBERON:0004647,5,descending aorta,UBERON:0001514,Artery
+liver lobule,Liver,UBERON:0004647,6,descending thoracic aorta,UBERON:0002345,Artery
+liver lobule,Liver,UBERON:0004647,7,abdominal aorta,UBERON:0001516,Artery
+liver lobule,Liver,UBERON:0004647,8,celiac artery,UBERON:0001640,Artery
+liver lobule,Liver,UBERON:0004647,9,splenic artery,UBERON:0001194,Artery
+liver lobule,Liver,UBERON:0004647,10,lobar artery of spleen,nan,Artery
+liver lobule,Liver,UBERON:0004647,11,segmental branch of lobar artery of spleen,nan,Artery
+liver lobule,Liver,UBERON:0004647,12,spleen trabecular artery,UBERON:0010399,Artery
+liver lobule,Liver,UBERON:0004647,13,spleen central arteriole,UBERON:0010401,Artery
+liver lobule,Liver,UBERON:0004647,14,non-penicillar arteriole of spleen,nan,Artery
+liver lobule,Liver,UBERON:0004647,15,sheathed capillary of spleen,nan,Artery
+liver lobule,Liver,UBERON:0004647,16,post-sheath open capillary of spleen,nan,Artery
+liver lobule,Liver,UBERON:0004647,17,splenic venous sinusoid,UBERON:0003910,Artery
+liver lobule,Liver,UBERON:0004647,18,red pulp venule of spleen,nan,Artery
+liver lobule,Liver,UBERON:0004647,19,spleen trabecular vein,UBERON:0010400,Artery
+liver lobule,Liver,UBERON:0004647,20,splenic vein,UBERON:0003713,Artery
+liver lobule,Liver,UBERON:0004647,21,hepatic portal vein,UBERON:0001639,Artery
+liver lobule,Liver,UBERON:0004647,22,left hepatic portal vein,FMA:15415,Artery
+liver lobule,Liver,UBERON:0004647,23,left lateral hepatic portal vein,nan,Artery
+liver lobule,Liver,UBERON:0004647,24,lateral inferior segmental hepatic portal vein,FMA:15432,Artery
+liver lobule,Liver,UBERON:0004647,25,hepatic portal venule,nan,FTU
+liver lobule,Liver,UBERON:0004647,26,central vein of liver,UBERON:0006841,FTU
+liver lobule,Liver,UBERON:0004647,27,segmental hepatic vein,nan,Vein
+liver lobule,Liver,UBERON:0004647,28,left hepatic vein,UBERON:0011955,Vein
+liver lobule,Liver,UBERON:0004647,29,inferior vena cava,UBERON:0001072,Vein
+liver lobule,Liver,UBERON:0004647,30,right atrium,UBERON:0002078,Vein
+liver lobule,Liver,UBERON:0004647,50,common hepatic artery,UBERON:0005436,Artery
+liver lobule,Liver,UBERON:0004647,51,proper hepatic artery,UBERON:0015480,Artery
+liver lobule,Liver,UBERON:0004647,52,left hepatic artery,UBERON:0015481,Artery
+liver lobule,Liver,UBERON:0004647,53,segmental hepatic artery,nan,Artery
+liver lobule,Liver,UBERON:0004647,54,hepatic arteriole,nan,FTU
+liver lobule,Liver,UBERON:0004647,55,hepatic sinusoid,UBERON:0001281,FTU

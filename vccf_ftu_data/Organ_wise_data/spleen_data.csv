@@ -1,0 +1,67 @@
+﻿FTU,Organ,FTUID,PathStep,PathVessel,PathVesselID,Type
+red pulp of spleen,spleen,UBERON:0001250,50,left ventricle,UBERON:0002084,Artery
+red pulp of spleen,spleen,UBERON:0001250,51,aorta,UBERON:0000947,Artery
+red pulp of spleen,spleen,UBERON:0001250,52,ascending aorta,UBERON:0001496,Artery
+red pulp of spleen,spleen,UBERON:0001250,53,aortic arch,UBERON:0001508,Artery
+red pulp of spleen,spleen,UBERON:0001250,54,descending aorta,UBERON:0001514,Artery
+red pulp of spleen,spleen,UBERON:0001250,55,descending thoracic aorta,UBERON:0002345,Artery
+red pulp of spleen,spleen,UBERON:0001250,56,abdominal aorta,UBERON:0001516,Artery
+red pulp of spleen,spleen,UBERON:0001250,57,celiac artery,UBERON:0001640,Artery
+red pulp of spleen,spleen,UBERON:0001250,58,splenic artery,UBERON:0001194,Artery
+red pulp of spleen,spleen,UBERON:0001250,59,lobar artery of spleen,nan,Artery
+red pulp of spleen,spleen,UBERON:0001250,60,segmental branch of lobar artery of spleen,nan,Artery
+red pulp of spleen,spleen,UBERON:0001250,61,spleen trabecular artery,UBERON:0010399,Artery
+red pulp of spleen,spleen,UBERON:0001250,62,spleen central arteriole,UBERON:0010401,Artery
+red pulp of spleen,spleen,UBERON:0001250,63,non-penicillar arteriole of spleen,nan,Artery
+red pulp of spleen,spleen,UBERON:0001250,64,sheathed capillary of spleen,nan,Artery
+red pulp of spleen,spleen,UBERON:0001250,65,post-sheath open capillary of spleen,nan,FTU
+red pulp of spleen,spleen,UBERON:0001250,66,splenic venous sinusoid,UBERON:0003910,FTU
+red pulp of spleen,spleen,UBERON:0001250,67,red pulp venule of spleen,nan,FTU
+red pulp of spleen,spleen,UBERON:0001250,68,spleen trabecular vein,UBERON:0010400,Vein
+red pulp of spleen,spleen,UBERON:0001250,69,splenic vein,UBERON:0003713,Vein
+red pulp of spleen,spleen,UBERON:0001250,70,hepatic portal vein,UBERON:0001639,Vein
+red pulp of spleen,spleen,UBERON:0001250,71,left hepatic portal vein,FMA:15415,Vein
+red pulp of spleen,spleen,UBERON:0001250,72,left lateral hepatic portal vein,nan,Vein
+red pulp of spleen,spleen,UBERON:0001250,73,lateral inferior segmental hepatic portal vein,FMA:15432,Vein
+red pulp of spleen,spleen,UBERON:0001250,74,hepatic portal venule,nan,Vein
+red pulp of spleen,spleen,UBERON:0001250,75,hepatic sinusoid,UBERON:0001281,Vein
+red pulp of spleen,spleen,UBERON:0001250,76,central vein of liver,UBERON:0006841,Vein
+red pulp of spleen,spleen,UBERON:0001250,77,segmental hepatic vein,nan,Vein
+red pulp of spleen,spleen,UBERON:0001250,78,left hepatic vein,UBERON:0011955,Vein
+red pulp of spleen,spleen,UBERON:0001250,79,inferior vena cava,UBERON:0001072,Vein
+red pulp of spleen,spleen,UBERON:0001250,80,right atrium,UBERON:0002078,Vein
+white pulp of spleen,spleen,UBERON:0001959,1,left ventricle,UBERON:0002084,Artery
+white pulp of spleen,spleen,UBERON:0001959,2,aorta,UBERON:0000947,Artery
+white pulp of spleen,spleen,UBERON:0001959,3,ascending aorta,UBERON:0001496,Artery
+white pulp of spleen,spleen,UBERON:0001959,4,aortic arch,UBERON:0001508,Artery
+white pulp of spleen,spleen,UBERON:0001959,5,descending aorta,UBERON:0001514,Artery
+white pulp of spleen,spleen,UBERON:0001959,6,descending thoracic aorta,UBERON:0002345,Artery
+white pulp of spleen,spleen,UBERON:0001959,7,abdominal aorta,UBERON:0001516,Artery
+white pulp of spleen,spleen,UBERON:0001959,8,celiac artery,UBERON:0001640,Artery
+white pulp of spleen,spleen,UBERON:0001959,9,splenic artery,UBERON:0001194,Artery
+white pulp of spleen,spleen,UBERON:0001959,10,lobar artery of spleen,nan,Artery
+white pulp of spleen,spleen,UBERON:0001959,11,segmental branch of lobar artery of spleen,nan,Artery
+white pulp of spleen,spleen,UBERON:0001959,12,spleen trabecular artery,UBERON:0010399,Artery
+white pulp of spleen,spleen,UBERON:0001959,13,spleen central arteriole,UBERON:0010401,FTU
+white pulp of spleen,spleen,UBERON:0001959,14,non-penicillar arteriole of spleen,nan,Artery
+white pulp of spleen,spleen,UBERON:0001959,15,sheathed capillary of spleen,nan,Artery
+white pulp of spleen,spleen,UBERON:0001959,16,superficial white pulp capillary of spleen,nan,Artery
+white pulp of spleen,spleen,UBERON:0001959,17,branch of superficial white pulp capillary of spleen,nan,FTU
+white pulp of spleen,spleen,UBERON:0001959,19,sheathed capillary of spleen,nan,Vein
+white pulp of spleen,spleen,UBERON:0001959,20,post-sheath open capillary of spleen,nan,FTU/red
+white pulp of spleen,spleen,UBERON:0001959,21,splenic venous sinusoid,UBERON:0003910,FTU/red
+white pulp of spleen,spleen,UBERON:0001959,22,red pulp venule of spleen,nan,FTU/red
+white pulp of spleen,spleen,UBERON:0001959,23,spleen trabecular vein,UBERON:0010400,Vein
+white pulp of spleen,spleen,UBERON:0001959,24,splenic vein,UBERON:0003713,Vein
+white pulp of spleen,spleen,UBERON:0001959,25,hepatic portal vein,UBERON:0001639,Vein
+white pulp of spleen,spleen,UBERON:0001959,26,left hepatic portal vein,FMA:15415,Vein
+white pulp of spleen,spleen,UBERON:0001959,27,left lateral hepatic portal vein,nan,Vein
+white pulp of spleen,spleen,UBERON:0001959,28,lateral inferior segmental hepatic portal vein,FMA:15432,Vein
+white pulp of spleen,spleen,UBERON:0001959,29,hepatic portal venule,nan,Liver FTU
+white pulp of spleen,spleen,UBERON:0001959,30,hepatic sinusoid,UBERON:0001281,Liver FTU
+white pulp of spleen,spleen,UBERON:0001959,31,central vein of liver,UBERON:0006841,Liver FTU
+white pulp of spleen,spleen,UBERON:0001959,32,segmental hepatic vein,nan,Vein
+white pulp of spleen,spleen,UBERON:0001959,33,left hepatic vein,UBERON:0011955,Vein
+white pulp of spleen,spleen,UBERON:0001959,34,inferior vena cava,UBERON:0001072,Vein
+white pulp of spleen,spleen,UBERON:0001959,35,right atrium,UBERON:0002078,Vein
+white pulp of spleen,spleen,UBERON:0001959,36,secondary follicle arteriole of spleen,nan,FTU

@@ -1,0 +1,44 @@
+﻿PathVessel,PathID,PathStep,Type
+left ventricle,UBERON:0002084,1,Artery
+aorta,UBERON:0000947,2,Artery
+ascending aorta,UBERON:0001496,3,Artery
+aortic arch,UBERON:0001508,4,Artery
+common carotid artery,UBERON:0001530,5,Artery
+external carotid artery,UBERON:0001070,6,Artery
+facial artery,UBERON:0001612,7,Artery
+lingual artery,UBERON:0001610,8,Artery
+maxillary artery,UBERON:0001616,9,Artery
+superficial temporal artery,UBERON:0001614,10,Artery
+glandular branches of facial artery,FMA:71675,12,Artery
+submandibular gland arteriole,,13,Artery
+submandibular gland capillary,,14,FTU
+concomitant Wharton doct vein,,15,Vein
+sublingual vein,UBERON:8600071,16,Vein
+lingual vein,UBERON:0006634,17,Vein
+internal jugular vein,UBERON:0001586,18,Vein
+brachiocephalic vein,UBERON:0003711,19,Vein
+superior vena cava,UBERON:0001585,20,Vein
+right atrium,UBERON:0002078,21,Vein
+sublingual artery,UBERON:0001611,22,Artery
+sublingual gland arteriole,,23,Artery
+sublingual gland capillary,,24,FTU
+deep parotid gland arteriole,,25,Artery
+deep parotid gland capillary,,26,FTU
+deep parotid gland venule,,27,Vein
+retromandibular vein,UBERON:0001656,28,Vein
+anterior branch of retromandibular vein,,29,Vein
+common facial vein,,30,Vein
+superior parotid gland arteriole,,31,Artery
+superior parotid gland capillary,,32,FTU
+,,,
+inferior alveolar artery,UBERON:0014693,33,Artery
+supraperiosteal arteriole,,34,Artery
+inferior gingival plexus,,35,FTU
+,,,
+posterior superior alveolar artery,UBERON:0018397,36,Artery
+superior gingival plexus,,37,FTU
+,,,
+inferior gingiva venule,,38,Vein
+inferior alveolar vein,,39,Vein
+pterygoid venous plexus,UBERON:0014685,40,Vein
+maxillary vein,UBERON:0001660,41,Vein

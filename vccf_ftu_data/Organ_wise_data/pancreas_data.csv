@@ -1,0 +1,34 @@
+﻿FTU,Organ,FTUID,PathStep,PathVessel,PathVesselID,Type,,,,,
+intercalated duct,Pancreas,UBERON:0014725,1,left ventricle,UBERON:0002084,Atery,,left ventricle,left ventricle,left ventricle,left ventricle
+intercalated duct,Pancreas,UBERON:0014725,2,aorta,UBERON:0000947,Atery,,aorta,aorta,aorta,aorta
+intercalated duct,Pancreas,UBERON:0014725,3,ascending aorta,UBERON:0001496,Atery,,ascending aorta,ascending aorta,ascending aorta,ascending aorta
+intercalated duct,Pancreas,UBERON:0014725,4,aortic arch,UBERON:0001508,Atery,,aortic arch,aortic arch,aortic arch,aortic arch
+intercalated duct,Pancreas,UBERON:0014725,5,descending aorta,UBERON:0001514,Atery,,descending aorta,descending aorta,descending aorta,descending aorta
+intercalated duct,Pancreas,UBERON:0014725,6,descending thoracic aorta,UBERON:0002345,Atery,,descending thoracic aorta,descending thoracic aorta,descending thoracic aorta,descending thoracic aorta
+intercalated duct,Pancreas,UBERON:0014725,7,abdominal aorta,UBERON:0001516,Atery,,abdominal aorta,abdominal aorta,abdominal aorta,abdominal aorta
+intercalated duct,Pancreas,UBERON:0014725,8,celiac artery,UBERON:0001640,Atery,,celiac artery,celiac artery,celiac artery,celiac artery
+intercalated duct,Pancreas,UBERON:0014725,9,splenic artery,UBERON:0001194,Atery,,splenic artery,splenic artery,splenic artery,splenic artery
+intercalated duct,Pancreas,UBERON:0014725,10,pancreatic artery,FMA:70471,Atery,,pancreatic artery,pancreatic artery,pancreatic artery,pancreatic artery
+intercalated duct,Pancreas,UBERON:0014725,11,interlobular artery of pancreas,nan,Atery,,interlobular artery of pancreas,interlobular artery of pancreas,interlobular artery of pancreas,interlobular artery of pancreas
+intercalated duct,Pancreas,UBERON:0014725,12,lobular artery of pancreas,nan,Atery,,lobular artery of pancreas,lobular artery of pancreas,lobular artery of pancreas,lobular artery of pancreas
+intercalated duct,Pancreas,UBERON:0014725,13,intralobular arteriole of pancreas,nan,FTU,,intralobular arteriole of pancreas,intralobular arteriole of pancreas,intralobular arteriole of pancreas,intralobular arteriole of pancreas
+intercalated duct,Pancreas,UBERON:0014725,14,periductal capillary of intercalated duct of pancreas,nan,FTU,,periductal capillary of intercalated duct of pancreas,pancreatic islet afferent arteriole,periductal capillary of intercalated duct of pancreas,lobular capillary of pancreas
+intercalated duct,Pancreas,UBERON:0014725,15,intralobular venule of pancreas,nan,Vein,,,pancreatic islet capillary,,
+intercalated duct,Pancreas,UBERON:0014725,16,lobular vein of pancreas,nan,Vein,,intralobular venule of pancreas,intralobular venule of pancreas,intralobular venule of pancreas,intralobular venule of pancreas
+intercalated duct,Pancreas,UBERON:0014725,17,interlobular vein of pancreas,nan,Vein,,lobular vein of pancreas,lobular vein of pancreas,lobular vein of pancreas,lobular vein of pancreas
+intercalated duct,Pancreas,UBERON:0014725,18,pancreatic vein,FMA:70929,Vein,,interlobular vein of pancreas,interlobular vein of pancreas,interlobular vein of pancreas,interlobular vein of pancreas
+intercalated duct,Pancreas,UBERON:0014725,19,splenic vein,UBERON:0003713,Vein,,pancreatic vein,pancreatic vein,pancreatic vein,pancreatic vein
+intercalated duct,Pancreas,UBERON:0014725,20,hepatic portal vein,UBERON:0001639,Vein,,splenic vein,splenic vein,splenic vein,splenic vein
+intercalated duct,Pancreas,UBERON:0014725,21,left hepatic portal vein,FMA:15415,Vein,,hepatic portal vein,hepatic portal vein,hepatic portal vein,hepatic portal vein
+intercalated duct,Pancreas,UBERON:0014725,22,left lateral hepatic portal vein,nan,Vein,,left hepatic portal vein,left hepatic portal vein,left hepatic portal vein,left hepatic portal vein
+intercalated duct,Pancreas,UBERON:0014725,23,lateral inferior segmental hepatic portal vein,FMA:15432,Vein,,left lateral hepatic portal vein,left lateral hepatic portal vein,left lateral hepatic portal vein,left lateral hepatic portal vein
+intercalated duct,Pancreas,UBERON:0014725,24,hepatic portal venule,nan,FTU,,lateral inferior segmental hepatic portal vein,lateral inferior segmental hepatic portal vein,lateral inferior segmental hepatic portal vein,lateral inferior segmental hepatic portal vein
+intercalated duct,Pancreas,UBERON:0014725,25,hepatic sinusoid,UBERON:0001281,FTU,,hepatic portal venule,hepatic portal venule,hepatic portal venule,hepatic portal venule
+intercalated duct,Pancreas,UBERON:0014725,26,central vein of liver,UBERON:0006841,FTU,,hepatic sinusoid,hepatic sinusoid,hepatic sinusoid,hepatic sinusoid
+intercalated duct,Pancreas,UBERON:0014725,27,segmental hepatic vein,nan,Vein,,central vein of liver,central vein of liver,central vein of liver,central vein of liver
+intercalated duct,Pancreas,UBERON:0014725,28,left hepatic vein,UBERON:0011955,Vein,,segmental hepatic vein,segmental hepatic vein,segmental hepatic vein,segmental hepatic vein
+intercalated duct,Pancreas,UBERON:0014725,29,inferior vena cava,UBERON:0001072,Vein,,left hepatic vein,left hepatic vein,left hepatic vein,left hepatic vein
+intercalated duct,Pancreas,UBERON:0014725,30,right atrium,UBERON:0002078,Vein,,inferior vena cava,inferior vena cava,inferior vena cava,inferior vena cava
+islet of Langerhans,Pancreas,UBERON:0000006,31,pancreatic islet afferent arteriole,nan,Atery,,,,,
+islet of Langerhans,Pancreas,UBERON:0000006,32,pancreatic islet capillary,FMA:280080,FTU,,,,,
+pancreatic acinus,Pancreas,UBERON:0001263,33,lobular capillary of pancreas,nan,FTU,,,,,

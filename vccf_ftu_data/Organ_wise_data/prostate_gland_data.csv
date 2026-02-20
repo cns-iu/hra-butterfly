@@ -1,0 +1,22 @@
+﻿FTU,Organ,FTUID,PathStep,PathVessel,PathVesselID,Type
+prostate glandular acinus,Prostate Gland,UBERON:0004179,1,left ventricle,UBERON:0002084,Artery
+prostate glandular acinus,Prostate Gland,UBERON:0004179,2,aorta,UBERON:0000947,Artery
+prostate glandular acinus,Prostate Gland,UBERON:0004179,3,ascending aorta,UBERON:0001496,Artery
+prostate glandular acinus,Prostate Gland,UBERON:0004179,4,aortic arch,UBERON:0001508,Artery
+prostate glandular acinus,Prostate Gland,UBERON:0004179,5,descending aorta,UBERON:0001514,Artery
+prostate glandular acinus,Prostate Gland,UBERON:0004179,6,descending thoracic aorta,UBERON:0002345,Artery
+prostate glandular acinus,Prostate Gland,UBERON:0004179,7,abdominal aorta,UBERON:0001516,Artery
+prostate glandular acinus,Prostate Gland,UBERON:0004179,8,common iliac artery,UBERON:0001191,Artery
+prostate glandular acinus,Prostate Gland,UBERON:0004179,9,internal iliac artery,UBERON:0001309,Artery
+prostate glandular acinus,Prostate Gland,UBERON:0004179,10,anterior division of internal iliac artery,FMA:69797,Artery
+prostate glandular acinus,Prostate Gland,UBERON:0004179,11,inferior vesical artery,UBERON:0001311,Artery
+prostate glandular acinus,Prostate Gland,UBERON:0004179,12,prostatic artery,FMA:20966,Artery
+prostate glandular acinus,Prostate Gland,UBERON:0004179,13,prostatic arteriole,nan,Artery
+prostate glandular acinus,Prostate Gland,UBERON:0004179,14,prostatic capillary,FMA:280966,FTU
+prostate glandular acinus,Prostate Gland,UBERON:0004179,15,prostatic venule,nan,Vein
+prostate glandular acinus,Prostate Gland,UBERON:0004179,16,prostatic venous plexus,UBERON:0009042,Vein
+prostate glandular acinus,Prostate Gland,UBERON:0004179,17,inferior vesical vein,UBERON:0001318,Vein
+prostate glandular acinus,Prostate Gland,UBERON:0004179,18,internal iliac vein,UBERON:0001317,Vein
+prostate glandular acinus,Prostate Gland,UBERON:0004179,19,common iliac vein,UBERON:0001139,Vein
+prostate glandular acinus,Prostate Gland,UBERON:0004179,20,inferior vena cava,UBERON:0001072,Vein
+prostate glandular acinus,Prostate Gland,UBERON:0004179,21,right atrium,UBERON:0002078,Vein

@@ -1,0 +1,35 @@
+﻿FTU,Organ,FTUID,PathStep,PathVessel,PathVesselID,Type
+crypt of Lieberkuhn,Large intestine,UBERON:0001983,1,left ventricle,UBERON:0002084,Artery
+crypt of Lieberkuhn,Large intestine,UBERON:0001983,2,aorta,UBERON:0000947,Artery
+crypt of Lieberkuhn,Large intestine,UBERON:0001983,3,ascending aorta,UBERON:0001496,Artery
+crypt of Lieberkuhn,Large intestine,UBERON:0001983,4,aortic arch,UBERON:0001508,Artery
+crypt of Lieberkuhn,Large intestine,UBERON:0001983,5,descending aorta,UBERON:0001514,Artery
+crypt of Lieberkuhn,Large intestine,UBERON:0001983,6,descending thoracic aorta,UBERON:0002345,Artery
+crypt of Lieberkuhn,Large intestine,UBERON:0001983,7,abdominal aorta,UBERON:0001516,Artery
+crypt of Lieberkuhn,Large intestine,UBERON:0001983,8,inferior mesenteric artery,UBERON:0001183,Artery
+crypt of Lieberkuhn,Large intestine,UBERON:0001983,9,left colic artery,UBERON:8410022,Artery
+crypt of Lieberkuhn,Large intestine,UBERON:0001983,10,ascending branch of left colic artery,FMA:14828,Artery
+crypt of Lieberkuhn,Large intestine,UBERON:0001983,11,marginal artery of Drummond,FMA:14824,Artery
+crypt of Lieberkuhn,Large intestine,UBERON:0001983,12,vasa recta of colon,nan,Artery
+crypt of Lieberkuhn,Large intestine,UBERON:0001983,13,long branch of vasa recta of colon,nan,Artery
+crypt of Lieberkuhn,Large intestine,UBERON:0001983,14,submucosal artery of colon,nan,Artery
+crypt of Lieberkuhn,Large intestine,UBERON:0001983,15,submucosal arteriole of colon,nan,Artery
+crypt of Lieberkuhn,Large intestine,UBERON:0001983,16,mucosal arteriole of colon,nan,Artery
+crypt of Lieberkuhn,Large intestine,UBERON:0001983,17,branch of mucous plexus of colon,nan,FTU
+crypt of Lieberkuhn,Large intestine,UBERON:0001983,18,mucosal venule of colon,nan,Vein
+crypt of Lieberkuhn,Large intestine,UBERON:0001983,19,submucosal venule of colon,nan,Vein
+crypt of Lieberkuhn,Large intestine,UBERON:0001983,20,submucosal vein of colon,nan,Vein
+crypt of Lieberkuhn,Large intestine,UBERON:0001983,21,vena recta of large intestine,nan,Vein
+crypt of Lieberkuhn,Large intestine,UBERON:0001983,22,ileocolic vein,UBERON:0001219,Vein
+crypt of Lieberkuhn,Large intestine,UBERON:0001983,23,superior mesenteric vein,UBERON:0001138,Vein
+crypt of Lieberkuhn,Large intestine,UBERON:0001983,24,hepatic portal vein,UBERON:0001639,Vein
+crypt of Lieberkuhn,Large intestine,UBERON:0001983,25,left hepatic portal vein,FMA:15415,Vein
+crypt of Lieberkuhn,Large intestine,UBERON:0001983,26,left lateral hepatic portal vein,nan,Vein
+crypt of Lieberkuhn,Large intestine,UBERON:0001983,27,lateral inferior segmental hepatic portal vein,FMA:15432,Vein
+crypt of Lieberkuhn,Large intestine,UBERON:0001983,28,hepatic portal venule,nan,Vein
+crypt of Lieberkuhn,Large intestine,UBERON:0001983,29,hepatic sinusoid,UBERON:0001281,Vein
+crypt of Lieberkuhn,Large intestine,UBERON:0001983,30,central vein of liver,UBERON:0006841,Vein
+crypt of Lieberkuhn,Large intestine,UBERON:0001983,31,segmental hepatic vein,nan,Vein
+crypt of Lieberkuhn,Large intestine,UBERON:0001983,32,left hepatic vein,UBERON:0011955,Vein
+crypt of Lieberkuhn,Large intestine,UBERON:0001983,33,inferior vena cava,UBERON:0001072,Vein
+crypt of Lieberkuhn,Large intestine,UBERON:0001983,34,right atrium,UBERON:0002078,Vein
